@@ -1,0 +1,33 @@
+# Build artifacts for tagged releases (publish is placeholder).
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install build tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: Build artifacts
+        run: python -m build
+
+      - name: Publish artifacts (placeholder)
+        run: |
+          echo "Configure TWINE_USERNAME/TWINE_PASSWORD secrets to publish."
+          echo "twine upload dist/*"

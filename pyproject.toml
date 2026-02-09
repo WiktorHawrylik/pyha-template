@@ -1,0 +1,88 @@
+[build-system]
+# Build backend for packaging with PEP 517/518 support.
+requires = ["hatchling>=1.24.2"]
+build-backend = "hatchling.build"
+
+[project]
+# Template metadata (rename as needed).
+name = "python-library-template"
+version = "0.1.0"
+description = "Reusable template for fast Python library development."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "GPL-3.0-only" }
+authors = [
+  { name = "Template Maintainers", email = "maintainers@example.com" },
+]
+keywords = ["template", "library", "python"]
+classifiers = [
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Typing :: Typed",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+# Development dependencies grouped for tooling and docs.
+dev = [
+  "mypy>=1.8.0",
+  "pre-commit>=3.6.0",
+  "pytest>=8.0.0",
+  "pytest-cov>=4.1.0",
+  "ruff>=0.4.0",
+  "types-setuptools",
+]
+docs = [
+  "mkdocs-material>=9.5.0",
+  "mkdocstrings[python]>=0.25.0",
+]
+
+[tool.hatch.build.targets.wheel]
+# Use src/ layout for packaging.
+packages = ["src/python_library_template"]
+include = ["src/python_library_template/py.typed"]
+
+[tool.pytest.ini_options]
+# Keep pytest config centralized for consistent CI/local runs.
+minversion = "8.0"
+addopts = "-ra --cov=python_library_template --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+# Track coverage only for the src package.
+source = ["python_library_template"]
+branch = true
+
+[tool.coverage.report]
+# Fail if coverage slips below the template baseline.
+fail_under = 90
+show_missing = true
+
+[tool.mypy]
+# Enforce strict typing by default for template quality gates.
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+strict = true
+
+[tool.ruff]
+# Ruff config for linting + formatting.
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# Select common linting rules and keep configuration explicit.
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "PL", "RUF"]
+ignore = ["PLR0913"]
+
+[tool.ruff.lint.isort]
+# Ensure consistent import ordering.
+known-first-party = ["python_library_template"]
+
+[tool.ruff.format]
+# Enable Ruff's formatter for consistent styling.
+quote-style = "double"
