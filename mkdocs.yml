@@ -1,0 +1,16 @@
+# MkDocs config provides a minimal documentation site for the template.
+site_name: Python Library Template
+site_description: "Documentation for the python-library-template."
+site_url: "https://example.com"
+
+theme:
+  # Use MkDocs Material for a modern docs experience.
+  name: material
+
+plugins:
+  # Keep plugins minimal until real API docs are added.
+  - search
+
+nav:
+  - Home: index.md
+  - API: api.md

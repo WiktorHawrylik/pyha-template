@@ -1,0 +1,26 @@
+# Pre-commit hooks to keep quality gates consistent locally and in CI.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.7
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        additional_dependencies: ["types-setuptools"]
+  - repo: local
+    hooks:
+      - id: check-agents
+        name: check-agents
+        entry: scripts/check_agents.sh
+        language: system
+        pass_filenames: false

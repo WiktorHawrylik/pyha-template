@@ -1,0 +1,88 @@
+[build-system]
+# Use hatchling for PEP 517 builds and consistent metadata handling.
+requires = ["hatchling>=1.24.2"]
+build-backend = "hatchling.build"
+
+[project]
+# Template metadata; rename as part of your fork.
+name = "python-library-template"
+version = "0.1.0"
+description = "Template for a Python library with agentic development guardrails."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-only" }
+authors = [
+  { name = "Template Maintainer", email = "maintainer@example.com" },
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+# Runtime dependencies go here.
+dependencies = []
+
+[project.optional-dependencies]
+# Dev tooling used by CI and pre-commit.
+dev = [
+  "build>=1.2.1",
+  "mypy>=1.10.0",
+  "pre-commit>=3.7.1",
+  "pytest>=8.2.0",
+  "pytest-cov>=5.0.0",
+  "ruff>=0.5.0",
+  "mkdocs-material>=9.5.20",
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://github.com/example/python-library-template"
+Issues = "https://github.com/example/python-library-template/issues"
+
+[tool.hatch.build.targets.wheel]
+# Point hatchling at the src layout package.
+packages = ["src/python_library_template"]
+
+[tool.ruff]
+# Ruff handles lint + format to keep developer friction low.
+line-length = 100
+src = ["src", "tests"]
+target-version = "py310"
+
+[tool.ruff.lint]
+# Select common correctness and style rules.
+select = ["E", "F", "I", "B", "UP", "SIM", "PL"]
+ignore = ["PLR2004"]
+
+[tool.ruff.lint.per-file-ignores]
+# Allow tests to use assert directly.
+"tests/*" = ["S101"]
+
+[tool.mypy]
+# Type-check the library with strict-ish settings.
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+warn_unused_configs = true
+mypy_path = "src"
+
+[tool.pytest.ini_options]
+# Pytest configuration for clear output and coverage.
+addopts = "--cov=python_library_template --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+# Coverage tracks only the library package.
+branch = true
+source = ["python_library_template"]
+
+[tool.coverage.report]
+# Fail CI if coverage drops below baseline.
+fail_under = 90
+show_missing = true
+skip_empty = true
