@@ -1,0 +1,80 @@
+# Pre-commit hooks configuration for code quality and consistency
+# This ensures all commits meet quality standards automatically
+repos:
+  # General pre-commit hooks for file health
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        name: Trim trailing whitespace
+      - id: end-of-file-fixer
+        name: Fix end of files
+      - id: check-yaml
+        name: Check YAML syntax
+      - id: check-added-large-files
+        name: Check for large files
+        args: ['--maxkb=1000']
+      - id: check-json
+        name: Check JSON syntax
+      - id: check-toml
+        name: Check TOML syntax
+      - id: check-merge-conflict
+        name: Check for merge conflicts
+      - id: debug-statements
+        name: Check for debug statements
+      - id: check-ast
+        name: Check Python AST
+      - id: check-docstring-first
+        name: Check docstring is first
+
+  # Ruff - Fast Python linter and formatter (replaces flake8, isort, black)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.14
+    hooks:
+      - id: ruff
+        name: Lint with ruff
+        args: [--fix]
+      - id: ruff-format
+        name: Format with ruff
+
+  # MyPy - Static type checker
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.19.1
+    hooks:
+      - id: mypy
+        name: Type check with mypy
+        additional_dependencies: [pydantic>=2.0.0, types-requests]
+        args: [--config-file=pyproject.toml]
+
+  # Security check for dependencies
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.3
+    hooks:
+      - id: python-safety-dependencies-check
+        name: Check for known security vulnerabilities
+        files: pyproject.toml
+
+  # Markdown linting for documentation
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.43.0
+    hooks:
+      - id: markdownlint
+        name: Lint markdown files
+        args: ['--fix']
+
+# Configuration for pre-commit itself
+default_language_version:
+  python: python3.9
+
+# CI configuration - run all hooks on CI
+ci:
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit hooks
+
+    for more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_branch: ''
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false
