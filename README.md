@@ -109,7 +109,7 @@ make test
 ├── README.md                   # This file
 ├── CONTRIBUTING.md             # Contribution guidelines
 ├── CHANGELOG.md                # Version history
-└── LICENSE                     # GPL-3.0 license
+└── LICENSE                     # AGPL-3.0 license
 
 ```
 

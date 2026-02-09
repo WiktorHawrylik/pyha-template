@@ -103,4 +103,4 @@ extra:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/your-package-name/
 
-copyright: Copyright &copy; 2024 Your Name - GPL-3.0 License
+copyright: Copyright &copy; 2024 Your Name - AGPL-3.0 License

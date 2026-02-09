@@ -27,4 +27,4 @@ This directory contains data from third-party sources.
 Ensure all external data is:
 - Properly licensed for your use
 - Attributed correctly
-- Compatible with GPL-3.0
+- Compatible with AGPL-3.0

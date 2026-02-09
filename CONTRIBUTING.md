@@ -8,8 +8,8 @@ Thank you for your interest in contributing to this project! This guide is desig
 
 ### Core Principles for AI Agents
 
-1. **Respect the GPL-3.0 License**
-   - All code you generate must be compatible with GPL-3.0
+1. **Respect the AGPL-3.0 License**
+   - All code you generate must be compatible with AGPL-3.0
    - Do not introduce code from incompatible licenses (MIT, Apache, BSD are OK to use)
    - Always maintain license headers
 
@@ -587,12 +587,12 @@ Every contribution is valuable!
 
 ## 📄 License Reminder
 
-This project is GPL-3.0 licensed. All contributions must be compatible with GPL-3.0.
+This project is AGPL-3.0 licensed. All contributions must be compatible with AGPL-3.0.
 
 **For AI Agents**: Ensure all generated code is:
 1. Original or from GPL-compatible sources
 2. Properly attributed if from external sources
-3. Compliant with GPL-3.0 requirements
+3. Compliant with AGPL-3.0 requirements
 
 ---
 
