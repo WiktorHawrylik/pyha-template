@@ -1,6 +1,6 @@
 # Python Library Template 🚀
 
-[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Type checked: mypy](https://img.shields.io/badge/type%20checked-mypy-blue.svg)](http://mypy-lang.org/)
@@ -267,7 +267,7 @@ Documentation structure:
 
 ## 🔒 License & Legal
 
-This template is licensed under **GPL-3.0**. This means:
+This template is licensed under **AGPL-3.0** (GNU Affero General Public License v3.0). This means:
 
 ### For Users
 ✅ **You CAN**:
@@ -276,16 +276,18 @@ This template is licensed under **GPL-3.0**. This means:
 - Use it commercially
 
 ⚠️ **You MUST**:
-- Disclose source code
-- License modifications under GPL-3.0
+- Disclose source code (including for network services)
+- License modifications under AGPL-3.0
 - Include original copyright notice
+- Provide source to network users
 
 ### For AI Agents
 **IMPORTANT**: When contributing to projects using this template:
-1. Respect the GPL-3.0 license terms
+1. Respect the AGPL-3.0 license terms
 2. Do not introduce code from incompatible licenses
 3. Maintain license headers in new files
 4. Document any third-party code sources
+5. Remember: Network use triggers source disclosure
 
 See [LICENSE](LICENSE) for full terms.
 
@@ -352,4 +354,4 @@ This template is based on the excellent work from:
 
 **Made with ❤️ for the agentic development community**
 
-*This template respects GPL-3.0 licensing and encourages all contributors (human and AI) to do the same.*
+*This template respects AGPL-3.0 licensing and encourages all contributors (human and AI) to do the same.*

@@ -7,7 +7,7 @@ name = "your-package-name"
 version = "0.1.0"
 description = "A modern Python library template optimized for agentic and data-driven development"
 readme = "README.md"
-license = {text = "GPL-3.0-or-later"}
+license = {text = "AGPL-3.0-or-later"}
 authors = [
     { name = "Your Name", email = "your.email@example.com" }
 ]
@@ -17,7 +17,7 @@ maintainers = [
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -173,16 +173,14 @@ ignore = [
     "E203",  # whitespace before ':'
     "S101",  # use of assert (needed for tests)
     "PLR0913",  # too many arguments
-    "D100",  # missing docstring in public module
-    "D104",  # missing docstring in public package
 ]
 
 # Max cyclomatic complexity
 mccabe.max-complexity = 10
 
 [tool.ruff.lint.per-file-ignores]
-"__init__.py" = ["F401", "D104"]  # Allow unused imports and missing docstrings
-"tests/**/*.py" = ["S101", "ARG", "PLR2004", "D"]  # Allow asserts, unused args, magic values, no docstrings
+"__init__.py" = ["F401", "D104"]  # Allow unused imports and missing package docstrings in __init__ files
+"tests/**/*.py" = ["S101", "ARG", "PLR2004", "D"]  # Allow asserts, unused args, magic values, no docstrings in tests
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"  # Use Google-style docstrings
