@@ -1,0 +1,24 @@
+# Pre-commit hooks to enforce linting, formatting, and guardrails.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      # Lint and auto-fix Python issues.
+      - id: ruff
+        args: ["--fix"]
+      # Format code to match Ruff's formatter.
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.2
+    hooks:
+      # Static type checking to catch interface regressions.
+      - id: mypy
+        args: ["--config-file=pyproject.toml"]
+  - repo: local
+    hooks:
+      # Guardrail: ensure AGENTS.md is present.
+      - id: check-agents
+        name: check-agents
+        entry: python scripts/check_agents.py
+        language: system
+        pass_filenames: false

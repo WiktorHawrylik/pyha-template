@@ -1,0 +1,82 @@
+[build-system]
+# Build system for PEP 517/518 packaging.
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+# Core package metadata for PEP 621.
+name = "python-library-template"
+version = "0.1.0"
+description = "Reusable template for Python library development."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Template Maintainers", email = "maintainers@example.com" }]
+keywords = ["template", "library"]
+classifiers = [
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+# Placeholder URLs to be updated when the template is reused.
+Homepage = "https://github.com/your-org/python-library-template"
+Repository = "https://github.com/your-org/python-library-template"
+Documentation = "https://your-org.github.io/python-library-template"
+
+[project.optional-dependencies]
+# Developer tooling extras.
+dev = [
+  "build",
+  "mypy",
+  "mkdocs-material",
+  "mkdocstrings[python]",
+  "pre-commit",
+  "pytest",
+  "pytest-cov",
+  "ruff",
+  "types-setuptools",
+]
+
+[tool.hatch.build.targets.wheel]
+# Use the src/ layout for packaging.
+packages = ["src/python_library_template"]
+
+[tool.ruff]
+# Ruff is the primary linter and formatter.
+line-length = 100
+src = ["src", "tests"]
+target-version = "py310"
+
+[tool.ruff.lint]
+# Starter rule set for modern Python projects.
+select = ["E", "F", "I", "N", "B", "UP", "ANN", "SIM"]
+ignore = ["ANN101", "ANN102"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests can be less strict about annotations.
+"tests/**/*.py" = ["ANN201"]
+
+[tool.mypy]
+# Mypy configuration for static type checking.
+python_version = "3.10"
+strict = true
+warn_unused_configs = true
+mypy_path = "src"
+
+[tool.pytest.ini_options]
+# Pytest configuration with test discovery and strictness.
+addopts = "--cov=python_library_template --cov-report=term-missing --strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+# Coverage configuration for meaningful reports.
+branch = true
+source = ["python_library_template"]
+
+[tool.coverage.report]
+# Exclude defensive code from coverage thresholds.
+exclude_lines = ["pragma: no cover", "if __name__ == \"__main__\":"]

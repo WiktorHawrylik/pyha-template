@@ -1,0 +1,24 @@
+# MkDocs configuration for documentation site generation.
+site_name: Python Library Template
+site_description: Documentation for the Python library template.
+site_url: https://your-org.github.io/python-library-template
+repo_url: https://github.com/your-org/python-library-template
+
+theme:
+  # Material theme for modern docs.
+  name: material
+  features:
+    - navigation.tabs
+
+plugins:
+  # mkdocstrings enables API documentation stubs.
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - API: api.md
