@@ -1,0 +1,6 @@
+# Issue template configuration to guide reporters.
+blank_issues_enabled: false
+contact_links:
+  - name: Security reports
+    url: https://example.com/security
+    about: Please report security issues privately.

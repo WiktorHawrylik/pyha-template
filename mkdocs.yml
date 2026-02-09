@@ -1,0 +1,20 @@
+# MkDocs config for minimal documentation site.
+site_name: python-library-template
+site_description: "Template for rapid Python library development."
+repo_url: https://github.com/your-org/python-library-template
+repo_name: your-org/python-library-template
+theme:
+  name: material
+  palette:
+    scheme: slate
+# Minimal navigation for getting started.
+nav:
+  - Home: index.md
+  - API: api.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google

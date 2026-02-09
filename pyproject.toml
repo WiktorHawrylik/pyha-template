@@ -1,0 +1,84 @@
+[build-system]
+# Build via hatchling to keep packaging simple and PEP 621 compliant.
+requires = ["hatchling>=1.24.2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "python-library-template"
+version = "0.1.0"
+description = "Template repository for rapid Python library development."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-only" }
+authors = [
+  { name = "Template Maintainer", email = "maintainer@example.com" },
+]
+keywords = ["template", "python", "library"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+# Developer tooling for linting, typing, tests, and docs.
+dev = [
+  "mypy>=1.9.0",
+  "pre-commit>=3.6.0",
+  "pytest>=8.1.0",
+  "pytest-cov>=4.1.0",
+  "ruff>=0.4.0",
+  "mkdocs-material>=9.5.0",
+  "mkdocstrings[python]>=0.24.0",
+]
+
+[tool.hatch.build.targets.wheel]
+# Use src/ layout for import isolation.
+packages = ["src/python_library_template"]
+
+[tool.ruff]
+# Ruff handles lint + formatting with a single fast tool.
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+# Enable a curated set of rules for consistency.
+select = ["E", "F", "I", "B", "UP", "SIM", "PL", "RUF"]
+ignore = ["PLR0913"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests can be a bit more flexible in assertions and fixtures.
+"tests/**/*.py" = ["PLR2004"]
+
+[tool.ruff.format]
+# Keep formatting deterministic for CI/pre-commit.
+quote-style = "double"
+
+[tool.mypy]
+# Mypy enforces type correctness in CI.
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+strict_optional = true
+mypy_path = ["src"]
+
+[tool.pytest.ini_options]
+# Pytest configuration for predictable test runs.
+minversion = "8.0"
+addopts = "-ra --cov=python_library_template --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+# Coverage configuration to match the src layout.
+branch = true
+source = ["python_library_template"]
+
+[tool.coverage.report]
+# Fail CI if we drop below the required coverage.
+fail_under = 85
+show_missing = true
