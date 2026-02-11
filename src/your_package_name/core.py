@@ -174,3 +174,5 @@ class ExampleClass:
         if not isinstance(other, ExampleClass):
             return NotImplemented
         return self.name == other.name and self.value == other.value
+
+    __hash__ = None  # Mutable object should not be hashable
