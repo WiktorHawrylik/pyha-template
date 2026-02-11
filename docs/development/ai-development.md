@@ -1,8 +1,6 @@
-# AI Agent README
+# AI-Assisted Development Guide
 
-## For AI Coding Assistants
-
-This file provides essential context for AI coding assistants (GitHub Copilot, Cursor, Claude, ChatGPT, etc.) working on this template.
+This guide provides essential context for AI coding assistants (GitHub Copilot, Cursor, Claude, ChatGPT, etc.) working on this template.
 
 ## Project Identity
 
@@ -68,12 +66,11 @@ This file provides essential context for AI coding assistants (GitHub Copilot, C
 ├── configs/                  # Configuration files
 ├── .github/
 │   ├── workflows/            # CI/CD workflows
-│   └── copilot-instructions.md  # Instructions for you!
+│   └── copilot-instructions.md
 ├── pyproject.toml            # **SINGLE SOURCE OF TRUTH** for config
 ├── Makefile                  # Development automation
 ├── .cursorrules              # Cursor AI rules
-├── LICENSE                   # AGPL-3.0
-└── LICENSE-AI-NOTICE.md      # License guide for AI agents
+└── LICENSE                   # AGPL-3.0
 ```
 
 ## Configuration Philosophy
@@ -320,16 +317,10 @@ class TestFunctionName:
 - `.git/` - Git internals
 - `__pycache__/` - Python cache
 
-## Questions?
-
-- Read: `.github/copilot-instructions.md`
-- Read: `.cursorrules`
-- Read: `CONTRIBUTING.md`
-- Check: Existing code for patterns
-
 ## Success Criteria
 
 Your contribution is successful when:
+
 1. ✅ Code has complete type hints
 2. ✅ All functions have docstrings
 3. ✅ Tests are comprehensive

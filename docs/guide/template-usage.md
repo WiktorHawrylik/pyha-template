@@ -1,4 +1,4 @@
-# How to Use This Template
+# Template Usage Guide
 
 This guide explains how to use the Python Library Template to create your own project.
 
@@ -7,11 +7,13 @@ This guide explains how to use the Python Library Template to create your own pr
 ### 1. Create Your Repository
 
 **Option A: Use as GitHub Template**
+
 1. Click "Use this template" button on GitHub
 2. Create a new repository with your project name
 3. Clone your new repository
 
 **Option B: Manual Clone**
+
 ```bash
 git clone https://github.com/WiktorHawrylik/python-package-template.git my-project
 cd my-project
@@ -22,11 +24,13 @@ git init
 ### 2. Customize the Template
 
 **Automated (Recommended)**
+
 ```bash
 python scripts/customize_template.py
 ```
 
 This script will prompt you for:
+
 - Package name (e.g., `my-awesome-library`)
 - Module name (e.g., `my_awesome_library`)
 - Your name
@@ -35,6 +39,7 @@ This script will prompt you for:
 - Project description
 
 **Manual Customization**
+
 If you prefer, find and replace these placeholders:
 
 | Placeholder | Replace With | Example |
@@ -46,6 +51,7 @@ If you prefer, find and replace these placeholders:
 | `your-username` | Your GitHub username | `janedoe` |
 
 Files to update:
+
 - `README.md`
 - `pyproject.toml`
 - `mkdocs.yml`
@@ -55,6 +61,7 @@ Files to update:
 - All files in `docs/`
 
 Then rename:
+
 ```bash
 mv src/your_package_name src/my_actual_package
 ```
@@ -88,6 +95,7 @@ make docs
 ### 5. Start Coding!
 
 You're ready to go! The template provides:
+
 - ✅ Project structure
 - ✅ Example code
 - ✅ Comprehensive tests
@@ -98,6 +106,7 @@ You're ready to go! The template provides:
 ## What's Included
 
 ### Project Structure
+
 ```
 your-project/
 ├── src/your_package/      # Your source code
@@ -111,6 +120,7 @@ your-project/
 ```
 
 ### Development Tools
+
 - **uv**: Fast Python package manager
 - **ruff**: Linting and formatting
 - **mypy**: Type checking
@@ -119,12 +129,14 @@ your-project/
 - **mkdocs**: Documentation
 
 ### Documentation
+
 - User guides
 - API reference
 - Contributing guide
 - AI agent instructions
 
 ### CI/CD
+
 - Automated testing
 - Code quality checks
 - Documentation deployment
@@ -238,6 +250,7 @@ myfeature = [
 ```
 
 Then:
+
 ```bash
 uv sync
 ```
@@ -245,6 +258,7 @@ uv sync
 ### Modify CI/CD
 
 Edit `.github/workflows/ci.yml`:
+
 - Add/remove Python versions
 - Add additional checks
 - Modify test commands
@@ -252,6 +266,7 @@ Edit `.github/workflows/ci.yml`:
 ### Change Documentation Theme
 
 Edit `mkdocs.yml`:
+
 - Change theme colors
 - Add/remove sections
 - Configure plugins
@@ -259,6 +274,7 @@ Edit `mkdocs.yml`:
 ### Add Custom Scripts
 
 Create in `scripts/`:
+
 ```python
 #!/usr/bin/env python3
 """My custom script."""
@@ -275,23 +291,27 @@ if __name__ == "__main__":
 This template is optimized for AI coding assistants:
 
 ### GitHub Copilot
+
 - Read `.github/copilot-instructions.md`
 - Copilot will use template patterns
 - Suggestions will match code style
 
 ### Cursor
+
 - Read `.cursorrules`
 - Cursor follows template conventions
 - AI understands project structure
 
 ### ChatGPT/Claude
-- Share `AI-README.md` for context
-- Provide `CONTRIBUTING.md` for guidelines
+
+- Share AI development guide for context
+- Provide CONTRIBUTING.md for guidelines
 - Reference existing code for patterns
 
 ## Best Practices
 
 ### Do's ✅
+
 - Use type hints everywhere
 - Write comprehensive docstrings
 - Add tests for new code
@@ -301,6 +321,7 @@ This template is optimized for AI coding assistants:
 - Use meaningful commit messages
 
 ### Don'ts ❌
+
 - Don't commit secrets
 - Don't skip tests
 - Don't ignore linting errors
@@ -342,8 +363,7 @@ make test
 
 ```bash
 # Add to pyproject.toml
-# [project]
-# dependencies = [
+# [project dependencies = [
 #     "new-package>=1.0.0",
 # ]
 

@@ -75,23 +75,19 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting Started:
+  - User Guide:
       - Installation: guide/installation.md
       - Quick Start: guide/quickstart.md
+      - Template Usage: guide/template-usage.md
       - Configuration: guide/configuration.md
-  - User Guide:
-      - Basic Usage: guide/usage.md
-      - Data Processing: guide/data-processing.md
-      - Agentic Development: guide/agentic-development.md
       - Best Practices: guide/best-practices.md
   - API Reference:
       - Core: api/core.md
       - Utils: api/utils.md
   - Development:
       - Contributing: contributing.md
-      - Testing: development/testing.md
-      - Documentation: development/docs.md
-      - Release Process: development/release.md
+      - AI Development: development/ai-development.md
+      - License Compliance: development/license-compliance.md
   - About:
       - Changelog: changelog.md
       - License: license.md
