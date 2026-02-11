@@ -11,7 +11,7 @@ Ensure all code changes pass pre-commit quality checks by automatically detectin
 Run pre-commit checks to establish baseline:
 
 ```bash
-uv run pre-commit run --all-files
+uv run pre-commit run --hook-stage pre-push
 ```
 
 Analyze the output to identify:
@@ -49,7 +49,7 @@ Execute up to **10 iterations** of the following process:
 4. **Validate Changes**:
 
    ```bash
-   uv run pre-commit run --all-files
+   uv run pre-commit run --hook-stage pre-push
    ```
 
 5. **Progress Check**:

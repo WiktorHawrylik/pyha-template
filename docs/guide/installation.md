@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Python 3.9 or higher
+- Python 3.11 or higher
 - pip or uv package manager
 
 ## Installation Methods
@@ -83,7 +83,7 @@ print(your_package_name.__version__)
 
 ### Python Version Issues
 
-Make sure you have Python 3.9+:
+Make sure you have Python 3.11+:
 
 ```bash
 python --version

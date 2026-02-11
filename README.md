@@ -1,7 +1,7 @@
 # Python Library Template
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Type checked: mypy](https://img.shields.io/badge/type%20checked-mypy-blue.svg)](http://mypy-lang.org/)
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://your-username.github.io/your-package-name/)
@@ -61,7 +61,7 @@ Complete documentation available at: **[https://your-username.github.io/your-pac
 
 ## 🛠️ Requirements
 
-- Python 3.9+
+- Python 3.11+
 - uv (recommended) or pip
 - make (for automation)
 

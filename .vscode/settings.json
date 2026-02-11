@@ -4,6 +4,8 @@
         "hawrylik.commit": true
     },
     "chat.tools.terminal.autoApprove": {
-        "uv run pre-commit run --all-files": true
+        "uv run pre-commit run --all-files --hook-stage pre-push": true,
+        "uv run pre-commit install --hook-type pre-push": true,
+        "uv run pre-commit run --hook-stage pre-push": true
     }
 }

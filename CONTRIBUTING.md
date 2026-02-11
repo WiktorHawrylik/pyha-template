@@ -187,7 +187,7 @@ git push origin feature/my-feature
 
 #### Prerequisites
 
-- Python 3.9 or higher
+- Python 3.11 or higher
 - [uv](https://github.com/astral-sh/uv) - Fast Python package manager
 - Git
 
@@ -222,7 +222,7 @@ Do NOT create separate config files (`.ruff.toml`, `mypy.ini`, etc.)
 #### Python Style Guide
 
 - **Line length**: 120 characters
-- **Python version**: 3.9+ compatible
+- **Python version**: 3.11+ compatible
 - **Formatting**: Use ruff (Black-compatible)
 - **Import sorting**: Automatic with ruff
 - **Docstrings**: Google style

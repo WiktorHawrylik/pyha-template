@@ -139,7 +139,7 @@ class TestExampleClass:
         """Test that non-numeric increment raises TypeError."""
         obj = ExampleClass("test", 10.0)
         with pytest.raises(TypeError, match="must be numeric"):
-            obj.increment("not a number")  # type: ignore
+            obj.increment("not a number")  # type: ignore[arg-type]
 
     def test_reset(self) -> None:
         """Test reset functionality."""
@@ -188,4 +188,5 @@ class TestSlowOperations:
         # Example of slow test that can be skipped
         large_data = [{"value": i / 1000} for i in range(10000)]
         result = process_data(large_data, threshold=0.5)
-        assert len(result) == 5000
+        # Values from i=500 (0.5) to i=9999 (9.999) inclusive = 9500 items
+        assert len(result) == 9500
