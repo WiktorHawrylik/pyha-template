@@ -11,10 +11,10 @@ the Free Software Foundation, either version 3 of the License, or
 """
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Union
 
 
-def validate_file_path(path: Path | str) -> Path:
+def validate_file_path(path: Union[Path, str]) -> Path:
     """Validate and convert file path to Path object.
 
     Args:

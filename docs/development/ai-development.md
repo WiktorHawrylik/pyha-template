@@ -2,14 +2,15 @@
 
 This constitution provides essential rules and context for AI coding assistants (GitHub Copilot, Cursor, Claude, ChatGPT, etc.) working on this template.
 
-**Project**: Python Library Template  
-**Purpose**: Modern Python project template for agentic and data-driven development  
-**License**: AGPL-3.0 (GNU Affero General Public License v3.0)  
-**Origin**: [urzad-regulacji-energetyki](https://github.com/WiktorHawrylik/urzad-regulacji-energetyki)  
+**Project**: Python Library Template
+**Purpose**: Modern Python project template for agentic and data-driven development
+**License**: AGPL-3.0 (GNU Affero General Public License v3.0)
+**Origin**: [urzad-regulacji-energetyki](https://github.com/WiktorHawrylik/urzad-regulacji-energetyki)
 
 ## Core Principles
 
 ### I. Code Quality is Non-Negotiable
+
 Every piece of code must meet strict quality standards:
 
 - **Type hints**: Required on ALL functions, methods, and class attributes
@@ -19,6 +20,7 @@ Every piece of code must meet strict quality standards:
 - **Type checking**: Strict mypy compliance with no type: ignore comments without justification
 
 ### II. Explicit Over Implicit
+
 Code clarity and maintainability supersede cleverness:
 
 - Clear, self-documenting variable and function names
@@ -28,6 +30,7 @@ Code clarity and maintainability supersede cleverness:
 - Explicit imports (never use `import *`)
 
 ### III. Test-First Development (NON-NEGOTIABLE)
+
 Testing is mandatory before implementation:
 
 - Write tests BEFORE implementing features (Test-Driven Development)
@@ -38,6 +41,7 @@ Testing is mandatory before implementation:
 - All tests must pass before merging
 
 ### IV. Document Everything
+
 Documentation is code:
 
 - Module-level docstrings explaining purpose and usage
@@ -47,6 +51,7 @@ Documentation is code:
 - CHANGELOG.md updated for all user-facing changes
 
 ### V. License Compliance
+
 AGPL-3.0 compliance is mandatory:
 
 - All code must be AGPL-3.0 compatible (AGPL/GPL/LGPL/MIT/BSD/Apache allowed)
@@ -60,9 +65,11 @@ AGPL-3.0 compliance is mandatory:
 ## Code Standards
 
 ### Configuration Philosophy
+
 **Single Source of Truth**: `pyproject.toml`
 
 All tool configuration lives in `pyproject.toml`:
+
 - Package metadata and dependencies
 - Ruff (linting & formatting)
 - Mypy (type checking)
@@ -74,6 +81,7 @@ All tool configuration lives in `pyproject.toml`:
 ### Mandatory Patterns
 
 **Type Hints (Always!)**
+
 ```python
 def process_data(
     data: list[dict[str, Any]],
@@ -86,6 +94,7 @@ def process_data(
 ```
 
 **Docstrings (Google Style)**
+
 ```python
 def function(param: Type) -> ReturnType:
     """Brief one-line description.
@@ -108,6 +117,7 @@ def function(param: Type) -> ReturnType:
 ```
 
 **Error Handling (Explicit)**
+
 ```python
 if not data:
     raise ValueError("Data cannot be empty")
@@ -117,6 +127,7 @@ if not path.exists():
 ```
 
 **Testing (Comprehensive)**
+
 ```python
 class TestFunction:
     """Tests for function."""
@@ -135,6 +146,7 @@ class TestFunction:
 ### Prohibited Patterns
 
 ❌ **Never Do**:
+
 - Skip type hints on any function, method, or class attribute
 - Use bare `except:` without specific exception handling
 - Write functions exceeding 50 lines (refactor into smaller functions)
@@ -145,6 +157,7 @@ class TestFunction:
 - Import with wildcard (`from module import *`)
 
 ✅ **Always Do**:
+
 - Add type hints everywhere
 - Handle specific exceptions with informative messages
 - Keep functions focused and small (Single Responsibility Principle)
@@ -157,6 +170,7 @@ class TestFunction:
 ### File Templates
 
 **New Python Module**
+
 ```python
 """Module description.
 
@@ -179,6 +193,7 @@ def function_name(param: Type) -> ReturnType:
 ```
 
 **New Test File**
+
 ```python
 """Tests for module_name."""
 
@@ -197,6 +212,7 @@ class TestFunctionName:
 ## Development Workflow
 
 ### Before Making Changes
+
 ```bash
 # Understand the codebase
 rg "function_name"          # Search for function
@@ -208,6 +224,7 @@ cat tests/test_core.py
 ```
 
 ### Implementation Process
+
 1. **Understand the request**
    - Read the issue/request carefully
    - Check existing code for patterns
@@ -240,6 +257,7 @@ cat tests/test_core.py
    - Update examples and guides
 
 ### After Making Changes
+
 ```bash
 # Format code automatically
 make format
@@ -256,6 +274,7 @@ make format && make lint && make test
 ```
 
 ### Common Tasks
+
 - `make help` - Show all available commands
 - `make install-dev` - Install development dependencies
 - `make format` - Auto-format code with ruff
@@ -265,12 +284,14 @@ make format && make lint && make test
 - `make docs-serve` - Preview documentation locally
 
 ### Files to Always Update
+
 - `CHANGELOG.md` - Add entry for all user-facing changes
 - Docstrings - Keep synchronized with code changes
 - Tests - Add for new functionality, update for changes
 - README.md - If public API or usage patterns change
 
 ### Files Never to Modify
+
 - `LICENSE` - This is AGPL-3.0 (immutable)
 - `.git/` - Git internals
 - `__pycache__/` - Python cache directories
@@ -278,6 +299,7 @@ make format && make lint && make test
 ## Quality Gates
 
 ### Pre-Commit Checklist
+
 All changes must pass these gates:
 
 1. ✅ **Type Hints**: Complete type annotations on all functions/methods
@@ -292,6 +314,7 @@ All changes must pass these gates:
 ### License Compliance Verification
 
 Before generating or committing code:
+
 - [ ] Is the code original or from an AGPL-compatible source?
 - [ ] If from external source, is it AGPL/GPL/LGPL/MIT/BSD/Apache licensed?
 - [ ] Have I added proper attribution and copyright notices?
@@ -315,22 +338,27 @@ A contribution is acceptable when:
 ## Governance
 
 ### Constitution Authority
+
 This constitution supersedes all other development guidelines and practices. When conflicts arise, this document takes precedence.
 
 ### Enforcement
+
 - All code reviews must verify compliance with this constitution
 - All pull requests must pass automated quality gates
 - Complexity and deviations require explicit justification in PR description
 - Unjustified deviations are grounds for rejection
 
 ### Amendments
+
 - Changes to this constitution require documented rationale
 - Major changes require team consensus
 - All amendments must include version increment and update date
 - Migration plan required for breaking changes
 
 ### Additional Guidance
+
 This constitution provides core rules. For detailed implementation patterns, examples, and best practices, refer to:
+
 - `.github/copilot-instructions.md` - GitHub Copilot context
 - `CONTRIBUTING.md` - Contribution guidelines
 - `docs/guide/best-practices.md` - Detailed best practices

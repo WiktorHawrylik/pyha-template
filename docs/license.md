@@ -8,25 +8,25 @@ For the complete license text, see [LICENSE](../LICENSE) in the project root.
 
 ### You Can
 
-✅ Use this software commercially  
-✅ Modify the source code  
-✅ Distribute this software  
-✅ Use this software privately  
-✅ Grant patent rights  
+✅ Use this software commercially
+✅ Modify the source code
+✅ Distribute this software
+✅ Use this software privately
+✅ Grant patent rights
 
 ### You Must
 
-⚠️ Disclose source code  
-⚠️ License derivatives under AGPL-3.0  
-⚠️ State changes made to the code  
-⚠️ Include the original license and copyright  
-⚠️ **Provide source for network use** (AGPL-specific)  
+⚠️ Disclose source code
+⚠️ License derivatives under AGPL-3.0
+⚠️ State changes made to the code
+⚠️ Include the original license and copyright
+⚠️ **Provide source for network use** (AGPL-specific)
 
 ### You Cannot
 
-❌ Hold the authors liable  
-❌ Use without attribution  
-❌ Sublicense under different terms  
+❌ Hold the authors liable
+❌ Use without attribution
+❌ Sublicense under different terms
 
 ## Special AGPL-3.0 Feature
 

@@ -11,7 +11,7 @@ the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 """
 
-from typing import Any
+from typing import Any, Optional
 
 
 def process_data(data: list[dict[str, Any]], threshold: float = 0.5) -> list[dict[str, Any]]:
@@ -95,7 +95,7 @@ class ExampleClass:
         name: str,
         value: float,
         *,
-        metadata: dict[str, Any] | None = None,
+        metadata: Optional[dict[str, Any]] = None,
     ) -> None:
         """Initialize ExampleClass.
 
@@ -175,4 +175,4 @@ class ExampleClass:
             return NotImplemented
         return self.name == other.name and self.value == other.value
 
-    __hash__ = None  # Mutable object should not be hashable
+    __hash__ = None  # type: ignore[assignment]  # Mutable object should not be hashable

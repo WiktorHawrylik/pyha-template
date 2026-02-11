@@ -5,6 +5,7 @@ This directory contains configuration files for the application.
 ## File Formats
 
 ### JSON Configuration
+
 ```json
 {
   "api_key": "${API_KEY}",
@@ -14,6 +15,7 @@ This directory contains configuration files for the application.
 ```
 
 ### YAML Configuration
+
 ```yaml
 api:
   base_url: https://api.example.com
@@ -26,6 +28,7 @@ processing:
 ```
 
 ### TOML Configuration
+
 ```toml
 [api]
 base_url = "https://api.example.com"
@@ -39,6 +42,7 @@ normalize = true
 ## Using Configuration Files
 
 ### With Pydantic
+
 ```python
 from pathlib import Path
 from pydantic import BaseModel
@@ -55,6 +59,7 @@ config = Config(**json.loads(config_path.read_text()))
 ```
 
 ### With Environment Variables
+
 ```python
 import os
 from pathlib import Path
@@ -92,6 +97,7 @@ config["api_key"] = os.getenv("API_KEY", config["api_key"])
 ## Example Configuration Files
 
 ### config.example.json
+
 ```json
 {
   "api": {
@@ -111,6 +117,7 @@ config["api_key"] = os.getenv("API_KEY", config["api_key"])
 ```
 
 ### .env.example
+
 ```bash
 # API Configuration
 API_KEY=your_api_key_here
@@ -127,6 +134,7 @@ LOG_LEVEL=INFO
 ## Loading Configuration
 
 ### Simple Approach
+
 ```python
 from pathlib import Path
 import json
@@ -138,6 +146,7 @@ def load_config(config_name: str = "config.json") -> dict:
 ```
 
 ### With Environment Override
+
 ```python
 import os
 from pathlib import Path

@@ -5,6 +5,7 @@ This directory contains Jupyter notebooks for data exploration and analysis.
 ## Naming Convention
 
 Number notebooks in execution order:
+
 - `01_exploration.ipynb` - Initial data exploration
 - `02_cleaning.ipynb` - Data cleaning and preparation
 - `03_analysis.ipynb` - Main analysis
@@ -13,11 +14,13 @@ Number notebooks in execution order:
 ## Guidelines
 
 ### Before Committing
+
 1. **Clear all outputs**: `Kernel` → `Restart & Clear Output`
 2. **Run all cells**: Ensure notebook runs from top to bottom
 3. **Add documentation**: Use markdown cells to explain your work
 
 ### Best Practices
+
 - Keep notebooks focused on exploration and visualization
 - Extract reusable code to `src/your_package_name/`
 - Use relative paths for data files
@@ -27,11 +30,13 @@ Number notebooks in execution order:
 ### Running Notebooks
 
 Start Jupyter Lab:
+
 ```bash
 make notebook
 ```
 
 Or directly:
+
 ```bash
 uv run jupyter lab
 ```
@@ -68,13 +73,17 @@ df = pd.read_csv(data_path)
 ## Common Issues
 
 ### Kernel Not Found
+
 Install ipykernel:
+
 ```bash
 uv pip install ipykernel
 ```
 
 ### Missing Dependencies
+
 Install data dependencies:
+
 ```bash
 uv pip install "your-package-name[data]"
 ```
@@ -82,7 +91,7 @@ uv pip install "your-package-name[data]"
 ## Sharing Notebooks
 
 - Export to HTML: `File` → `Export Notebook As` → `HTML`
-- Share on nbviewer: Upload to GitHub and use https://nbviewer.org/
+- Share on nbviewer: Upload to GitHub and use <https://nbviewer.org/>
 - Convert to slides: Use RISE extension
 
 ## Questions?

@@ -5,15 +5,18 @@ This directory contains utility scripts for data processing, automation, and mai
 ## Script Categories
 
 ### Data Processing
+
 - `process_data.py` - Clean and transform raw data
 - `download_data.py` - Download external data sources
 - `validate_data.py` - Validate data integrity
 
 ### Maintenance
+
 - `update_dependencies.py` - Update package dependencies
 - `clean_cache.py` - Clean temporary files and caches
 
 ### Deployment
+
 - `build_package.py` - Build distribution packages
 - `deploy_docs.py` - Deploy documentation
 
@@ -67,6 +70,7 @@ if __name__ == "__main__":
 ## Guidelines
 
 ### Script Standards
+
 - Add a shebang line: `#!/usr/bin/env python3`
 - Include a docstring with usage examples
 - Use argparse for command-line arguments
@@ -75,6 +79,7 @@ if __name__ == "__main__":
 - Log progress for long-running scripts
 
 ### Error Handling
+
 ```python
 import logging
 
@@ -93,6 +98,7 @@ except Exception as e:
 ```
 
 ### Testing Scripts
+
 Write tests for scripts in `tests/test_scripts.py`:
 
 ```python
@@ -105,17 +111,20 @@ def test_process_data_script():
 ## Running Scripts
 
 ### From Command Line
+
 ```bash
 python scripts/process_data.py --input data/raw/file.csv
 ```
 
 ### From Python
+
 ```python
 from scripts import process_data
 process_data.main()
 ```
 
 ### With uv
+
 ```bash
 uv run python scripts/process_data.py
 ```
@@ -123,6 +132,7 @@ uv run python scripts/process_data.py
 ## Common Patterns
 
 ### Reading Config Files
+
 ```python
 import json
 from pathlib import Path
@@ -132,6 +142,7 @@ config = json.loads(config_path.read_text())
 ```
 
 ### Progress Bars
+
 ```python
 from tqdm import tqdm
 
@@ -140,6 +151,7 @@ for item in tqdm(items, desc="Processing"):
 ```
 
 ### Parallel Processing
+
 ```python
 from concurrent.futures import ProcessPoolExecutor
 

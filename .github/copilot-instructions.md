@@ -9,6 +9,7 @@ This is a **GPL-3.0 licensed Python library template** designed for rapid agenti
 ### 1. Code Quality Standards
 
 #### Type Hints (MANDATORY)
+
 Every function, method, and class must have complete type hints:
 
 ```python
@@ -32,6 +33,7 @@ def process_data(data, threshold, normalize=True):
 ```
 
 #### Docstrings (MANDATORY)
+
 Use Google-style docstrings for all public functions:
 
 ```python
@@ -93,6 +95,7 @@ class TestAddNumbers:
 ### 3. File Organization
 
 #### Project Structure
+
 ```
 src/your_package_name/
 ├── __init__.py          # Package exports
@@ -114,6 +117,7 @@ tests/
 ```
 
 #### Import Organization
+
 Always organize imports in this order:
 
 ```python
@@ -214,6 +218,7 @@ class DataConfig(BaseModel):
 ### When Adding New Features
 
 1. **Create the function with complete signatures:**
+
 ```python
 def new_feature(param: ParamType) -> ReturnType:
     """Brief description.
@@ -229,6 +234,7 @@ def new_feature(param: ParamType) -> ReturnType:
 ```
 
 2. **Write tests immediately:**
+
 ```python
 def test_new_feature() -> None:
     """Test new_feature basic functionality."""
@@ -237,6 +243,7 @@ def test_new_feature() -> None:
 ```
 
 3. **Update documentation:**
+
 - Add examples to docstring
 - Update README.md if public API
 - Add entry to CHANGELOG.md
@@ -251,6 +258,7 @@ def test_new_feature() -> None:
 ## Code Patterns to Follow
 
 ### Configuration Management
+
 ```python
 from pathlib import Path
 from pydantic import BaseModel
@@ -269,6 +277,7 @@ class Settings(BaseModel):
 ```
 
 ### Data Processing
+
 ```python
 import pandas as pd
 from pathlib import Path
@@ -306,6 +315,7 @@ def process_csv(
 ```
 
 ### Async Operations
+
 ```python
 import asyncio
 from typing import Any
@@ -341,6 +351,7 @@ async def fetch_multiple(
 ⚠️ **IMPORTANT**: All code suggestions must be GPL-3.0 compatible.
 
 #### ✅ Compatible Licenses
+
 - GPL-3.0, GPL-2.0
 - LGPL
 - MIT
@@ -348,11 +359,13 @@ async def fetch_multiple(
 - Apache 2.0
 
 #### ❌ Incompatible Licenses
+
 - Proprietary code
 - CC-BY-NC (Non-Commercial)
 - Code with unclear licensing
 
 #### License Header Template
+
 Add to new files:
 
 ```python
@@ -498,6 +511,7 @@ path = Path(dir) / file
 ## Questions?
 
 When unsure:
+
 - Check existing code for patterns
 - Refer to CONTRIBUTING.md
 - Follow PEP 8 and PEP 257

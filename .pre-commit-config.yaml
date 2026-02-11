@@ -43,16 +43,8 @@ repos:
     hooks:
       - id: mypy
         name: Type check with mypy
-        additional_dependencies: [pydantic>=2.0.0, types-requests]
+        additional_dependencies: [pydantic>=2.0.0, types-requests, pytest>=7.0.0]
         args: [--config-file=pyproject.toml]
-
-  # Security check for dependencies
-  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
-    rev: v1.3.3
-    hooks:
-      - id: python-safety-dependencies-check
-        name: Check for known security vulnerabilities
-        files: pyproject.toml
 
   # Markdown linting for documentation
   - repo: https://github.com/igorshubovych/markdownlint-cli

@@ -92,7 +92,7 @@ make lint
 make docs
 ```
 
-### 5. Start Coding!
+### 5. Start Coding
 
 You're ready to go! The template provides:
 
@@ -170,6 +170,7 @@ git push origin feature/my-feature
 ### Adding New Features
 
 1. **Write tests first** (TDD)
+
    ```bash
    # Create test file
    touch tests/test_new_feature.py
@@ -178,6 +179,7 @@ git push origin feature/my-feature
    ```
 
 2. **Implement feature**
+
    ```bash
    # Create module
    touch src/your_package/new_feature.py
@@ -191,6 +193,7 @@ git push origin feature/my-feature
    - Update CHANGELOG.md
 
 4. **Review**
+
    ```bash
    make format
    make lint

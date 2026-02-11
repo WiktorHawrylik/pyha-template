@@ -78,6 +78,7 @@ make test            # Run all tests
 ### AI-Specific Code Standards
 
 #### Type Hints (REQUIRED)
+
 ```python
 # ✅ GOOD - Explicit types
 def process_data(data: list[dict[str, Any]], threshold: float = 0.5) -> pd.DataFrame:
@@ -91,6 +92,7 @@ def process_data(data, threshold=0.5):
 ```
 
 #### Docstrings (REQUIRED)
+
 ```python
 # ✅ GOOD - Complete Google-style docstring
 def calculate_metrics(data: pd.DataFrame, metric: str) -> float:
@@ -121,6 +123,7 @@ def calculate_metrics(data, metric):
 ```
 
 #### Error Handling
+
 ```python
 # ✅ GOOD - Explicit error handling
 def load_config(path: Path) -> dict[str, Any]:
@@ -183,11 +186,13 @@ git push origin feature/my-feature
 ### Development Setup
 
 #### Prerequisites
+
 - Python 3.9 or higher
 - [uv](https://github.com/astral-sh/uv) - Fast Python package manager
 - Git
 
 #### Installation
+
 ```bash
 # Install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -202,7 +207,9 @@ make pre-commit
 ### Code Style & Standards
 
 #### Single Source of Truth
+
 **ALL** configuration is in `pyproject.toml`:
+
 - Package metadata
 - Dependencies
 - Ruff configuration (linting & formatting)
@@ -213,6 +220,7 @@ make pre-commit
 Do NOT create separate config files (`.ruff.toml`, `mypy.ini`, etc.)
 
 #### Python Style Guide
+
 - **Line length**: 120 characters
 - **Python version**: 3.9+ compatible
 - **Formatting**: Use ruff (Black-compatible)
@@ -221,6 +229,7 @@ Do NOT create separate config files (`.ruff.toml`, `mypy.ini`, etc.)
 - **Type hints**: Required for all public APIs
 
 #### Code Organization
+
 ```
 src/your_package_name/
 ├── __init__.py          # Package exports
@@ -234,6 +243,7 @@ src/your_package_name/
 ### Testing
 
 #### Test Structure
+
 ```
 tests/
 ├── unit/                # Fast, isolated tests
@@ -243,6 +253,7 @@ tests/
 ```
 
 #### Writing Tests
+
 ```python
 import pytest
 from your_package_name import MyClass
@@ -268,6 +279,7 @@ class TestMyClass:
 ```
 
 #### Running Tests
+
 ```bash
 make test              # All tests
 make test-fast         # Exclude slow tests
@@ -281,6 +293,7 @@ pytest -k "test_name"  # Specific test
 We use [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/):
 
 #### Branches
+
 - **main**: Production releases only
 - **develop**: Integration branch
 - **feature/\***: New features (from develop)
@@ -289,6 +302,7 @@ We use [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/):
 - **release/\***: Release preparation (from develop)
 
 #### Creating a Feature
+
 ```bash
 # Start from develop
 git checkout develop
@@ -313,6 +327,7 @@ git push origin feature/my-awesome-feature
 We use [Conventional Commits](https://www.conventionalcommits.org/):
 
 #### Format
+
 ```
 <type>(<scope>): <subject>
 
@@ -322,6 +337,7 @@ We use [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 
 #### Types
+
 - **feat**: New feature
 - **fix**: Bug fix
 - **docs**: Documentation only
@@ -333,6 +349,7 @@ We use [Conventional Commits](https://www.conventionalcommits.org/):
 - **ci**: CI/CD changes
 
 #### Examples
+
 ```bash
 feat(core): add data validation function
 
@@ -347,6 +364,7 @@ test(core): add tests for validation
 ### Pull Request Process
 
 #### Before Submitting
+
 - [ ] Code is formatted: `make format`
 - [ ] All checks pass: `make lint`
 - [ ] Tests pass: `make test`
@@ -356,6 +374,7 @@ test(core): add tests for validation
 - [ ] Commits follow convention
 
 #### PR Template
+
 ```markdown
 ## Description
 Brief description of changes
@@ -382,6 +401,7 @@ Brief description of changes
 ```
 
 #### Review Process
+
 1. Automated checks must pass (CI)
 2. At least 1 approval required
 3. No unresolved discussions
@@ -391,6 +411,7 @@ Brief description of changes
 ### Code Review Guidelines
 
 #### For Reviewers
+
 - Be constructive and respectful
 - Focus on logic, not style (automated)
 - Check for edge cases
@@ -398,6 +419,7 @@ Brief description of changes
 - Ensure documentation is clear
 
 #### For Authors
+
 - Respond to all comments
 - Make requested changes
 - Re-request review after updates
@@ -406,6 +428,7 @@ Brief description of changes
 ### Documentation
 
 #### Docstring Example
+
 ```python
 def complex_function(
     data: pd.DataFrame,
@@ -447,13 +470,16 @@ def complex_function(
 ```
 
 #### README Updates
+
 Update README.md when:
+
 - Adding new features to public API
 - Changing installation process
 - Updating requirements
 - Adding new examples
 
 #### API Documentation
+
 - Auto-generated from docstrings
 - Build with: `make docs`
 - Preview with: `make docs-serve`
@@ -461,6 +487,7 @@ Update README.md when:
 ### Data-Driven Development
 
 #### Data Directory Structure
+
 ```
 data/
 ├── raw/              # Original, immutable data
@@ -472,6 +499,7 @@ data/
 ```
 
 #### Best Practices
+
 1. **Document data sources**: Add README in each directory
 2. **Version large files**: Use DVC or Git LFS
 3. **Never commit secrets**: Use .env files (in .gitignore)
@@ -479,6 +507,7 @@ data/
 5. **Data validation**: Use Pydantic models
 
 #### Notebook Guidelines
+
 ```
 notebooks/
 ├── 01_exploration.ipynb      # Initial data exploration
@@ -494,6 +523,7 @@ notebooks/
 ### Agentic Development
 
 #### AI Assistant Integration
+
 This project is optimized for AI-assisted development:
 
 1. **GitHub Copilot**: See `.github/copilot-instructions.md`
@@ -501,6 +531,7 @@ This project is optimized for AI-assisted development:
 3. **Claude/ChatGPT**: Share this CONTRIBUTING.md
 
 #### Best Practices with AI
+
 - **Review AI suggestions**: Don't blindly accept
 - **Test AI code**: Same standards as human code
 - **Document AI changes**: Explain in commits
@@ -509,16 +540,19 @@ This project is optimized for AI-assisted development:
 ### Security
 
 #### Dependency Management
+
 - Regular updates: `uv sync --upgrade`
 - Check for vulnerabilities: `pre-commit` safety hook
 - Pin versions in production
 
 #### Secrets Management
+
 - Use environment variables
 - Never commit `.env` files
 - Use GitHub Secrets for CI/CD
 
 #### Code Security
+
 - No `eval()` or `exec()`
 - Validate all inputs
 - Use parameterized queries
@@ -527,12 +561,15 @@ This project is optimized for AI-assisted development:
 ### Release Process
 
 #### Versioning
+
 We use [Semantic Versioning](https://semver.org/):
+
 - **MAJOR**: Breaking changes
 - **MINOR**: New features (backwards compatible)
 - **PATCH**: Bug fixes
 
 #### Creating a Release
+
 ```bash
 # 1. Create release branch from develop
 git checkout develop
@@ -569,6 +606,7 @@ git push origin develop
 ## 🎯 Good First Issues
 
 Look for issues labeled:
+
 - `good first issue`
 - `help wanted`
 - `documentation`
@@ -576,6 +614,7 @@ Look for issues labeled:
 ## 🙏 Thank You
 
 Your contributions make this project better! Whether you're:
+
 - Fixing a typo
 - Adding a feature
 - Improving documentation
@@ -590,6 +629,7 @@ Every contribution is valuable!
 This project is AGPL-3.0 licensed. All contributions must be compatible with AGPL-3.0.
 
 **For AI Agents**: Ensure all generated code is:
+
 1. Original or from GPL-compatible sources
 2. Properly attributed if from external sources
 3. Compliant with AGPL-3.0 requirements

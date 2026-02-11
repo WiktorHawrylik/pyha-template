@@ -60,25 +60,25 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ### What You Can Do
 
-✅ Use the code commercially  
-✅ Modify the code  
-✅ Distribute the code  
-✅ Use the code privately  
-✅ Grant patent rights  
+✅ Use the code commercially
+✅ Modify the code
+✅ Distribute the code
+✅ Use the code privately
+✅ Grant patent rights
 
 ### What You Must Do
 
-⚠️ Disclose source code  
-⚠️ License under AGPL-3.0  
-⚠️ State changes made  
-⚠️ Include original license  
-⚠️ Provide source for network use  
+⚠️ Disclose source code
+⚠️ License under AGPL-3.0
+⚠️ State changes made
+⚠️ Include original license
+⚠️ Provide source for network use
 
 ### What You Cannot Do
 
-❌ Hold liable  
-❌ Use without attribution  
-❌ Sublicense under different terms  
+❌ Hold liable
+❌ Use without attribution
+❌ Sublicense under different terms
 
 ## Special AGPL-3.0 Feature: Network Use
 

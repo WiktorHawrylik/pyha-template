@@ -15,7 +15,7 @@ These rules apply to humans and LLMs working in this repository.
 ## Code Quality Standards
 
 - **Type hints**: Required on ALL functions and methods
-- **Docstrings**: Google-style, comprehensive  
+- **Docstrings**: Google-style, comprehensive
 - **Tests**: Minimum 80% coverage
 - **Formatting**: Use `make format` before committing
 - **Type checking**: Pass `make lint` without errors
@@ -32,7 +32,7 @@ These rules apply to humans and LLMs working in this repository.
 
 ```bash
 make format      # Auto-format code
-make lint        # Check code quality  
+make lint        # Check code quality
 make test        # Run tests
 make test-cov    # Run tests with coverage
 ```

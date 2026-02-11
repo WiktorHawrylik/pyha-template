@@ -15,7 +15,7 @@ This directory contains original, immutable data files.
 ### Example Data Source
 
 - **File**: `example.csv`
-- **Source**: https://example.com/data
+- **Source**: <https://example.com/data>
 - **Date Downloaded**: YYYY-MM-DD
 - **License**: CC-BY-4.0
 - **Description**: Brief description of the data

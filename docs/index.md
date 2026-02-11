@@ -55,12 +55,14 @@ See the [Template Usage Guide](guide/template-usage.md) for detailed instruction
 ## Why This Template?
 
 ### For Developers
+
 - **Zero Configuration**: Pre-configured with modern Python tooling
 - **Best Practices**: Following industry standards
 - **Fast Development**: Makefile automation, pre-commit hooks
 - **Type Safety**: Full mypy strict mode
 
 ### For AI Agents
+
 - **Clear Structure**: Consistent, predictable project layout
 - **Explicit Guidelines**: Comprehensive documentation
 - **Type Hints**: Full type coverage for better understanding

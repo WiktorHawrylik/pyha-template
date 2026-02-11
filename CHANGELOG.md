@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Initial project template structure
 - Modern Python tooling (uv, ruff, mypy)
 - Comprehensive documentation
@@ -18,23 +19,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - LLM instruction files
 
 ### Changed
+
 - N/A
 
 ### Deprecated
+
 - N/A
 
 ### Removed
+
 - N/A
 
 ### Fixed
+
 - N/A
 
 ### Security
+
 - N/A
 
 ## [0.1.0] - YYYY-MM-DD
 
 ### Added
+
 - Initial release
 - Basic project structure
 - Core functionality
@@ -74,19 +81,23 @@ When creating a new release, copy this template:
 ## Guidelines for Maintaining the Changelog
 
 ### For Human Developers
+
 - Update this file with each PR
 - Add entries under `[Unreleased]` section
 - Use present tense ("Add feature" not "Added feature")
 - Group changes by type (Added, Changed, etc.)
 
 ### For AI Agents
+
 When making changes, ALWAYS update this file:
+
 1. Add entry under appropriate section in `[Unreleased]`
 2. Be specific and descriptive
 3. Reference issue numbers if applicable
 4. Use format: `- Description (#issue-number)`
 
 Example:
+
 ```markdown
 ## [Unreleased]
 

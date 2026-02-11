@@ -5,11 +5,13 @@ This guide covers best practices for using this library.
 ## Code Organization
 
 ### Keep It Simple
+
 - Write small, focused functions
 - One function = one responsibility
 - Prefer composition over inheritance
 
 ### Use Type Hints
+
 ```python
 # Good
 def process(data: list[int]) -> dict[str, float]:
@@ -21,6 +23,7 @@ def process(data):
 ```
 
 ### Write Docstrings
+
 ```python
 def calculate(x: float, y: float) -> float:
     """Calculate something useful.
@@ -38,6 +41,7 @@ def calculate(x: float, y: float) -> float:
 ## Error Handling
 
 ### Be Specific
+
 ```python
 # Good
 try:
@@ -54,6 +58,7 @@ except:
 ```
 
 ### Provide Context
+
 ```python
 # Good
 if not path.exists():
@@ -70,6 +75,7 @@ if not path.exists():
 ## Testing
 
 ### Test Edge Cases
+
 ```python
 def test_empty_input():
     """Test handling of empty input."""
@@ -83,6 +89,7 @@ def test_boundary_values():
 ```
 
 ### Use Descriptive Names
+
 ```python
 # Good
 def test_process_data_raises_error_on_negative_values():
@@ -96,6 +103,7 @@ def test1():
 ## Performance
 
 ### Use Generators
+
 ```python
 # Good - Memory efficient
 def read_large_file(path: Path):
@@ -110,6 +118,7 @@ def read_large_file(path: Path):
 ```
 
 ### Profile Before Optimizing
+
 ```python
 import cProfile
 
@@ -128,6 +137,7 @@ def profile_function():
 ## Data Handling
 
 ### Validate Input
+
 ```python
 from pydantic import BaseModel, Field, field_validator
 
@@ -144,6 +154,7 @@ class DataPoint(BaseModel):
 ```
 
 ### Use Pathlib
+
 ```python
 # Good
 from pathlib import Path
@@ -164,6 +175,7 @@ if os.path.exists(data_path):
 ## Security
 
 ### Never Hardcode Secrets
+
 ```python
 # Good
 import os
@@ -174,6 +186,7 @@ api_key = "sk-1234567890abcdef"
 ```
 
 ### Validate User Input
+
 ```python
 # Good
 def load_file(path: Path) -> str:
@@ -194,6 +207,7 @@ def load_file(path: str) -> str:
 ## Documentation
 
 ### Document Why, Not What
+
 ```python
 # Good
 def normalize(values: list[float]) -> list[float]:
@@ -212,6 +226,7 @@ def normalize(values: list[float]) -> list[float]:
 ```
 
 ### Keep Examples Updated
+
 ```python
 def process(data: list[int]) -> dict[str, float]:
     """Process data.

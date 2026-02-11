@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test test-cov lint format clean docs pre-commit notebook data-clean
+uv run pre-commit run --all-files.PHONY: help install install-dev test test-cov lint format clean docs pre-commit notebook data-clean
 
 # Default target
 help:

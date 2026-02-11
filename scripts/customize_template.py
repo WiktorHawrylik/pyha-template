@@ -25,9 +25,8 @@ the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 """
 
-import re
+import sys
 from pathlib import Path
-from typing import Any
 
 
 def prompt_user() -> dict[str, str]:
@@ -46,9 +45,7 @@ def prompt_user() -> dict[str, str]:
     config = {}
 
     # Package name (kebab-case for PyPI)
-    config["package_name"] = input(
-        "Package name (kebab-case, e.g., my-awesome-lib): "
-    ).strip()
+    config["package_name"] = input("Package name (kebab-case, e.g., my-awesome-lib): ").strip()
 
     # Module name (snake_case for Python imports)
     default_module = config["package_name"].replace("-", "_")
@@ -75,7 +72,7 @@ def prompt_user() -> dict[str, str]:
     confirm = input("Proceed with customization? (y/n): ").strip().lower()
     if confirm != "y":
         print("Customization cancelled.")
-        exit(0)
+        sys.exit(0)
 
     return config
 
@@ -174,10 +171,10 @@ def main() -> None:
         customize_template(config)
     except KeyboardInterrupt:
         print("\n\nCustomization cancelled.")
-        exit(1)
+        sys.exit(1)
     except Exception as e:
         print(f"\n\nError: {e}")
-        exit(1)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -26,7 +26,6 @@ import argparse
 import logging
 import sys
 from pathlib import Path
-from typing import Any
 
 # Set up logging
 logging.basicConfig(
@@ -68,10 +67,8 @@ def process_file(input_path: Path, output_path: Path, threshold: float = 0.5) ->
     # Create output directory if it doesn't exist
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # Placeholder for actual processing
-    # df = pd.read_csv(input_path)
-    # df_processed = df[df['value'] >= threshold]
-    # df_processed.to_csv(output_path, index=False)
+    # TODO: Implement actual data processing here
+    # Example: Load data, filter by threshold, and save results
 
     logger.info(f"Results saved to {output_path}")
 
