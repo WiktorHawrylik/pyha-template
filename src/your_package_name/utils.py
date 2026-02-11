@@ -52,7 +52,7 @@ def merge_dicts(*dicts: dict[str, Any]) -> dict[str, Any]:
         Merged dictionary
 
     Examples:
-        >>> merge_dicts({'a': 1}, {'b': 2}, {'a': 3})
+        >>> merge_dicts({"a": 1}, {"b": 2}, {"a": 3})
         {'a': 3, 'b': 2}
 
         >>> merge_dicts({})

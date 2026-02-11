@@ -35,11 +35,11 @@ def process_data(data: list[dict[str, Any]], threshold: float = 0.5) -> list[dic
         TypeError: If any value is not numeric.
 
     Examples:
-        >>> data = [{'value': 0.3}, {'value': 0.7}, {'value': 0.9}]
+        >>> data = [{"value": 0.3}, {"value": 0.7}, {"value": 0.9}]
         >>> process_data(data, threshold=0.5)
         [{'value': 0.7}, {'value': 0.9}]
 
-        >>> process_data([{'value': 0.3}], threshold=0.2)
+        >>> process_data([{"value": 0.3}], threshold=0.2)
         [{'value': 0.3}]
 
     Notes:
