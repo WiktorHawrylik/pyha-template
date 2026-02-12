@@ -11,7 +11,6 @@ README.md              # Root: Project overview and quick start
 CONTRIBUTING.md        # Root: Contribution guidelines and setup
 CHANGELOG.md           # Root: Version history and release notes
 LICENSE                # Root: AGPL-3.0 license text
-AGENTS.md              # Root: Agentic development rules (humans + AI)
 
 docs/
 ├── index.md                      # Home: Documentation portal (mirrors README.md)
@@ -19,24 +18,8 @@ docs/
 ├── contributing.md               # Home: Contribution guide (mirrors CONTRIBUTING.md)
 ├── license.md                    # Home: License details (mirrors LICENSE)
 │
-├── guide/                        # 👤 USER-FACING: How to use the product
-│   ├── quickstart.md             # Tutorial: Getting started in 5 minutes
-│   ├── installation.md           # Tutorial: Installation and setup
-│   ├── configuration.md          # Reference: Configuration options and environment
-│   ├── best-practices.md         # Guide: Recommended usage patterns
-│   ├── template-usage.md         # Guide: Template-specific features
-│   └── troubleshooting.md        # Reference: Common issues and solutions
-│
-├── architecture/                        # 🏗️ SYSTEM DESIGN: What the system does and why
-│   ├── overview.md                      # Guide: High-level system architecture and diagrams
-│   ├── functional-requirements.md       # Spec: Business logic and user stories
-│   ├── non-functional-requirements.md   # Spec: Performance, security, scalability
-│   ├── data-models.md                   # Reference: Domain entities and relationships
-│   └── decisions/                       # 📋 ADRs: Architecture Decision Records
-│       ├── adr-001-template.md          # Template: ADR format and structure
-│       └── adr-002-example.md           # Example: Sample architecture decision
-│
 ├── development/                  # 🛠️ DEVELOPER GUIDANCE: How to build and maintain
+│   ├── agents.md                 # Standards: Agentic development rules (humans + AI)
 │   ├── _constitution.md          # Standards: AI agent coding rules (NON-NEGOTIABLE)
 │   ├── mkdocs.md                 # Standards: Documentation guidelines (this file)
 │   ├── license-compliance.md     # Guide: AGPL-3.0 compliance requirements

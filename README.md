@@ -78,7 +78,7 @@ AGPL-3.0 - see [LICENSE](LICENSE)
 ### 🔧 Configuration & Tooling
 
 - [ ] Consolidate `.editorconfig` settings into `pyproject.toml`
-- [ ] Remove `.cursorrules` (replaced by AGENTS.md + _constitution.md)
+- [x] Remove `.cursorrules` (replaced by docs/development/agents.md + _constitution.md)
 - [ ] Document `configs/` directory structure and usage
 - [x] Create `customize_template.py` script for easy template initialization
 
@@ -114,7 +114,7 @@ AGPL-3.0 - see [LICENSE](LICENSE)
 
 ## 🤝 Contributing
 
-Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) for guidelines.
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) and [Agentic Development Rules](docs/development/agents.md) for guidelines.
 
 ## 📬 Contact
 

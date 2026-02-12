@@ -11,6 +11,6 @@ For contributing guidelines, please see [CONTRIBUTING.md](../CONTRIBUTING.md) in
 
 ## For AI Agents
 
-- See [AGENTS.md](../AGENTS.md) for agentic development rules
+- See [Agentic Development Rules](development/agents.md) for agentic development rules
 - See [AI Development Guide](development/_constitution.md) for detailed patterns
 - See [License Compliance](development/license-compliance.md) for AGPL-3.0 requirements
