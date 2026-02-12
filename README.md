@@ -74,6 +74,8 @@ AGPL-3.0 - see [LICENSE](LICENSE)
 
 - [ ] Move `docs/development/_constitution.md` → `docs/design/_constitution.md`
 - [ ] Add "Simplicity First" principles to development guide (minimal abstractions)
+- [ ] Should some files be python agnostic? For migrations? Very limited - only constitution - it can refer to dev guidelines per language?
+- [ ] Hosted db for persistant memory
 
 ### 🔧 Configuration & Tooling
 
