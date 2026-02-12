@@ -32,6 +32,7 @@ Execute up to **10 iterations** of the following process:
    - Type checking errors (mypy)
    - Security vulnerabilities (safety check)
    - Documentation problems (markdown lint)
+   - Documentation build problems (mkdocs build)
 
 2. **Prioritize Fixes**: Address issues in this order:
    - Auto-fixable formatting issues (let pre-commit handle)
@@ -43,7 +44,8 @@ Execute up to **10 iterations** of the following process:
 3. **Apply Fixes**: For each error:
    - Read the relevant file section
    - Understand the context and requirements
-   - Apply the fix following project standards (see `.github/copilot-instructions.md`)
+   - Apply the fix following project standards (see `docs/development/_constitution.md`)
+   - Apply .md fix following documentation standards (see `docs/development/mkdocs.md`)
    - Ensure fix doesn't introduce new issues
 
 4. **Validate Changes**:
@@ -55,7 +57,7 @@ Execute up to **10 iterations** of the following process:
 5. **Progress Check**:
    - If exit code is 0: **SUCCESS** → Proceed to summary
    - If errors remain: Continue to next iteration
-   - If same errors persist for 3+ iterations: Report blocker and stop
+   - If same errors persist for more than 3 iterations: Report blocker and stop
 
 ### 3. Quality Standards
 
@@ -69,11 +71,23 @@ All fixes MUST comply with:
 
 Refer to:
 
-- `.github/copilot-instructions.md` for coding standards
+- `docs/development/_constitution.md` for coding standards (NON-NEGOTIABLE)
+- `docs/development/mkdocs.md` for documentation standards
 - `AGENTS.md` for development rules
 - `pyproject.toml` for tool configurations
 
-### 4. Completion Summary
+### 4. Final Assessment
+
+Before reporting completion:
+
+- [ ] All pre-commit hooks pass
+- [ ] **Documentation changes validated against documentation quality gates [docs/development/mkdocs.md#documentation-quality-gates](../../docs/development/mkdocs.md)**
+  - [ ] New pages added to `mkdocs.yml` nav
+  - [ ] No broken links (`mkdocs build --strict`)
+  - [ ] Diagrams use Mermaid.js
+  - [ ] Code examples are runnable
+
+### 5. Completion Summary
 
 Once all checks pass (exit code 0), provide a **high-level summary**:
 
@@ -81,20 +95,25 @@ Once all checks pass (exit code 0), provide a **high-level summary**:
 ## Pre-commit Quality Check: PASSED ✅
 
 ### Issues Resolved
+
 - **Formatting**: [count] files reformatted
 - **Linting**: [count] violations fixed
 - **Type Checking**: [count] type errors resolved
 - **Security**: [count] vulnerabilities addressed
 - **Documentation**: [count] markdown issues fixed
+- **Documentation build**: [count] mkdocs issues fixed
 
 ### Files Modified
+
 - [file1.py]: [brief description of changes]
 - [file2.py]: [brief description of changes]
 
 ### Iterations Required
+
 Completed in [X]/10 iterations
 
 ### Next Steps
+
 All pre-commit hooks passing. Code is ready for commit.
 ```
 
@@ -106,12 +125,15 @@ All pre-commit hooks passing. Code is ready for commit.
 ## Pre-commit Quality Check: INCOMPLETE ⚠️
 
 ### Remaining Issues
+
 [List unresolved errors with file:line references]
 
 ### Blockers Identified
+
 [Description of issues that couldn't be auto-fixed]
 
 ### Manual Intervention Required
+
 [Specific guidance on what needs human review]
 ```
 
@@ -122,6 +144,7 @@ All pre-commit hooks passing. Code is ready for commit.
 **Safety Vulnerabilities**: Update dependencies in `pyproject.toml`
 **Markdown Lint**: Fix heading structure, line length, trailing punctuation
 **Trailing Whitespace**: Auto-fixed by pre-commit hook
+**MkDocs Build Errors**: Structure and link validation
 
 ## Constraints
 

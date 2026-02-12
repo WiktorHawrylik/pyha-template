@@ -242,5 +242,4 @@ def process(data: list[int]) -> dict[str, float]:
 ## Next Steps
 
 - Read the [API Reference](../api/core.md)
-- Check [Testing Guide](../development/testing.md)
 - Review [Contributing Guidelines](../contributing.md)

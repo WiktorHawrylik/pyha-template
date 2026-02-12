@@ -66,6 +66,13 @@ repos:
         pass_filenames: false
         always_run: true
         stages: [pre-push]
+      - id: mkdocs-build
+        name: Build documentation
+        entry: uv run mkdocs build --strict
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
 
 # Configuration for pre-commit itself
 default_language_version:

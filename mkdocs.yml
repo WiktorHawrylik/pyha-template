@@ -85,7 +85,8 @@ nav:
       - Utils: api/utils.md
   - Development:
       - Contributing: contributing.md
-      - AI Development: development/ai-development.md
+      - AI Development: development/_constitution.md
+      - Documentation Standards: development/mkdocs.md
       - License Compliance: development/license-compliance.md
   - About:
       - Changelog: changelog.md

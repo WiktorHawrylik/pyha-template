@@ -18,7 +18,7 @@ When contributing code to this project, you MUST:
 
 - Keep existing license headers in files
 - Add appropriate headers to new files
-- Template provided in CONTRIBUTING.md
+- Template provided in [CONTRIBUTING.md](https://github.com/your-username/your-package-name/blob/main/CONTRIBUTING.md)
 
 ### 3. Respect Copyleft
 
@@ -142,8 +142,8 @@ def borrowed_function():
 
 ## Questions?
 
-- Read the full [CONTRIBUTING.md](../../CONTRIBUTING.md) guide
-- Check the [LICENSE](../../LICENSE) file
+- Read the full [CONTRIBUTING.md](https://github.com/your-username/your-package-name/blob/main/CONTRIBUTING.md) guide
+- Check the [LICENSE](https://github.com/your-username/your-package-name/blob/main/LICENSE) file
 - Review [AGPL-3.0 FAQ](https://www.gnu.org/licenses/gpl-faq.html)
 
 ## Summary

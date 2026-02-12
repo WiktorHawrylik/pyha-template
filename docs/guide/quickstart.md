@@ -65,4 +65,3 @@ except ValueError as e:
 
 - [API Reference](../api/core.md) - Detailed API documentation
 - [Best Practices](best-practices.md) - Recommended patterns
-- [Data Processing](data-processing.md) - Working with data

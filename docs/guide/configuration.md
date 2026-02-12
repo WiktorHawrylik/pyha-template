@@ -4,7 +4,7 @@ This guide explains how to configure your application.
 
 ## Configuration Files
 
-Configuration files are stored in the `configs/` directory. See [configs/README.md](../../configs/README.md) for details.
+Configuration files are stored in the `configs/` directory. See [configs/README.md](https://github.com/your-username/your-package-name/blob/main/configs/README.md) for details.
 
 ## Environment Variables
 
