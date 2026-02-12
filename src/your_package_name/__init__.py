@@ -12,8 +12,9 @@ the Free Software Foundation, either version 3 of the License, or
 """
 
 __version__ = "0.1.0"
-__author__ = "Your Name"
-__email__ = "your.email@example.com"
+__author__ = "Wiktor Hawrylik"
+__email__ = "wiktor.hawrylik@gmail.com"
+__license__ = "GPL-3.0"
 
 from your_package_name.core import ExampleClass, process_data
 

@@ -161,7 +161,7 @@ def load_config(path):
 
 ```bash
 # 1. Fork and clone
-git clone https://github.com/your-username/your-package-name.git
+git clone https://github.com/WiktorHawrylik/your-package-name.git
 cd your-package-name
 
 # 2. Set up development environment

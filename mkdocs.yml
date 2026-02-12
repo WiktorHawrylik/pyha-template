@@ -1,10 +1,10 @@
 site_name: Your Package Name
 site_description: A modern Python library template for agentic and data-driven development
-site_author: Your Name
-site_url: https://your-username.github.io/your-package-name
+site_author: Wiktor Hawrylik
+site_url: https://WiktorHawrylik.github.io/your-package-name
 
-repo_name: your-username/your-package-name
-repo_url: https://github.com/your-username/your-package-name
+repo_name: WiktorHawrylik/your-package-name
+repo_url: https://github.com/WiktorHawrylik/your-package-name
 edit_uri: edit/main/docs/
 
 theme:
@@ -95,7 +95,7 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-username
+      link: https://github.com/WiktorHawrylik
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/your-package-name/
 

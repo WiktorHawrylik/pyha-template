@@ -78,8 +78,8 @@ See the [Template Usage Guide](guide/template-usage.md) for detailed instruction
 ## Getting Help
 
 - 📖 **Documentation**: Browse the sections above
-- 🐛 **Issues**: [GitHub Issues](https://github.com/your-username/your-package-name/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/your-username/your-package-name/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/WiktorHawrylik/your-package-name/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/WiktorHawrylik/your-package-name/discussions)
 
 ## License
 

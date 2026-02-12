@@ -9,10 +9,10 @@ description = "A modern Python library template optimized for agentic and data-d
 readme = "README.md"
 license = {text = "AGPL-3.0-or-later"}
 authors = [
-    { name = "Your Name", email = "your.email@example.com" }
+    { name = "Wiktor Hawrylik", email = "wiktor.hawrylik@gmail.com" }
 ]
 maintainers = [
-    { name = "Your Name", email = "your.email@example.com" }
+    { name = "Wiktor Hawrylik", email = "wiktor.hawrylik@gmail.com" }
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -89,10 +89,10 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-username/your-package-name"
-Repository = "https://github.com/your-username/your-package-name"
-Documentation = "https://your-username.github.io/your-package-name/"
-"Bug Tracker" = "https://github.com/your-username/your-package-name/issues"
+Homepage = "https://github.com/WiktorHawrylik/your-package-name"
+Repository = "https://github.com/WiktorHawrylik/your-package-name"
+Documentation = "https://WiktorHawrylik.github.io/your-package-name/"
+"Bug Tracker" = "https://github.com/WiktorHawrylik/your-package-name/issues"
 
 [project.scripts]
 # Add CLI scripts here if needed

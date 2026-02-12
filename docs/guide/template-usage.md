@@ -35,7 +35,7 @@ This script will prompt you for:
 - Module name (e.g., `my_awesome_library`)
 - Your name
 - Your email
-- GitHub username
+- GitHub WiktorHawrylik
 - Project description
 
 **Manual Customization**
@@ -48,7 +48,7 @@ If you prefer, find and replace these placeholders:
 | `your_package_name` | Your Python module name | `my_awesome_lib` |
 | `Your Name` | Your actual name | `Jane Doe` |
 | `your.email@example.com` | Your email | `jane@example.com` |
-| `your-username` | Your GitHub username | `janedoe` |
+| `WiktorHawrylik` | Your GitHub username | `janedoe` |
 
 Files to update:
 

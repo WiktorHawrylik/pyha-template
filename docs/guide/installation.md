@@ -29,7 +29,7 @@ uv pip install your-package-name
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-package-name.git
+git clone https://github.com/WiktorHawrylik/your-package-name.git
 cd your-package-name
 
 # Install in development mode

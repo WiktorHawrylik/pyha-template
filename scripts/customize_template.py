@@ -114,7 +114,7 @@ def customize_template(config: dict[str, str]) -> None:
         "your_package_name": config["module_name"],
         "Your Name": config["author_name"],
         "your.email@example.com": config["author_email"],
-        "your-username": config["github_user"],
+        "WiktorHawrylik": config["github_user"],
         "A modern Python library template": config["description"],
     }
 
