@@ -3,10 +3,10 @@
 This module demonstrates best practices for Python development with full
 type hints, comprehensive docstrings, and proper error handling.
 
-Copyright (C) 2024 Your Name
+Copyright (C) 2024 Wiktor Hawrylik
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 """

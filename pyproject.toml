@@ -85,7 +85,33 @@ ai = [
 
 # All dependencies for complete development environment
 all = [
-    "your-package-name[dev,docs,test,data,ai]",
+    # Expanded to avoid circular dependency
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-xdist>=3.3.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.11.0",
+    "ruff>=0.8.0",
+    "mypy>=1.5.0",
+    "pre-commit>=3.3.0",
+    "ipython>=8.0.0",
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.24.0",
+    "mike>=2.0.0",
+    "hypothesis>=6.80.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "plotly>=5.14.0",
+    "jupyter>=1.0.0",
+    "jupyterlab>=4.0.0",
+    "notebook>=7.0.0",
+    "openai>=1.0.0",
+    "anthropic>=0.3.0",
+    "langchain>=0.1.0",
+    "tiktoken>=0.5.0",
 ]
 
 [project.urls]
@@ -111,7 +137,7 @@ your_package_name = ["py.typed"]
 # Ruff configuration - Single source of truth for code quality
 [tool.ruff]
 line-length = 120
-target-version = "py39"
+target-version = "py311"
 src = ["src", "tests"]
 exclude = [
     ".eggs",

@@ -52,25 +52,27 @@ api_key = os.getenv('API_KEY')
 
 ## Configuration with Pydantic
 
-Recommended approach using Pydantic:
+Recommended approach using Pydantic v2 with pydantic-settings:
 
 ```python
-from pydantic import BaseModel, Field
+from pydantic import Field
+from pydantic_settings import BaseSettings
 import os
 
-class Settings(BaseModel):
+class Settings(BaseSettings):
     """Application settings."""
 
-    api_key: str = Field(..., env='API_KEY')
+    api_key: str = Field(..., description="API key for service")
     api_base_url: str = Field(
         default='https://api.example.com',
-        env='API_BASE_URL'
+        description="Base URL for API"
     )
-    batch_size: int = Field(default=100, env='BATCH_SIZE')
+    batch_size: int = Field(default=100, description="Batch size for processing")
 
-    class Config:
-        env_file = '.env'
-        env_file_encoding = 'utf-8'
+    model_config = {
+        'env_file': '.env',
+        'env_file_encoding': 'utf-8',
+    }
 
 # Usage
 settings = Settings()
@@ -85,8 +87,9 @@ Support different configurations per environment:
 import os
 from pathlib import Path
 import json
+from typing import Any
 
-def load_config(env: str = None) -> dict:
+def load_config(env: str | None = None) -> dict[str, Any]:
     """Load configuration for specified environment."""
     if env is None:
         env = os.getenv('ENVIRONMENT', 'dev')

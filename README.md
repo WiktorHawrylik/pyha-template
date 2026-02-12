@@ -120,7 +120,7 @@ Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AG
 
 - **Report a problem**: [GitHub Issues](https://github.com/WiktorHawrylik/your-package-name/issues)
 - **Ask a question**: [GitHub Discussions](https://github.com/WiktorHawrylik/your-package-name/discussions)
-- **Autor**: Wiktor Hawrylik
+- **Author**: Wiktor Hawrylik
 - **Email**: <wiktor.hawrylik@gmail.com>
 
 ---

@@ -2,10 +2,10 @@
 
 This module provides common utility functions used throughout the package.
 
-Copyright (C) 2024 Your Name
+Copyright (C) 2024 Wiktor Hawrylik
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
+it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 """
@@ -26,6 +26,7 @@ def validate_file_path(path: Union[Path, str]) -> Path:
     Raises:
         FileNotFoundError: If file doesn't exist
         TypeError: If path is not string or Path
+        IsADirectoryError: If path is a directory, not a file
 
     Examples:
         >>> validate_file_path("existing_file.txt")
@@ -38,6 +39,9 @@ def validate_file_path(path: Union[Path, str]) -> Path:
 
     if not path.exists():
         raise FileNotFoundError(f"File not found: {path}")
+    
+    if not path.is_file():
+        raise IsADirectoryError(f"Path is a directory, not a file: {path}")
 
     return path
 

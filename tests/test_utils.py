@@ -20,6 +20,7 @@ class TestValidateFilePath:
             result = validate_file_path(tmp_path)
             assert isinstance(result, Path)
             assert result.exists()
+            assert result.is_file()
         finally:
             Path(tmp_path).unlink()
 
@@ -32,6 +33,7 @@ class TestValidateFilePath:
             result = validate_file_path(tmp_path)
             assert isinstance(result, Path)
             assert result.exists()
+            assert result.is_file()
         finally:
             tmp_path.unlink()
 
@@ -44,6 +46,12 @@ class TestValidateFilePath:
         """Test that invalid type raises TypeError."""
         with pytest.raises(TypeError, match="must be str or Path"):
             validate_file_path(123)  # type: ignore
+
+    def test_directory_raises_error(self) -> None:
+        """Test that directory path raises IsADirectoryError."""
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            with pytest.raises(IsADirectoryError, match="directory, not a file"):
+                validate_file_path(tmp_dir)
 
 
 class TestMergeDicts:
