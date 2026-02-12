@@ -123,6 +123,7 @@ AGPL-3.0 - see [LICENSE](LICENSE)
   - [ ] Use status.md as default context for agent sessions
   - [ ] Auto-update status.md when agents complete tasks
   - [ ] Log all agent edits to files referenced in status.md
+- [ ] MCP only as in ClawCode through CLI
 
 ### 🔧 Configuration & Tooling
 
