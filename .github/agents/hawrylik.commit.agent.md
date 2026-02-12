@@ -150,9 +150,9 @@ All pre-commit hooks passing. Code is ready for commit.
 
 ### ⛔ ABSOLUTE PROHIBITIONS (NON-NEGOTIABLE)
 
-- **NEVER** create `.markdownlint.json` or any markdown linting configuration files
+- **NEVER** delete, disable, or introduce alternative `.markdownlint` configuration files whose purpose is to bypass or weaken markdown linting; use and, if necessary, update the existing project-standard configuration instead
 - **NEVER** modify `.pre-commit-config.yaml` to disable, bypass, or relax any checks
-- **NEVER** create any configuration files to work around quality standards
+- **NEVER** create or modify configuration files whose purpose is to work around or weaken quality standards (only make configuration changes that align with and enforce the documented project standards)
 
 These rules are **non-negotiable**. If pre-commit checks fail, fix the actual code/documentation issues, not the configuration.
 
