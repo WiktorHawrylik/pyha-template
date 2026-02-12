@@ -6,7 +6,7 @@
 [![Type checked: mypy](https://img.shields.io/badge/type%20checked-mypy-blue.svg)](http://mypy-lang.org/)
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://WiktorHawrylik.github.io/your-package-name/)
 
-Modern Python library template optimized for agentic AI development and data-driven workflows.
+Wiktor Hawrylik Python library template optimized for agentic AI development and data-driven workflows.
 
 - **Pre-configured tooling** - uv, ruff, mypy, pytest
 - **AI-ready** - Optimized for GitHub Copilot, Cursor, Claude
