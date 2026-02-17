@@ -71,6 +71,25 @@ jobs:
         run: |
           uv sync --extra docs
 
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-get update && sudo apt-get install -y gh jq
+
+      - name: Ensure GitHub Pages is enabled (gh-pages branch)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -e
+          # Get current pages config
+          pages_info=$(gh api repos/$REPO/pages || echo '')
+          if echo "$pages_info" | grep -q '"branch": *"gh-pages"'; then
+            echo "GitHub Pages already enabled on gh-pages branch."
+          else
+            echo "Enabling GitHub Pages on gh-pages branch."
+            gh api --method PUT repos/$REPO/pages --field source.branch='gh-pages' --field source.path='/'
+          fi
+
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
