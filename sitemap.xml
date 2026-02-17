@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/changelog/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/changelog/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/contributing/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/contributing/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/license/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/license/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/api/core/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/api/core/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/api/utils/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/api/utils/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/development/_constitution/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/development/_constitution/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/development/_constitution_template/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/development/_constitution_template/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/development/license-compliance/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/development/license-compliance/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/development/mkdocs/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/development/mkdocs/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/guide/best-practices/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/guide/best-practices/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/guide/configuration/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/guide/configuration/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/guide/installation/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/guide/installation/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/guide/quickstart/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/guide/quickstart/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
     <url>
-         <loc>https://WiktorHawrylik.github.io/your-package-name/guide/template-usage/</loc>
+         <loc>https://wiktorhawrylik.github.io/your-package-name/guide/template-usage/</loc>
          <lastmod>2026-02-17</lastmod>
     </url>
 </urlset>
