@@ -1,7 +1,7 @@
 site_name: Your Package Name
 site_description: A modern Python library template for agentic and data-driven development
 site_author: Wiktor Hawrylik
-site_url: https://WiktorHawrylik.github.io/your-package-name
+site_url: https://wiktorhawrylik.github.io/your-package-name
 
 repo_name: WiktorHawrylik/your-package-name
 repo_url: https://github.com/WiktorHawrylik/your-package-name
