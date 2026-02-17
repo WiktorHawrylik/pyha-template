@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Type checked: mypy](https://img.shields.io/badge/type%20checked-mypy-blue.svg)](http://mypy-lang.org/)
-[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://WiktorHawrylik.github.io/your-package-name/)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://wiktorhawrylik.github.io/pyha-template/)
 
 Wiktor Hawrylik Python library template optimized for agentic AI development and data-driven workflows.
 
