@@ -522,13 +522,7 @@ notebooks/
 
 ### Agentic Development
 
-#### AI Assistant Integration
-
-This project is optimized for AI-assisted development:
-
-1. **GitHub Copilot**: See `.github/copilot-instructions.md`
-2. **Cursor**: See `.cursorrules`
-3. **Claude/ChatGPT**: Share this CONTRIBUTING.md
+This project is optimized for AI-assisted development.
 
 #### Best Practices with AI
 

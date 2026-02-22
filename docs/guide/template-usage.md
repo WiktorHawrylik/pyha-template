@@ -291,12 +291,6 @@ This template is optimized for AI coding assistants:
 - Copilot will use template patterns
 - Suggestions will match code style
 
-### Cursor
-
-- Read `.cursorrules`
-- Cursor follows template conventions
-- AI understands project structure
-
 ### ChatGPT/Claude
 
 - Share AI development guide for context

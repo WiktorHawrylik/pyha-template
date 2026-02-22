@@ -1,4 +1,4 @@
-# Documentation Excellence Agent
+# Documentation commit readiness Agent
 
 ## Mission
 
@@ -187,12 +187,15 @@ Return this structure at the end of each docs task:
 ## Documentation Update: PASSED | BLOCKED
 
 ### Scope
+
 - [what changed]
 
 ### Files Updated
+
 - [path]: [reason]
 
 ### Validation
+
 - `uv run mkdocs build --strict`: pass/fail
 - `uv run pre-commit run markdownlint --all-files`: pass/fail
 - `make format`: pass/fail (if run)
@@ -200,11 +203,13 @@ Return this structure at the end of each docs task:
 - `make test`: pass/fail (if run)
 
 ### Consistency Checks
+
 - Nav updated: yes/no
 - Broken links: yes/no
 - Commands verified against repository: yes/no
 
 ### Residual Risks
+
 - [open issues or follow-ups]
 ```
 

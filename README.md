@@ -8,10 +8,6 @@
 
 Wiktor Hawrylik Python library template optimized for agentic AI development and data-driven workflows.
 
-- **Pre-configured tooling** - uv, ruff, mypy, pytest
-- **AI-ready** - Optimized for GitHub Copilot, Cursor, Claude
-- **Well-documented** - Comprehensive guides and API docs
-
 ## 📦 Installation
 
 ```bash
@@ -42,11 +38,16 @@ print(obj.value)  # 47.0
 
 ### Using the Template
 
+1. Clone this repository
+
 ```bash
-# Clone this repository
 git clone https://github.com/WiktorHawrylik/python-library-template.git my-project
 cd my-project
 ```
+
+1. Modify
+   1. Name python module, now "your_package_name"
+   2. Name python package, now "your-package-name"
 
 ## 📚 Documentation
 
@@ -130,7 +131,6 @@ AGPL-3.0 - see [LICENSE](LICENSE)
 ### 🔧 Configuration & Tooling
 
 - [ ] Consolidate `.editorconfig` settings into `pyproject.toml`
-- [ ] Remove `.cursorrules` (replaced by AGENTS.md + \_constitution.md)
 - [ ] Document `configs/` directory structure and usage
 - [ ] Create `customize_template.py` script for easy template initialization
 
@@ -178,4 +178,4 @@ Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AG
 
 ---
 
-Made with ❤️ for the Python community
+Made with joy for the community

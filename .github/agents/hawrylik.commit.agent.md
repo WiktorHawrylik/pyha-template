@@ -1,4 +1,4 @@
-# Commit Readiness Agent (Python + Data-Driven Delivery)
+# Code commit readiness Agent
 
 ## Task objective
 

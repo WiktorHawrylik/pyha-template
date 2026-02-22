@@ -1,17 +1,24 @@
-# Cursor AI Rules for This Project
+# TBD - Code Development Agent
+
+Notes from past:
+
+# .cursorrules: Cursor AI Rules for This Project
 
 ## Project Context
+
 This is a GPL-3.0 licensed Python library template optimized for agentic and data-driven development. All code must maintain high quality standards and comprehensive documentation.
 
 ## Code Style & Quality
 
 ### Required for ALL Code
+
 1. **Type Hints**: Every function must have complete type hints
 2. **Docstrings**: Google-style docstrings for all public APIs
 3. **Testing**: Write tests for all new functionality
 4. **Formatting**: Use ruff for formatting (automatic with pre-commit)
 
 ### Type Hint Examples
+
 ```python
 # ✅ Good
 def process_data(data: list[dict[str, Any]], config: Config) -> pd.DataFrame:
@@ -24,6 +31,7 @@ def process_data(data, config):
 ```
 
 ### Docstring Template
+
 ```python
 def function_name(param1: Type1, param2: Type2) -> ReturnType:
     """Brief one-line description.
@@ -50,12 +58,14 @@ def function_name(param1: Type1, param2: Type2) -> ReturnType:
 ## File Organization
 
 ### Source Code Structure
+
 - Place new modules in `src/your_package_name/`
 - Mirror structure in `tests/` directory
 - Keep functions small and focused (< 50 lines)
 - One class per file for complex classes
 
 ### Import Order
+
 1. Standard library imports
 2. Third-party imports
 3. Local imports
@@ -77,11 +87,13 @@ from your_package_name.core import MyClass
 ## Testing Requirements
 
 ### Test Structure
+
 - Create test file `tests/test_module.py` for `src/your_package_name/module.py`
 - Use descriptive test names: `test_function_name_does_what`
 - Group related tests in classes
 
 ### Test Example
+
 ```python
 import pytest
 from your_package_name.module import function_to_test
@@ -108,6 +120,7 @@ class TestFunctionToTest:
 ## Git & Version Control
 
 ### Commit Message Format
+
 ```
 <type>(<scope>): <subject>
 
@@ -119,6 +132,7 @@ class TestFunctionToTest:
 Types: feat, fix, docs, test, refactor, chore, ci
 
 ### Before Committing
+
 1. Run `make format` - Auto-format code
 2. Run `make lint` - Check code quality
 3. Run `make test` - Verify tests pass
@@ -127,6 +141,7 @@ Types: feat, fix, docs, test, refactor, chore, ci
 ## Common Tasks
 
 ### Adding a New Feature
+
 1. Create feature branch: `feature/feature-name`
 2. Write code with type hints and docstrings
 3. Add tests in `tests/`
@@ -135,12 +150,14 @@ Types: feat, fix, docs, test, refactor, chore, ci
 6. Run quality checks: `make lint && make test`
 
 ### Adding a New Dependency
+
 1. Add to `pyproject.toml` under appropriate section
 2. Run `uv sync`
 3. Update documentation if user-facing
 4. Consider if it should be optional dependency
 
 ### Writing Data Processing Code
+
 1. Put raw data in `data/raw/`
 2. Create processing script in `scripts/`
 3. Save processed data to `data/processed/`
@@ -150,6 +167,7 @@ Types: feat, fix, docs, test, refactor, chore, ci
 ## License Compliance (CRITICAL)
 
 ### GPL-3.0 Requirements
+
 - All new code must be GPL-3.0 compatible
 - Do NOT use code from incompatible licenses
 - Add license header to new files:
@@ -166,6 +184,7 @@ Types: feat, fix, docs, test, refactor, chore, ci
 ## AI-Specific Guidelines
 
 ### Code Generation
+
 - Prioritize readability over cleverness
 - Use explicit names over abbreviations
 - Add comments for non-obvious logic
@@ -173,12 +192,14 @@ Types: feat, fix, docs, test, refactor, chore, ci
 - Avoid global state
 
 ### Error Handling
+
 - Raise specific exceptions (ValueError, TypeError, etc.)
 - Include helpful error messages
 - Document exceptions in docstrings
 - Don't use bare `except:`
 
 ### Best Practices
+
 - DRY: Don't Repeat Yourself
 - SOLID principles
 - Prefer composition over inheritance
@@ -188,6 +209,7 @@ Types: feat, fix, docs, test, refactor, chore, ci
 ## Common Patterns
 
 ### Configuration
+
 ```python
 from pydantic import BaseModel, Field
 
@@ -200,6 +222,7 @@ class Config(BaseModel):
 ```
 
 ### Data Processing
+
 ```python
 from pathlib import Path
 import pandas as pd
@@ -227,6 +250,7 @@ def load_data(path: Path) -> pd.DataFrame:
 ```
 
 ### Async Operations
+
 ```python
 import asyncio
 from typing import Any
@@ -252,6 +276,7 @@ async def fetch_data(url: str) -> dict[str, Any]:
 ## Don't Do This
 
 ### ❌ Bad Practices
+
 ```python
 # No type hints
 def process(data):
@@ -277,6 +302,7 @@ if value > 86400:  # What is 86400?
 ```
 
 ### ✅ Good Practices
+
 ```python
 # Complete type hints and docstring
 def process(data: DataType) -> ProcessedType:
@@ -332,6 +358,7 @@ if value > SECONDS_PER_DAY:
 ## Questions?
 
 If unsure about anything:
+
 1. Check existing code for patterns
 2. Read CONTRIBUTING.md
 3. Follow PEP 8 and PEP 257
