@@ -123,12 +123,14 @@ AGPL-3.0 - see [LICENSE](LICENSE)
   - [ ] Use status.md as default context for agent sessions
   - [ ] Auto-update status.md when agents complete tasks
   - [ ] Log all agent edits to files referenced in status.md
+- [ ] **Agent changes validation**
+  - [ ] Repository specific framework to test any changes in agents
 - [ ] MCP only as in ClawCode through CLI
 
 ### 🔧 Configuration & Tooling
 
 - [ ] Consolidate `.editorconfig` settings into `pyproject.toml`
-- [ ] Remove `.cursorrules` (replaced by AGENTS.md + _constitution.md)
+- [ ] Remove `.cursorrules` (replaced by AGENTS.md + \_constitution.md)
 - [ ] Document `configs/` directory structure and usage
 - [ ] Create `customize_template.py` script for easy template initialization
 
