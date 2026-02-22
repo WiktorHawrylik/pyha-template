@@ -86,6 +86,7 @@ include = ["your_package_name*"]
 [tool.setuptools.package-data]
 your_package_name = ["py.typed"]
 
+
 # -------------------------------
 # --- Code quality and style ----
 # -------------------------------
@@ -166,14 +167,6 @@ disallow_untyped_defs = false
 
 
 # -------------------------------
-# --- Documentation -------------
-# -------------------------------
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"  # Use Google-style docstrings
-
-
-# -------------------------------
 # --- Testing -------------------
 # -------------------------------
 [tool.pytest.ini_options]
@@ -217,3 +210,25 @@ exclude_lines = [
 
 [tool.coverage.html]
 directory = "htmlcov"
+
+
+# -------------------------------
+# --- Documentation -------------
+# -------------------------------
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"  # Use Google-style docstrings
+
+[tool.markdownlint]
+default = true
+MD029 = false
+MD036 = false
+MD040 = false
+
+[tool.markdownlint.MD013]
+line_length = 200
+code_blocks = false
+tables = false
+
+[tool.markdownlint.MD024]
+siblings_only = true

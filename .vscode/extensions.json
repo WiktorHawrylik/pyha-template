@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "DavidAnson.vscode-markdownlint",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "charliermarsh.ruff"

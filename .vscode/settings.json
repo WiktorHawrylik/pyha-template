@@ -1,6 +1,6 @@
 {
     "chat.promptFilesRecommendations": {
-        "hawrylik.modify_core": true,
+        "hawrylik.dev": true,
         "hawrylik.commit": true
     },
     "chat.tools.terminal.autoApprove": {
@@ -8,15 +8,5 @@
         "uv run pre-commit install --hook-type pre-push": true,
         "uv run pre-commit run --hook-stage pre-push": true,
         "git add": true
-    },
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll.markdownlint": "explicit"
-        }
-    },
-    "markdownlint.config": {
-        "extends": ".markdownlint.json"
     }
 }
