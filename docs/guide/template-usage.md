@@ -113,7 +113,6 @@ your-project/
 ├── tests/                 # Your tests
 ├── docs/                  # Your documentation
 ├── data/                  # Your data files
-├── notebooks/             # Jupyter notebooks
 ├── scripts/               # Utility scripts
 ├── configs/               # Configuration files
 └── .github/workflows/     # CI/CD pipelines
@@ -211,10 +210,6 @@ vim data/raw/README.md
 
 # Process data
 python scripts/process_data.py
-
-# Explore in notebook
-make notebook
-# Open notebooks/01_exploration.ipynb
 ```
 
 ### Building Documentation
@@ -226,9 +221,6 @@ make docs-serve
 
 # Build static site
 make docs
-
-# Deploy to GitHub Pages
-make docs-deploy
 ```
 
 ## Customization Tips

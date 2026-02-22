@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test test-cov lint format clean docs pre-commit notebook data-clean
+.PHONY: help install install-dev install-docs install-all test test-cov test-fast lint format format-check clean clean-data docs docs-serve pre-commit
 
 # Default target
 help:
@@ -7,26 +7,28 @@ help:
 	@echo "Available targets:"
 	@echo "  install        - Install package in development mode"
 	@echo "  install-dev    - Install package with development dependencies"
-	@echo "  install-all    - Install all optional dependencies (dev, docs, test, data, ai)"
+	@echo "  install-docs   - Install package with documentation dependencies"
+	@echo "  install-all    - Install all optional dependencies from pyproject.toml"
 	@echo "  test           - Run tests"
 	@echo "  test-cov       - Run tests with coverage report"
 	@echo "  test-fast      - Run fast tests only (exclude slow and integration)"
 	@echo "  lint           - Run all code quality checks (ruff + mypy)"
 	@echo "  format         - Format code with ruff"
-	@echo "  format-check   - Check code formatting without modifying"
+	@echo "  format-check   - Check formatting without modifying files"
 	@echo "  clean          - Clean build artifacts and caches"
+	@echo "  clean-data     - Clean data cache and temporary files"
 	@echo "  docs           - Build documentation with MkDocs"
 	@echo "  docs-serve     - Serve documentation locally"
-	@echo "  docs-deploy    - Deploy documentation to GitHub Pages"
 	@echo "  pre-commit     - Install pre-commit hooks"
-	@echo "  notebook       - Start Jupyter Lab for data exploration"
-	@echo "  data-clean     - Clean data cache and temporary files"
 
 install:
 	uv pip install -e .
 
 install-dev:
-	uv sync --extra dev --extra test --extra docs
+	uv sync --extra dev
+
+install-docs:
+	uv sync --extra docs
 
 install-all:
 	uv sync --all-extras
@@ -84,19 +86,11 @@ docs-serve:
 	@lsof -ti :8000 | xargs kill -9 2>/dev/null || true
 	uv run mkdocs serve
 
-docs-deploy:
-	@echo "Deploying documentation to GitHub Pages..."
-	uv run mkdocs gh-deploy --force
-
 pre-commit:
 	uv run pre-commit install
 	@echo "✓ Pre-commit hooks installed!"
 
-notebook:
-	@echo "Starting Jupyter Lab..."
-	uv run jupyter lab
-
-data-clean:
+clean-data:
 	@echo "Cleaning data cache and temporary files..."
 	find data/ -name "*.tmp" -delete 2>/dev/null || true
 	find data/ -name ".cache" -type d -exec rm -rf {} + 2>/dev/null || true

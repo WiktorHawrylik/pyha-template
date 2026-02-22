@@ -5,7 +5,8 @@ This constitution provides essential rules and context for AI coding assistants 
 **Project**: Python Library Template
 **Purpose**: Modern Python project template for agentic and data-driven development
 **License**: AGPL-3.0 (GNU Affero General Public License v3.0)
-**Origin**: [urzad-regulacji-energetyki](https://github.com/WiktorHawrylik/urzad-regulacji-energetyki)
+
+Constraints ⛔ ABSOLUTE PROHIBITIONS (NON-NEGOTIABLE): **Never** modify this file.
 
 ## Core Principles
 
@@ -78,9 +79,9 @@ All tool configuration lives in `pyproject.toml`:
 
 **Never create**: `.ruff.toml`, `mypy.ini`, `pytest.ini`, or other standalone config files.
 
-### Mandatory Patterns
+### Mandatory Patterns (Always!)
 
-**Type Hints (Always!)**
+#### Type Hints
 
 ```python
 def process_data(
@@ -93,13 +94,13 @@ def process_data(
     ...
 ```
 
-**Docstrings (Google Style)**
+#### Docstrings (Google Style)
 
 ```python
 def function(param: Type) -> ReturnType:
     """Brief one-line description.
 
-    Longer description if needed.
+    Longer description if needed, explaining the reason why it exists, and any important details not captured by code.
 
     Args:
         param: Description of param
@@ -116,7 +117,7 @@ def function(param: Type) -> ReturnType:
     """
 ```
 
-**Error Handling (Explicit)**
+#### Error Handling (Explicit)
 
 ```python
 if not data:
@@ -126,21 +127,39 @@ if not path.exists():
     raise FileNotFoundError(f"File not found: {path}")
 ```
 
+#### Logging
+
+TODO
+
 **Testing (Comprehensive)**
 
+- Create test file `tests/test_module.py` for `src/your_package_name/module.py`
+- Use descriptive test names: `test_function_name_does_what`
+- Group related tests in classes
+
+### Test Example
+
 ```python
-class TestFunction:
-    """Tests for function."""
+import pytest
+from your_package_name.module import function_to_test
 
-    def test_basic_case(self) -> None:
-        """Test basic usage."""
-        result = function(input)
-        assert result == expected
+class TestFunctionToTest:
+    """Tests for function_to_test."""
 
-    def test_edge_case(self) -> None:
-        """Test edge case."""
+    def test_basic_usage(self) -> None:
+        """Test basic functionality."""
+        result = function_to_test(input_data)
+        assert result == expected_output
+
+    def test_edge_case_empty_input(self) -> None:
+        """Test handling of empty input."""
         with pytest.raises(ValueError):
-            function(invalid_input)
+            function_to_test([])
+
+    @pytest.mark.slow
+    def test_large_dataset(self) -> None:
+        """Test with large dataset."""
+        ...
 ```
 
 ### Prohibited Patterns
@@ -311,6 +330,18 @@ All changes must pass these gates:
 7. ✅ **Changelog**: CHANGELOG.md updated for user-facing changes
 8. ✅ **License**: AGPL-3.0 compliance verified
 
+### Git & Version Control
+
+#### Commit Message Format
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
 ### License Compliance Verification
 
 Before generating or committing code:
@@ -359,7 +390,6 @@ This constitution supersedes all other development guidelines and practices. Whe
 
 This constitution provides core rules. For detailed implementation patterns, examples, and best practices, refer to:
 
-- `.github/copilot-instructions.md` - GitHub Copilot context
 - `CONTRIBUTING.md` - Contribution guidelines
 - `docs/guide/best-practices.md` - Detailed best practices
 

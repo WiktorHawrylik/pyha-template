@@ -1,7 +1,19 @@
-# Pre-commit hooks configuration for code quality and consistency
-# This ensures all commits meet quality standards automatically
+default_language_version:
+  python: python3.11
+
+ci:
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit hooks
+
+    for more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_branch: ""
+  autoupdate_commit_msg: "[pre-commit.ci] pre-commit autoupdate"
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false
+
 repos:
-  # General pre-commit hooks for file health
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -13,7 +25,7 @@ repos:
         name: Check YAML syntax
       - id: check-added-large-files
         name: Check for large files
-        args: ['--maxkb=1000']
+        args: ["--maxkb=1000"]
       - id: check-json
         name: Check JSON syntax
       - id: check-toml
@@ -48,14 +60,6 @@ repos:
         require_serial: true
         args: [--config-file=pyproject.toml]
 
-  # Markdown linting for documentation
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.43.0
-    hooks:
-      - id: markdownlint
-        name: Lint markdown files
-        args: ['--fix']
-
   # Local hooks - run tests on push (optional)
   - repo: local
     hooks:
@@ -73,20 +77,3 @@ repos:
         pass_filenames: false
         always_run: true
         stages: [pre-push]
-
-# Configuration for pre-commit itself
-default_language_version:
-  python: python3.11
-
-# CI configuration - run all hooks on CI
-ci:
-  autofix_commit_msg: |
-    [pre-commit.ci] auto fixes from pre-commit hooks
-
-    for more information, see https://pre-commit.ci
-  autofix_prs: true
-  autoupdate_branch: ''
-  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
-  autoupdate_schedule: weekly
-  skip: []
-  submodules: false
