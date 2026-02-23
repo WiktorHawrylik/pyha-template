@@ -1,10 +1,11 @@
 # Python Library Template
 
-[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
-[![Type checked: mypy](https://img.shields.io/badge/type%20checked-mypy-blue.svg)](http://mypy-lang.org/)
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://wiktorhawrylik.github.io/your-package-name/)
+[![CI](https://github.com/WiktorHawrylik/your-package-name/workflows/CI/badge.svg)](https://github.com/WiktorHawrylik/your-package-name/actions)
+[![codecov](https://codecov.io/gh/WiktorHawrylik/pyha-template/branch/main/graph/badge.svg)](https://codecov.io/gh/WiktorHawrylik/your-package-name)
+[![PyPI version](https://img.shields.io/pypi/v/your-package-name.svg)](https://pypi.org/project/your-package-name/)
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 Wiktor Hawrylik Python library template optimized for agentic AI development and data-driven workflows.
 
@@ -130,7 +131,6 @@ AGPL-3.0 - see [LICENSE](LICENSE)
 
 ### 🔧 Configuration & Tooling
 
-- [ ] Consolidate `.editorconfig` settings into `pyproject.toml`
 - [ ] Document `configs/` directory structure and usage
 - [ ] Create `customize_template.py` script for easy template initialization
 

@@ -8,6 +8,10 @@ version = "0.1.0"
 description = "Python application supporting data-driven, agentic development"
 readme = "README.md"
 requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0.0",
+    "typing-extensions>=4.0.0",
+]
 license = {text = "AGPL-3.0-or-later"}
 authors = [
     { name = "Wiktor Hawrylik", email = "wiktor.hawrylik@gmail.com" }
@@ -34,17 +38,11 @@ classifiers = [
     "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
 ]
 
-# Keep runtime dependencies minimal and explicit.
-dependencies = [
-    "pydantic>=2.0.0",
-    "typing-extensions>=4.0.0",
-]
-
 [project.optional-dependencies]
-# Keep this as the default contributor install target.
 dev = [
     "hypothesis>=6.80.0",
     "mypy>=1.5.0",
+    "pip-licenses>=5.5.1",
     "pre-commit>=3.3.0",
     "pytest>=7.4.0",
     "pytest-cov>=4.1.0",
@@ -52,19 +50,13 @@ dev = [
     "pytest-xdist>=3.3.0",
     "ruff>=0.8.0",
 ]
-
 docs = [
   "mike>=2.0.0",
   "mkdocs>=1.6.0",
   "mkdocs-material>=9.5.0",
   "mkdocstrings[python]>=0.25.0",
 ]
-
-
-# All dependencies for complete development environment
-all = [
-    "your-package-name[dev,docs]",
-]
+all = ["your-package-name[dev,docs]"]
 
 [project.urls]
 Homepage = "https://github.com/WiktorHawrylik/your-package-name"

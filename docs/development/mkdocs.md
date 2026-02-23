@@ -39,7 +39,7 @@ docs/
 ├── development/                  # 🛠️ DEVELOPER GUIDANCE: How to build and maintain
 │   ├── _constitution.md          # Standards: AI agent coding rules (NON-NEGOTIABLE)
 │   ├── mkdocs.md                 # Standards: Documentation guidelines (this file)
-│   ├── license-compliance.md     # Guide: AGPL-3.0 compliance requirements
+│   ├── license-audit.md          # Guide: AGPL-3.0 compliance requirements
 │   ├── testing.md                # Guide: Testing strategies and patterns
 │   └── workflows.md              # Guide: CI/CD pipelines and development flows
 │
@@ -91,7 +91,7 @@ Before marking documentation complete:
 | Breaking API change | `CHANGELOG.md`, `api/contracts.md`, ADR |
 | New module/class | `api/reference.md`, `architecture/overview.md` |
 | Algorithm change | `architecture/functional-requirements.md`, ADR |
-| Security fix | `CHANGELOG.md`, `development/license-compliance.md` |
+| Security fix | `CHANGELOG.md`, `development/license-audit.md` |
 | Performance optimization | `architecture/non-functional-requirements.md` |
 
 ## What Must Be Documented
@@ -312,7 +312,7 @@ erDiagram
 - `development/mkdocs.md` → Documentation update protocols (this file)
 - `development/testing.md` → Testing patterns, fixtures, coverage requirements
 - `development/workflows.md` → CI/CD, release process, deployment procedures
-- `development/license-compliance.md` → AGPL-3.0 obligations, dependency auditing
+- `development/license-audit.md` → AGPL-3.0 obligations, dependency auditing
 
 **Content Requirements**:
 
@@ -320,7 +320,7 @@ erDiagram
 - ✅ **mkdocs.md**: When/what/where to document, quality gates
 - ✅ **testing.md**: Test pyramid, naming conventions, fixture patterns, 80%+ coverage
 - ✅ **workflows.md**: GitHub Actions, pre-commit hooks, release checklist
-- ✅ **license-compliance.md**: AGPL-3.0 source disclosure, attribution, audit process
+- ✅ **license-audit.md**: AGPL-3.0 source disclosure, attribution, audit process
 
 **Quality Bar**: Enforceable via automated tools (pre-commit, CI/CD)
 
@@ -366,7 +366,7 @@ When modifying code, update documentation in this **exact order** (do not skip s
 1. **`development/*.md`** → Update if you changed tools, standards, or workflows
    - Modified pre-commit hooks? → Update `workflows.md`
    - Changed testing patterns? → Update `testing.md`
-   - Added dependency with different license? → Update `license-compliance.md`
+   - Added dependency with different license? → Update `license-audit.md`
 
 2. **`architecture/overview.md`** + diagrams → Update if component structure changed
    - Added/removed module or service? → Update component diagram

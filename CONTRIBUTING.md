@@ -1,6 +1,46 @@
-# Contributing Guide
+# Contributing Guide - TBD
 
-Thank you for your interest in contributing to this project! This guide is designed for both **human developers** and **AI coding agents** (GitHub Copilot, Cursor, Claude, ChatGPT, etc.).
+When oppening Pull Request make sure to follow below [PR Template](#pr-template) and follow [Guidelines](#guidelines)
+
+## PR Template
+
+```markdown
+## Description
+
+description of desired behaviour, proposed solution, rationale and consider alternatives (if any).
+
+## Type of Change
+
+- [ ] New feature not breaking current functionalities
+- [ ] Change fixing current functionalities
+- [ ] Change modifying current functionalities
+- [ ] Non-functional change (e.g. CI, Documentation)
+
+## Checklist
+
+- [ ] Branch named wrt. convention (feature/<my-short-desc>, bugfix/<my-short-desc>, no-op/<my-short-desc>)
+- [ ] Tests cases added
+- [ ] Documentation updated
+- [ ] CHANGELOG.md updated
+- [ ] GitHub CI Action pass sucessfully on Pull Request
+```
+
+#########
+
+## Guidelines
+
+- [development setup](https://github.com/wiktorhawrylik/your-package-name/blob/main/contributing.md#development-setup)
+- [code quality standards](https://github.com/wiktorhawrylik/your-package-name/blob/main/contributing.md#code-quality-standards)
+- [testing guidelines](https://github.com/wiktorhawrylik/your-package-name/blob/main/contributing.md#testing)
+- [pull request process](https://github.com/wiktorhawrylik/your-package-name/blob/main/contributing.md#pull-request-process)
+
+- [License Compliance Guide](https://github.com/WiktorHawrylik/your-package-name/blob/main/docs/development/license-audit.md) or [github.io](https://wiktorhawrylik.github.io/pyha-template/development/license-audit/).
+
+## for ai agents
+
+- see [agents.md](https://github.com/wiktorhawrylik/your-package-name/blob/main/agents.md) for agentic development rules
+- see [ai development guide](development/_constitution.md) for detailed patterns
+- see [license compliance](development/license-audit.md) for agpl-3.0 requirements
 
 ## 🤖 For AI Agents & LLMs
 
@@ -298,6 +338,7 @@ We use [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/):
 - **develop**: Integration branch
 - **feature/\***: New features (from develop)
 - **bugfix/\***: Bug fixes (from develop)
+- **no-op/\***: Non-functional (from develop)
 - **hotfix/\***: Emergency fixes (from main)
 - **release/\***: Release preparation (from develop)
 
@@ -373,33 +414,6 @@ test(core): add tests for validation
 - [ ] CHANGELOG.md updated
 - [ ] Commits follow convention
 
-#### PR Template
-
-```markdown
-## Description
-Brief description of changes
-
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
-
-## Changes Made
-- Change 1
-- Change 2
-
-## Testing
-- Test 1
-- Test 2
-
-## Checklist
-- [ ] Code follows style guide
-- [ ] Tests added/updated
-- [ ] Documentation updated
-- [ ] CHANGELOG.md updated
-```
-
 #### Review Process
 
 1. Automated checks must pass (CI)
@@ -416,7 +430,7 @@ Brief description of changes
 - Focus on logic, not style (automated)
 - Check for edge cases
 - Verify tests are comprehensive
-- Ensure documentation is clear
+- Ensure documentation is clear and minimal (documents what code does not capture)
 
 #### For Authors
 
@@ -632,4 +646,69 @@ This project is AGPL-3.0 licensed. All contributions must be compatible with AGP
 
 **Questions?** Open an issue or discussion!
 
-*This guide is designed to be useful for both humans and AI agents. If something is unclear, please let us know!*
+_This guide is designed to be useful for both humans and AI agents. If something is unclear, please let us know!_
+
+######################
+######################
+######################
+
+## Git Workflow (Git Flow)
+
+We use [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/):
+
+### Branches
+
+- **main**: Production releases only
+- **develop**: Integration branch
+- **feat/\***: New features (from develop)
+- **bugfix/\***: Bug fixes (from develop)
+- **hotfix/\***: Emergency fixes (from main)
+- **release/\***: Release preparation (from develop)
+
+### Creating a Feature
+
+```bash
+# Start from develop
+git checkout develop
+git pull origin develop
+
+# Create feature branch
+git checkout -b feat/my-awesome-feature
+
+# Work on feature
+# ... make changes ...
+
+# Keep branch updated
+git fetch origin
+git rebase origin/develop
+
+# Push and create PR to develop
+git push origin feat/my-awesome-feature
+```
+
+### Commit Message Convention
+
+We use [Conventional Commits](https://www.conventionalcommits.org/):
+
+#### Format
+
+```text
+<type>(<branch-type>): <subject>
+
+<body>
+
+<footer>
+```
+
+#### Examples
+
+```bash
+feat(core): add data validation function
+
+fix(utils): handle edge case in parser
+Fixes #123
+
+fix(readme): update installation instructions
+
+fix(core): add tests for validation
+```

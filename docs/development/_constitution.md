@@ -1,5 +1,17 @@
 # AI-Assisted Development Constitution
 
+This is instruction for humans ot supervisiong agents ro supervising agents.
+
+reliable enough for autonomous execution.
+prefer simplest dependencies - if there is somehting in system and requires little more effore - use it
+
+- use low cost fast models for:
+  .github/agents/hawrylik.licence-audit.agent.md
+- medium fo rmedium tasks
+- Extra High for complex mpackage wide chanegs
+
+NEVER UPDATE:
+
 This constitution provides essential rules and context for AI coding assistants (GitHub Copilot, Cursor, Claude, ChatGPT, etc.) working on this template.
 
 **Project**: Python Library Template

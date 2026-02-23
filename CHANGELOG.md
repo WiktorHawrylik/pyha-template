@@ -1,110 +1,65 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project are documented in this file.
+Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html). Release workflow follows GitFlow release branches (cut from develop, then merge to main and back to develop): [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
+## [0.0.0] - 0000-00-00
 
 ### Added
 
-- Initial project template structure
-- Modern Python tooling (uv, ruff, mypy)
-- Comprehensive documentation
-- GitHub Actions workflows
-- Pre-commit hooks configuration
-- Data-driven development support
-- Agentic AI development guidelines
-- LLM instruction files
-
-### Changed
-
-- N/A
-
-### Deprecated
-
-- N/A
-
-### Removed
-
-- N/A
-
-### Fixed
-
-- N/A
-
-### Security
-
-- N/A
-
-## [0.1.0] - YYYY-MM-DD
-
-### Added
-
-- Initial release
-- Basic project structure
-- Core functionality
-- Tests and documentation
-- CI/CD pipeline
+- Repository initialization.
 
 ---
 
-## Release Notes Template
+## Changelog Maintenance (AI + Human)
 
-When creating a new release, copy this template:
+Always update this file when behavior, API, workflow, dependencies, or docs change.
+Create or update a concrete release section for each merged release.
+
+When preparing a release:
+
+1. Create `## [X.Y.Z] - YYYY-MM-DD`.
+2. Add all relevant items for that release under categories.
+3. Keep category headings (`Added`, `Changed`, `Fixed`, `Docs`) even if some are empty.
+
+### Release Entry Template
 
 ```markdown
 ## [X.Y.Z] - YYYY-MM-DD
 
+Release branch: [release/x.y.z](https://github.com/WiktorHawrylik/your-package-name/tree/release/x.y.z)
+
 ### Added
-- New features
+- [Short user-visible change] ([#123](https://github.com/WiktorHawrylik/your-package-name/pull/123))
 
 ### Changed
-- Changes in existing functionality
-
-### Deprecated
-- Soon-to-be removed features
-
-### Removed
-- Removed features
+- [Behavior/config/workflow change] ([#234](https://github.com/WiktorHawrylik/your-package-name/pull/234))
 
 ### Fixed
-- Bug fixes
+- [Bug fix with concrete impact] ([#345](https://github.com/WiktorHawrylik/your-package-name/pull/345))
 
-### Security
-- Security fixes
+### Docs
+- [Documentation-only update] ([#456](https://github.com/WiktorHawrylik/your-package-name/pull/456))
 ```
 
----
+### Required Variables
 
-## Guidelines for Maintaining the Changelog
+- `X.Y.Z`: must match the released version.
+- `YYYY-MM-DD`: release date in calendar format.
+- `release/x.y.z`: release branch for that version.
+- Pull request links: include when available.
 
-### For Human Developers
+### Precision Rules for AI Agents
 
-- Update this file with each PR
-- Add entries under `[Unreleased]` section
-- Use present tense ("Add feature" not "Added feature")
-- Group changes by type (Added, Changed, etc.)
+1. Use concrete, user-facing wording. Avoid vague text like "minor updates".
+2. Prefer one change per bullet.
+3. Include impact context when possible (for example: CLI, API, tests, docs).
+4. Do not include speculative or unverified items.
+5. Do not remove previous release entries.
 
-### For AI Agents
+### Verification Checklist
 
-When making changes, ALWAYS update this file:
-
-1. Add entry under appropriate section in `[Unreleased]`
-2. Be specific and descriptive
-3. Reference issue numbers if applicable
-4. Use format: `- Description (#issue-number)`
-
-Example:
-
-```markdown
-## [Unreleased]
-
-### Added
-- Data validation function for user inputs (#42)
-- Support for async operations in core module (#45)
-
-### Fixed
-- Edge case in parser for empty strings (#43)
-```
+- Version matches release target.
+- Date is valid `YYYY-MM-DD`.
+- Entries are categorized correctly.
+- Links resolve.

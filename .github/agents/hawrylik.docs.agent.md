@@ -197,7 +197,7 @@ Return this structure at the end of each docs task:
 ### Validation
 
 - `uv run mkdocs build --strict`: pass/fail
-- `uv run pre-commit run markdownlint --all-files`: pass/fail
+- `uv run pre-commit run > --all-files`: pass/fail
 - `make format`: pass/fail (if run)
 - `make lint`: pass/fail (if run)
 - `make test`: pass/fail (if run)

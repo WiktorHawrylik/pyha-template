@@ -1,28 +1,23 @@
 #!/usr/bin/env python3
 """Template customization script.
 
-This script helps you customize the template for your specific project by
-replacing placeholder text with your actual project information.
+Script to customize the template for a specific project by replacing
+placeholder text with project-specific values.
 
-Usage:
-    python scripts/customize_template.py
-
-The script will prompt you for:
-- Project name (PyPI package name)
-- Module name (Python import name)
-- Author name
-- Author email
-- GitHub username
-- Project description
-
-It will then update all relevant files with your information.
-
-Copyright (C) 2024 Template Authors
+Copyright (C) 2026 Wiktor Hawrylik
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 
 import sys

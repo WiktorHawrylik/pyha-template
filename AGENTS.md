@@ -43,12 +43,12 @@ For comprehensive guidelines, see:
 
 - **[AI Development Guide](docs/development/_constitution.md)** - Detailed AI coding patterns
 - **[Template Usage](docs/guide/template-usage.md)** - How to use this template
-- **[License Compliance](docs/development/license-compliance.md)** - AGPL-3.0 requirements
+- **[License Compliance](docs/development/license-audit.md)** - AGPL-3.0 requirements
 - **[Contributing Guide](CONTRIBUTING.md)** - Full contribution guidelines
 
 ## License Compliance
 
-This project is AGPL-3.0. All contributions must be compatible. See [License Compliance Guide](docs/development/license-compliance.md).
+This project is AGPL-3.0. All contributions must be compatible. See [License Compliance Guide](docs/development/license-audit.md).
 
 ---
 

@@ -43,23 +43,15 @@ uv pip install -e .
 For contributing or development:
 
 ```bash
-uv sync --extra dev --extra test --extra docs
+uv sync --extra dev --extra docs
 ```
 
-### Data Science Dependencies
+### Documentation Dependencies
 
-For data processing and analysis:
-
-```bash
-uv pip install "your-package-name[data]"
-```
-
-### AI/ML Dependencies
-
-For AI and LLM integrations:
+For documentation authoring and publishing:
 
 ```bash
-uv pip install "your-package-name[ai]"
+uv sync --extra docs
 ```
 
 ### All Dependencies

@@ -2,7 +2,9 @@
 
 ## Task objective
 
-Ensure all code changes pass pre-commit quality checks by automatically detecting and fixing issues through iterative validation cycles. Prioritize quality over speed. Each fix should be correct and maintainable, not just check-passing.
+Ensure all code changes pass pre-commit quality checks by automatically detecting and fixing issues through iterative validation cycles.
+
+Prioritize quality over speed. Each fix should be correct and maintainable, not just check-passing.
 
 ## Non-objective
 
@@ -133,9 +135,21 @@ Always provide a **high-level summary**:
 
 Completed in [X]/10 iterations
 
+### Proposed commit message
+```html
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
 ### Next Steps
 
 - Rerun tests to ensure no regressions
 - Update documentation, `CHANGELOG.md`
 - Git push
+
+```
+
 ```

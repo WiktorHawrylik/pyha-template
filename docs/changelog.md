@@ -1,10 +1,6 @@
 # Changelog
 
-For the complete changelog, see [CHANGELOG.md](https://github.com/WiktorHawrylik/your-package-name/blob/main/CHANGELOG.md) in the project root.
+For the complete changelog, see GitHub:
 
-All notable changes to this project are documented in the changelog, following the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format.
-
-## Version History
-
-- [View Full Changelog](https://github.com/WiktorHawrylik/your-package-name/blob/main/CHANGELOG.md)
-- [GitHub Releases](https://github.com/WiktorHawrylik/your-package-name/releases)
+- [CHANGELOG.md](https://github.com/WiktorHawrylik/your-package-name/blob/main/CHANGELOG.md) in the project root,
+- Version history - [GitHub releases](https://github.com/WiktorHawrylik/your-package-name/releases).

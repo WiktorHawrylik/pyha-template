@@ -87,7 +87,7 @@ nav:
       - Contributing: contributing.md
       - AI Development: development/_constitution.md
       - Documentation Standards: development/mkdocs.md
-      - License Compliance: development/license-compliance.md
+      - License Audit: development/license-audit.md
   - About:
       - Changelog: changelog.md
       - License: license.md

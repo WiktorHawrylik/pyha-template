@@ -1,25 +1,23 @@
 #!/usr/bin/env python3
 """Example data processing script.
 
-This script demonstrates best practices for writing scripts in this template:
-- Clear documentation
-- Type hints
-- Error handling
-- Logging
-- Command-line arguments
+Example command-line script demonstrating best practices for data
+processing within this template (logging, type hints, CLI parsing).
 
-Usage:
-    python scripts/example_script.py --input data/raw/input.csv --output data/processed/output.csv
-
-Example:
-    python scripts/example_script.py --input data/raw/data.csv --threshold 0.5
-
-Copyright (C) 2024 Your Name
+Copyright (C) 2026 Wiktor Hawrylik
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 
 import argparse

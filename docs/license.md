@@ -4,6 +4,51 @@ This project is licensed under the **GNU Affero General Public License v3.0 (AGP
 
 For the complete license text, see [LICENSE](https://github.com/WiktorHawrylik/your-package-name/blob/main/LICENSE) in the project root.
 
+When using this code to this project, you MUST:
+
+## 1. Ensure License Compatibility
+
+All generated code must be compatible with AGPL-3.0.
+
+### Compatible Licenses
+
+You can incorporate code from these licenses:
+
+- **GPL-3.0** - GNU General Public License v3.0
+- **GPL-2.0+** - GNU General Public License v2.0 or later
+- **LGPL** - GNU Lesser General Public License
+- **MIT** - MIT License
+- **BSD** - BSD Licenses (2-clause, 3-clause)
+- **Apache-2.0** - Apache License 2.0
+- **Public Domain** - CC0, Unlicense
+
+#### Incompatible Licenses
+
+Do NOT incorporate code from:
+
+- **Proprietary** - Commercial, closed-source code
+- **CC BY-NC** - Creative Commons Non-Commercial
+- **GPL-2.0-only** - GPL v2.0 only (without "or later")
+- **Custom restrictive licenses**
+
+### 2. Maintain License Headers
+
+- Keep existing license headers in files
+- Add appropriate headers to new files
+- Template provided in [CONTRIBUTING.md](https://github.com/WiktorHawrylik/your-package-name/blob/main/CONTRIBUTING.md)
+
+### 3. Respect Copyleft
+
+- All derivative works must also be AGPL-3.0
+- Source code must be made available
+- Network use triggers copyleft (AGPL-specific)
+
+### 4. Attribution
+
+- Maintain copyright notices
+- Attribute third-party code properly
+- Document code sources in comments
+
 ## Quick Summary
 
 ### You Can
@@ -32,21 +77,7 @@ For the complete license text, see [LICENSE](https://github.com/WiktorHawrylik/y
 
 Unlike GPL, the AGPL requires that if you run modified versions of this software as a network service (web service, API, cloud service), you **must make the source code available** to users of that service.
 
-## For Contributors
-
-See [License Compliance Guide](development/license-compliance.md) for detailed information on:
-
-- Compatible licenses
-- How to add license headers
-- Attribution requirements
-- AI agent compliance
-
-## Full License Text
-
-The complete AGPL-3.0 license text is available at:
-
-- [LICENSE](https://github.com/WiktorHawrylik/your-package-name/blob/main/LICENSE) (in this repository)
-- [https://www.gnu.org/licenses/agpl-3.0.html](https://www.gnu.org/licenses/agpl-3.0.html) (official)
+**Example**: If you create a web API using this library and modify it, you must provide the modified source code to users who interact with your API.
 
 ## Questions?
 
