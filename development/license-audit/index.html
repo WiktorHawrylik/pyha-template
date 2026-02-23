@@ -12,7 +12,7 @@
         <meta name="author" content="Wiktor Hawrylik">
       
       
-        <link rel="canonical" href="https://wiktorhawrylik.github.io/your-package-name/development/license-compliance/">
+        <link rel="canonical" href="https://wiktorhawrylik.github.io/your-package-name/development/license-audit/">
       
       
         <link rel="prev" href="../mkdocs/">
@@ -29,7 +29,7 @@
     
     
       
-        <title>License Compliance - Your Package Name</title>
+        <title>License Audit - Your Package Name</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#license-compliance-guide" class="md-skip">
+        <a href="#license-compliance-guide-agent-executable-v2" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              License Compliance
+              License Audit
             
           </span>
         </div>
@@ -878,7 +878,7 @@
   <span class="md-ellipsis">
     
   
-    License Compliance
+    License Audit
   
 
     
@@ -896,7 +896,7 @@
   <span class="md-ellipsis">
     
   
-    License Compliance
+    License Audit
   
 
     
@@ -922,10 +922,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#for-ai-coding-assistants-and-contributors" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For AI Coding Assistants and Contributors
+        Objective
       
     </span>
   </a>
@@ -933,22 +933,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-this-means-for-ai-agents" class="md-nav__link">
+  <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What This Means for AI Agents
+        Scope
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What This Means for AI Agents">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-header-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Header Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution Workflow">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-ensure-license-compatibility" class="md-nav__link">
+  <a href="#step-1-prepare-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Ensure License Compatibility
+        Step 1. Prepare Environment
       
     </span>
   </a>
@@ -956,10 +989,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-maintain-license-headers" class="md-nav__link">
+  <a href="#step-2-validate-license-headers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Maintain License Headers
+        Step 2. Validate License Headers
       
     </span>
   </a>
@@ -967,10 +1000,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-respect-copyleft" class="md-nav__link">
+  <a href="#step-3-extract-dependency-licenses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Respect Copyleft
+        Step 3. Extract Dependency Licenses
       
     </span>
   </a>
@@ -978,10 +1011,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-attribution" class="md-nav__link">
+  <a href="#step-4-categorize-dependency-licenses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Attribution
+        Step 4. Categorize Dependency Licenses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-verify-third-party-attribution-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5. Verify Third-Party Attribution Markers
       
     </span>
   </a>
@@ -994,10 +1038,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#license-header-template" class="md-nav__link">
+  <a href="#output-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        License Header Template
+        Output Artifacts
       
     </span>
   </a>
@@ -1005,60 +1049,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agpl-30-key-points" class="md-nav__link">
+  <a href="#passfail-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AGPL-3.0 Key Points
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AGPL-3.0 Key Points">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-you-can-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Can Do
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-you-must-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Must Do
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-you-cannot-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Cannot Do
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-agpl-30-feature-network-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special AGPL-3.0 Feature: Network Use
+        Pass/Fail Criteria
       
     </span>
   </a>
@@ -1066,10 +1060,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compatible-licenses" class="md-nav__link">
+  <a href="#recommended-pr-summary-snippet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compatible Licenses
+        Recommended PR Summary Snippet
       
     </span>
   </a>
@@ -1077,10 +1071,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#incompatible-licenses" class="md-nav__link">
+  <a href="#incompatible-examples-block-by-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Incompatible Licenses
+        Incompatible Examples (Block by Default)
       
     </span>
   </a>
@@ -1088,43 +1082,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checklist-for-ai-agents" class="md-nav__link">
+  <a href="#compatible-examples-generally-acceptable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checklist for AI Agents
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-using-third-party-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Using Third-Party Code
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Questions?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
+        Compatible Examples (Generally Acceptable)
       
     </span>
   </a>
@@ -1291,10 +1252,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#for-ai-coding-assistants-and-contributors" class="md-nav__link">
+  <a href="#objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For AI Coding Assistants and Contributors
+        Objective
       
     </span>
   </a>
@@ -1302,22 +1263,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-this-means-for-ai-agents" class="md-nav__link">
+  <a href="#scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What This Means for AI Agents
+        Scope
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What This Means for AI Agents">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-header-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Header Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution Workflow">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-ensure-license-compatibility" class="md-nav__link">
+  <a href="#step-1-prepare-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Ensure License Compatibility
+        Step 1. Prepare Environment
       
     </span>
   </a>
@@ -1325,10 +1319,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-maintain-license-headers" class="md-nav__link">
+  <a href="#step-2-validate-license-headers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Maintain License Headers
+        Step 2. Validate License Headers
       
     </span>
   </a>
@@ -1336,10 +1330,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-respect-copyleft" class="md-nav__link">
+  <a href="#step-3-extract-dependency-licenses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Respect Copyleft
+        Step 3. Extract Dependency Licenses
       
     </span>
   </a>
@@ -1347,10 +1341,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-attribution" class="md-nav__link">
+  <a href="#step-4-categorize-dependency-licenses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Attribution
+        Step 4. Categorize Dependency Licenses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-verify-third-party-attribution-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5. Verify Third-Party Attribution Markers
       
     </span>
   </a>
@@ -1363,10 +1368,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#license-header-template" class="md-nav__link">
+  <a href="#output-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        License Header Template
+        Output Artifacts
       
     </span>
   </a>
@@ -1374,60 +1379,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agpl-30-key-points" class="md-nav__link">
+  <a href="#passfail-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AGPL-3.0 Key Points
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AGPL-3.0 Key Points">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#what-you-can-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Can Do
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-you-must-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Must Do
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-you-cannot-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Cannot Do
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-agpl-30-feature-network-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special AGPL-3.0 Feature: Network Use
+        Pass/Fail Criteria
       
     </span>
   </a>
@@ -1435,10 +1390,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compatible-licenses" class="md-nav__link">
+  <a href="#recommended-pr-summary-snippet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compatible Licenses
+        Recommended PR Summary Snippet
       
     </span>
   </a>
@@ -1446,10 +1401,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#incompatible-licenses" class="md-nav__link">
+  <a href="#incompatible-examples-block-by-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Incompatible Licenses
+        Incompatible Examples (Block by Default)
       
     </span>
   </a>
@@ -1457,43 +1412,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checklist-for-ai-agents" class="md-nav__link">
+  <a href="#compatible-examples-generally-acceptable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checklist for AI Agents
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-using-third-party-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Using Third-Party Code
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Questions?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
+        Compatible Examples (Generally Acceptable)
       
     </span>
   </a>
@@ -1520,40 +1442,37 @@
   
 
 
-<h1 id="license-compliance-guide">License Compliance Guide<a class="headerlink" href="#license-compliance-guide" title="Permanent link">&para;</a></h1>
-<h2 id="for-ai-coding-assistants-and-contributors">For AI Coding Assistants and Contributors<a class="headerlink" href="#for-ai-coding-assistants-and-contributors" title="Permanent link">&para;</a></h2>
-<p>This project is licensed under the <strong>GNU Affero General Public License v3.0 (AGPL-3.0)</strong>.</p>
-<h2 id="what-this-means-for-ai-agents">What This Means for AI Agents<a class="headerlink" href="#what-this-means-for-ai-agents" title="Permanent link">&para;</a></h2>
-<p>When contributing code to this project, you MUST:</p>
-<h3 id="1-ensure-license-compatibility">1. Ensure License Compatibility<a class="headerlink" href="#1-ensure-license-compatibility" title="Permanent link">&para;</a></h3>
+<h1 id="license-compliance-guide-agent-executable-v2">License Compliance Guide (Agent-Executable, v2)<a class="headerlink" href="#license-compliance-guide-agent-executable-v2" title="Permanent link">&para;</a></h1>
+<p>This project is licensed under <strong>AGPL-3.0-or-later</strong>.
+This guide is designed for humans and AI agents to run a repeatable compliance audit.</p>
+<p>Legal note: this is an engineering compliance workflow, not legal advice.
+If any result is ambiguous, escalate to a human maintainer for final review.</p>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
+<p>Verify all of the following before merge:</p>
+<ol>
+<li>Python source files include the required AGPL header text.</li>
+<li>Dependency licenses are inventoried and categorized.</li>
+<li>Disallowed licenses are blocked.</li>
+<li>Third-party code usage is attributed and documented.</li>
+</ol>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
 <ul>
-<li>All generated code must be compatible with AGPL-3.0</li>
-<li><strong>Compatible licenses</strong>: GPL-3.0, GPL-2.0+, LGPL, MIT, BSD, Apache 2.0</li>
-<li><strong>Incompatible licenses</strong>: Proprietary, non-commercial licenses</li>
+<li>Python files in <code>src/</code>, <code>tests/</code>, and <code>scripts/</code></li>
+<li>Dependencies declared in <code>pyproject.toml</code> and resolved in <code>uv.lock</code></li>
+<li>Third-party code copied or adapted into this repository</li>
 </ul>
-<h3 id="2-maintain-license-headers">2. Maintain License Headers<a class="headerlink" href="#2-maintain-license-headers" title="Permanent link">&para;</a></h3>
+<h2 id="required-tools">Required Tools<a class="headerlink" href="#required-tools" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Keep existing license headers in files</li>
-<li>Add appropriate headers to new files</li>
-<li>Template provided in <a href="https://github.com/WiktorHawrylik/your-package-name/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a></li>
+<li><code>uv</code></li>
+<li><code>find</code> (default macOS)</li>
+<li><code>grep</code> (default macOS)</li>
+<li><code>python</code> via <code>uv run python</code></li>
 </ul>
-<h3 id="3-respect-copyleft">3. Respect Copyleft<a class="headerlink" href="#3-respect-copyleft" title="Permanent link">&para;</a></h3>
-<ul>
-<li>All derivative works must also be AGPL-3.0</li>
-<li>Source code must be made available</li>
-<li>Network use triggers copyleft (AGPL-specific)</li>
-</ul>
-<h3 id="4-attribution">4. Attribution<a class="headerlink" href="#4-attribution" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Maintain copyright notices</li>
-<li>Attribute third-party code properly</li>
-<li>Document code sources in comments</li>
-</ul>
-<h2 id="license-header-template">License Header Template<a class="headerlink" href="#license-header-template" title="Permanent link">&para;</a></h2>
-<p>Add this to new Python files:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">&quot;&quot;&quot;Module description.</span>
+<h2 id="required-header-template">Required Header Template<a class="headerlink" href="#required-header-template" title="Permanent link">&para;</a></h2>
+<p>Each Python module must contain AGPL notice text equivalent to:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">&quot;&quot;&quot;[Module description]</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">Copyright (C) YYYY Your Name</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">Copyright (C) [YYYY] [Your Name]</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">This program is free software: you can redistribute it and/or modify</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">it under the terms of the GNU Affero General Public License as published by</span>
@@ -1569,96 +1488,88 @@
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="sd">along with this program. If not, see &lt;https://www.gnu.org/licenses/&gt;.</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="sd">&quot;&quot;&quot;</span>
 </span></code></pre></div>
-<h2 id="agpl-30-key-points">AGPL-3.0 Key Points<a class="headerlink" href="#agpl-30-key-points" title="Permanent link">&para;</a></h2>
-<h3 id="what-you-can-do">What You Can Do<a class="headerlink" href="#what-you-can-do" title="Permanent link">&para;</a></h3>
-<p>✅ Use the code commercially
-✅ Modify the code
-✅ Distribute the code
-✅ Use the code privately
-✅ Grant patent rights</p>
-<h3 id="what-you-must-do">What You Must Do<a class="headerlink" href="#what-you-must-do" title="Permanent link">&para;</a></h3>
-<p>⚠️ Disclose source code
-⚠️ License under AGPL-3.0
-⚠️ State changes made
-⚠️ Include original license
-⚠️ Provide source for network use</p>
-<h3 id="what-you-cannot-do">What You Cannot Do<a class="headerlink" href="#what-you-cannot-do" title="Permanent link">&para;</a></h3>
-<p>❌ Hold liable
-❌ Use without attribution
-❌ Sublicense under different terms</p>
-<h2 id="special-agpl-30-feature-network-use">Special AGPL-3.0 Feature: Network Use<a class="headerlink" href="#special-agpl-30-feature-network-use" title="Permanent link">&para;</a></h2>
-<p>Unlike GPL, AGPL requires that if you run modified versions of this software as a web service or network service, you must make the source code available to users of that service.</p>
-<p><strong>Example</strong>: If you create a web API using this library and modify it, you must provide the modified source code to users who interact with your API.</p>
-<h2 id="compatible-licenses">Compatible Licenses<a class="headerlink" href="#compatible-licenses" title="Permanent link">&para;</a></h2>
-<p>You can incorporate code from these licenses:</p>
+<p>Required variables:</p>
 <ul>
-<li><strong>GPL-3.0</strong> - GNU General Public License v3.0</li>
-<li><strong>GPL-2.0+</strong> - GNU General Public License v2.0 or later</li>
-<li><strong>LGPL</strong> - GNU Lesser General Public License</li>
-<li><strong>MIT</strong> - MIT License</li>
-<li><strong>BSD</strong> - BSD Licenses (2-clause, 3-clause)</li>
-<li><strong>Apache-2.0</strong> - Apache License 2.0</li>
-<li><strong>Public Domain</strong> - CC0, Unlicense</li>
+<li><code>[Module description]</code>: concise, module-specific summary.</li>
+<li><code>[YYYY]</code>: current year.</li>
+<li><code>[Your Name]</code>: contributor full name.</li>
 </ul>
-<h2 id="incompatible-licenses">Incompatible Licenses<a class="headerlink" href="#incompatible-licenses" title="Permanent link">&para;</a></h2>
-<p>Do NOT incorporate code from:</p>
-<ul>
-<li><strong>Proprietary</strong> - Commercial, closed-source code</li>
-<li><strong>CC BY-NC</strong> - Creative Commons Non-Commercial</li>
-<li><strong>GPL-2.0-only</strong> - GPL v2.0 only (without "or later")</li>
-<li><strong>Custom restrictive licenses</strong></li>
-</ul>
-<h2 id="checklist-for-ai-agents">Checklist for AI Agents<a class="headerlink" href="#checklist-for-ai-agents" title="Permanent link">&para;</a></h2>
-<p>Before generating or suggesting code:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Is the code original or based on compatible open-source?</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> If from external source, what is its license?</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Have I added proper attribution in comments?</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Have I included/maintained license headers?</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Is the resulting code compatible with AGPL-3.0?</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Have I documented any third-party code sources?</li>
-</ul>
-<h2 id="when-using-third-party-code">When Using Third-Party Code<a class="headerlink" href="#when-using-third-party-code" title="Permanent link">&para;</a></h2>
-<p>If incorporating code from other sources:</p>
-<ol>
-<li><strong>Check the license</strong> - Ensure it's AGPL-compatible</li>
-<li><strong>Add attribution</strong> - Comment with source and license</li>
-<li><strong>Preserve notices</strong> - Keep original copyright notices</li>
-<li><strong>Document</strong> - Note the source in commit messages</li>
-</ol>
-<p>Example:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># The following function is based on code from:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Source: https://github.com/example/project</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># License: MIT</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Copyright (c) 2024 Original Author</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">borrowed_function</span><span class="p">():</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Function borrowed from external source.&quot;&quot;&quot;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">pass</span>
+<h2 id="execution-workflow">Execution Workflow<a class="headerlink" href="#execution-workflow" title="Permanent link">&para;</a></h2>
+<p>Run from repository root.</p>
+<h3 id="step-1-prepare-environment">Step 1. Prepare Environment<a class="headerlink" href="#step-1-prepare-environment" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uv<span class="w"> </span>sync<span class="w"> </span>--extra<span class="w"> </span>all
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>build/license-compliance
 </span></code></pre></div>
-<h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Read the full <a href="https://github.com/WiktorHawrylik/your-package-name/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> guide</li>
-<li>Check the <a href="https://github.com/WiktorHawrylik/your-package-name/blob/main/LICENSE">LICENSE</a> file</li>
-<li>Review <a href="https://www.gnu.org/licenses/gpl-faq.html">AGPL-3.0 FAQ</a></li>
-</ul>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>The AGPL-3.0 license ensures:</p>
+<h3 id="step-2-validate-license-headers">Step 2. Validate License Headers<a class="headerlink" href="#step-2-validate-license-headers" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>scripts/license_audit_headers.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--roots<span class="w"> </span>src<span class="w"> </span>tests<span class="w"> </span>scripts<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--output<span class="w"> </span>build/license-compliance/header-audit.csv
+</span></code></pre></div>
+<h3 id="step-3-extract-dependency-licenses">Step 3. Extract Dependency Licenses<a class="headerlink" href="#step-3-extract-dependency-licenses" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>uv<span class="w"> </span>run<span class="w"> </span>pip-licenses<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--with-urls<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--with-authors<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--from<span class="o">=</span>mixed<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>--format<span class="o">=</span>csv<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>&gt;<span class="w"> </span>build/license-compliance/dependency-licenses.csv
+</span></code></pre></div>
+<h3 id="step-4-categorize-dependency-licenses">Step 4. Categorize Dependency Licenses<a class="headerlink" href="#step-4-categorize-dependency-licenses" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>scripts/license_audit_dependencies.py<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--input-csv<span class="w"> </span>build/license-compliance/dependency-licenses.csv<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--output-csv<span class="w"> </span>build/license-compliance/dependency-license-audit.csv
+</span></code></pre></div>
+<h3 id="step-5-verify-third-party-attribution-markers">Step 5. Verify Third-Party Attribution Markers<a class="headerlink" href="#step-5-verify-third-party-attribution-markers" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>:<span class="w"> </span>&gt;<span class="w"> </span>build/license-compliance/third-party-attribution-grep.txt
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">for</span><span class="w"> </span>d<span class="w"> </span><span class="k">in</span><span class="w"> </span>src<span class="w"> </span>tests<span class="w"> </span>scripts<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$d</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">continue</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>grep<span class="w"> </span>-R<span class="w"> </span>-n<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;Source:|License:|Copyright&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$d</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span>&gt;&gt;<span class="w"> </span>build/license-compliance/third-party-attribution-grep.txt<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">done</span>
+</span></code></pre></div>
+<p>If external code was copied or adapted, ensure nearby comments include:</p>
 <ol>
-<li><strong>Freedom</strong> - Anyone can use, modify, and distribute</li>
-<li><strong>Transparency</strong> - Source code must be available</li>
-<li><strong>Continuity</strong> - Derivatives remain free and open</li>
-<li><strong>Network protection</strong> - Cloud/SaaS use requires source disclosure</li>
+<li>Source URL</li>
+<li>Original license</li>
+<li>Copyright notice</li>
 </ol>
-<p>When in doubt, err on the side of:</p>
+<h2 id="output-artifacts">Output Artifacts<a class="headerlink" href="#output-artifacts" title="Permanent link">&para;</a></h2>
+<p>The audit must generate:</p>
 <ul>
-<li>More attribution</li>
-<li>More documentation</li>
-<li>More transparency</li>
-<li>Compatible licensing</li>
+<li><code>build/license-compliance/header-audit.csv</code></li>
+<li><code>build/license-compliance/dependency-licenses.csv</code></li>
+<li><code>build/license-compliance/dependency-license-audit.csv</code></li>
+<li><code>build/license-compliance/third-party-attribution-grep.txt</code></li>
 </ul>
-<hr />
-<p><strong>Remember</strong>: License compliance is not just legal necessity—it's respect for the open-source community and the collaborative spirit of software development.</p>
+<h2 id="passfail-criteria">Pass/Fail Criteria<a class="headerlink" href="#passfail-criteria" title="Permanent link">&para;</a></h2>
+<p>Pass only if:</p>
+<ol>
+<li><code>header-audit.csv</code> has zero <code>FAIL</code> rows.</li>
+<li><code>dependency-license-audit.csv</code> has zero <code>BLOCK</code> rows.</li>
+<li>Any <code>REVIEW</code> rows are resolved by a human maintainer and documented.</li>
+<li>Third-party copied/adapted code has attribution comments.</li>
+</ol>
+<h2 id="recommended-pr-summary-snippet">Recommended PR Summary Snippet<a class="headerlink" href="#recommended-pr-summary-snippet" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>License compliance audit completed.
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>- Header violations: &lt;N&gt;
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>- Blocked dependencies: &lt;N&gt;
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>- Review-required dependencies: &lt;N&gt;
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>- Third-party attribution checks: completed
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Artifacts: build/license-compliance/*
+</span></code></pre></div>
+<h2 id="incompatible-examples-block-by-default">Incompatible Examples (Block by Default)<a class="headerlink" href="#incompatible-examples-block-by-default" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Proprietary or closed-source licenses</li>
+<li>CC BY-NC and other non-commercial licenses</li>
+<li>GPL-2.0-only</li>
+<li>Custom restrictive licenses with field-of-use or redistribution limits</li>
+</ul>
+<h2 id="compatible-examples-generally-acceptable">Compatible Examples (Generally Acceptable)<a class="headerlink" href="#compatible-examples-generally-acceptable" title="Permanent link">&para;</a></h2>
+<ul>
+<li>AGPL-3.0, GPL-3.0, LGPL</li>
+<li>MIT, BSD (2/3-clause), Apache-2.0, ISC</li>
+<li>Public-domain equivalents (CC0, Unlicense)</li>
+</ul>
+<p>For edge cases, dual licenses, or unclear metadata, mark as <code>REVIEW</code> and escalate.</p>
 
 
 
