@@ -1,0 +1,4 @@
+interface:
+  display_name: "License Audit"
+  short_description: "Run AGPL license compliance audits"
+  default_prompt: "Run the AGPL license compliance workflow and summarize findings with artifact paths."

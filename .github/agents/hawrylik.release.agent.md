@@ -1,4 +1,6 @@
-TBD - always ask human gates
+# TBD - always ask human gates
+
+```chatagent
 files:
 
 - check version in pypi
@@ -8,3 +10,5 @@ files:
 
 Search for release in e.g. "CONTRIBUTING.md" and create notes in
 docs/guide/release.md change links etc.
+
+```

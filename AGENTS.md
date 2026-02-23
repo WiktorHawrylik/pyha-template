@@ -1,45 +1,38 @@
 # Agentic Development Rules
 
-These rules apply to humans and LLMs working in this repository.
+These rules apply to LLMs working in this repository.
 
 ## Mandatory Guardrails
 
-- Never commit secrets, credentials, or private keys.
-- Do not add network calls in tests (no HTTP, no API calls, no live services).
-- Keep public APIs stable; document any breaking changes explicitly.
-- Write tests for behavior changes and keep existing tests passing.
-- Prefer small, focused PRs.
-- Update documentation when changing public APIs or workflows.
-- Follow Conventional Commits for commit messages and PR titles.
+- Never modify protected files
 
-## Code Quality Standards
+### Protected files
 
-- **Type hints**: Required on ALL functions and methods
-- **Docstrings**: Google-style, comprehensive
-- **Tests**: Minimum 80% coverage
-- **Formatting**: Use `make format` before committing
-- **Type checking**: Pass `make lint` without errors
+- `AGENTS.md`
+- `.pre-commit-config.yaml`
+- `docs/development/_constitution.md`
+- `LICENSE`
 
-## Evaluation Checklist
+## Definition of done
 
-- [ ] Run `make format && make lint && make test`
-- [ ] Compare outputs before/after changes for regressions
-- [ ] Ensure `.pre-commit-config.yaml` hooks pass
-- [ ] Update CHANGELOG.md with changes
-- [ ] Update relevant documentation
+Before opening or merging a change, confirm all of the following:
 
-## Quick Commands
+- Make sure AGPL-3.0 compliance audit passes
+- Documentation is up to date and follow guidelines
+- Tests are up to date and follow guidelines
+- Branch name, commit message and PR title follow guidelines
 
-```bash
-make format      # Auto-format code
-make lint        # Check code quality
-make test        # Run tests
-make test-cov    # Run tests with coverage
-```
+## Skills
 
-## Documentation
+A skill is a set of local instructions stored in a `SKILL.md` file.
 
-For comprehensive guidelines, see:
+### Available skills
+
+- license-audit: Run AGPL-3.0 compliance audits (headers, dependency license classification, and third-party attribution checks). Use when asked to perform or verify license compliance. (file: .agents/skills/license-audit/SKILL.md)
+
+## Comprehensive guidelines
+
+Use comprehensive guidelines to solve any ambiguities, see:
 
 - **[AI Development Guide](docs/development/_constitution.md)** - Detailed AI coding patterns
 - **[Template Usage](docs/guide/template-usage.md)** - How to use this template

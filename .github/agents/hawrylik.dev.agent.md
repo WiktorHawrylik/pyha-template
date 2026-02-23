@@ -2,7 +2,7 @@
 
 Notes from past:
 
-# .cursorrules: Cursor AI Rules for This Project
+## .cursorrules: Cursor AI Rules for This Project
 
 ## Project Context
 

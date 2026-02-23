@@ -1,8 +1,8 @@
 # TBD - Push Agent
 
-# Git & Version Control
+## Git & Version Control
 
-#### Commit Message Format
+### Commit Message Format
 
 ```
 <type>(<scope>): <subject>
