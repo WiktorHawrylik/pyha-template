@@ -303,15 +303,20 @@ Available skills:
 
 | Skill | Description |
 |---|---|
-| `license-audit` | Run AGPL-3.0 compliance audits (headers, dependency licenses, third-party attribution) |
+| `ai-friendly-development` | Build or refactor Python repositories for safe extension by humans and AI agents |
 | `commit-readiness` | Prepare a branch for commit by fixing pre-commit failures and proposing a conventional commit message |
 | `documentation-update` | Update docs to match current code, tooling, and workflows |
+| `license-audit` | Run AGPL-3.0 compliance audits (headers, dependency licenses, third-party attribution) |
+| `release-preparation` | Prepare a SemVer release by checking versions, changelog coverage, release docs, and human approval gates |
 
 Skills are available by default in Codex and Copilot. For Claude Code, run:
 
 ```bash
 make setup-claude
 ```
+
+This command symlinks all repo skills from `.agents/skills/` into
+`.claude/skills/` for local Claude Code discovery.
 
 ### GitHub Copilot
 
@@ -394,29 +399,46 @@ uv sync
 ### Create a Release
 
 ```bash
-# Update version in pyproject.toml
-# version = "1.0.0"
+# 1. Start from develop and cut a release branch
+git checkout develop
+git pull origin develop
+git checkout -b release/1.0.0
 
-# Update CHANGELOG.md
-# ## [1.0.0] - 2024-XX-XX
-# ### Added
-# - Feature X
+# 2. Update version sources
+# pyproject.toml -> version = "1.0.0"
+# src/your_package_name/__init__.py -> __version__ = "1.0.0"
 
-# Commit
+# 3. Promote release notes from CHANGELOG.md Unreleased
+# ## [1.0.0] - YYYY-MM-DD
+# Release branch: release/1.0.0
+
+# 4. Commit the release branch
 git commit -am "chore: prepare release 1.0.0"
 
-# Tag
+# 5. Merge to main after review / explicit approval
+git checkout main
+git merge --no-ff release/1.0.0
+
+# 6. Tag the release
 git tag -a v1.0.0 -m "Release 1.0.0"
 
-# Push
+# 7. Push main and the tag
 git push origin main --tags
 
-# GitHub Actions will:
-# - Run tests
-# - Build package
-# - Publish to PyPI
-# - Create GitHub release
+# 8. Merge the release branch back to develop
+git checkout develop
+git merge --no-ff release/1.0.0
+git push origin develop
 ```
+
+The release workflow in `.github/workflows/release.yml` triggers on pushed tags
+matching `v*.*.*` and will build the package, publish to PyPI, and create a
+GitHub release.
+
+If you use AI agents for release prep, prefer the `release-preparation` skill:
+it can gather facts, update release files, and validate readiness, but it
+should stop for human approval before branch creation, tagging, pushing, or
+publishing.
 
 ## Troubleshooting
 

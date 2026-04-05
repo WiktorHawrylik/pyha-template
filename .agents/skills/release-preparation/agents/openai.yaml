@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Preparation"
+  short_description: "Prepare a SemVer release, validate it, and stop at human gates"
+  default_prompt: "Prepare this repository for release: verify the target version, update release files, validate readiness, and stop before any tag, push, merge, or publish action that needs human approval."

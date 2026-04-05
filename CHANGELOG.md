@@ -7,15 +7,27 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html). R
 
 ### Added
 
+- `ai-friendly-development` skill under `.agents/skills/ai-friendly-development/`:
+  patterns and workflow for building Python repositories safe for human and AI extension.
 - `commit-readiness` skill under `.agents/skills/commit-readiness/`: iterative
   pre-commit repair workflow with conventional commit message proposal.
 - `documentation-update` skill under `.agents/skills/documentation-update/`:
   evidence-driven docs maintenance workflow with strict validation gates.
+- `release-preparation` skill under `.agents/skills/release-preparation/`:
+  gated SemVer release-prep workflow covering version sources, changelog
+  promotion, collision checks, and pre-publish validation.
 
 ### Changed
 
 - Migrated commit-readiness workflow from `.github/agents/` and
   `.github/prompts/` to the unified `.agents/skills/` layout.
+- Migrated release workflow guidance from `.github/agents/` to the unified
+  `.agents/skills/` layout with explicit human approval gates.
+
+### Docs
+
+- Updated template and documentation standards to reflect current repo skill
+  discovery and the GitFlow-based release preparation workflow.
 
 ---
 

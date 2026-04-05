@@ -8,7 +8,7 @@ This guide defines documentation standards for AI agents and human developers to
 
 ```
 README.md              # Root: Project overview and quick start
-CONTRIBUTING.md        # Root: Contribution guidelines and setup
+CONTRIBUTING.md        # Root: Contribution, testing, and release workflow
 CHANGELOG.md           # Root: Version history and release notes
 LICENSE                # Root: AGPL-3.0 license text
 AGENTS.md              # Root: Agentic development rules (humans + AI)
@@ -42,8 +42,6 @@ docs/
 │   ├── mkdocs.md                 # Standards: Documentation guidelines (this file)
 │   ├── license-audit.md          # Guide: AGPL-3.0 compliance requirements
 │   ├── license-review-decisions.md # Generated: published dependency review decisions
-│   ├── testing.md                # Guide: Testing strategies and patterns
-│   └── workflows.md              # Guide: CI/CD pipelines and development flows
 │
 └── api/                          # 📚 API REFERENCE: Technical specifications
     ├── reference.md              # Reference: Auto-generated API docs (from docstrings)
@@ -312,8 +310,7 @@ erDiagram
 
 - `development/_constitution.md` → Non-negotiable AI coding rules (enforced via pre-commit)
 - `development/mkdocs.md` → Documentation update protocols (this file)
-- `development/testing.md` → Testing patterns, fixtures, coverage requirements
-- `development/workflows.md` → CI/CD, release process, deployment procedures
+- `CONTRIBUTING.md` → contributor workflow, testing expectations, GitFlow, release process
 - `development/license-audit.md` → AGPL-3.0 obligations, audit entrypoint, policy
 - `development/license-review-decisions.md` → generated published view of documented dependency approvals
 - `architecture/roadmap.md` → roadmap items moved out of the README
@@ -322,8 +319,7 @@ erDiagram
 
 - ✅ **_constitution.md**: Immutable coding standards with rationale
 - ✅ **mkdocs.md**: When/what/where to document, quality gates
-- ✅ **testing.md**: Test pyramid, naming conventions, fixture patterns, 80%+ coverage
-- ✅ **workflows.md**: GitHub Actions, pre-commit hooks, release checklist
+- ✅ **CONTRIBUTING.md**: contributor setup, testing expectations, branch strategy, release checklist
 - ✅ **license-audit.md**: AGPL-3.0 source disclosure, attribution, audit policy
 - ✅ **license-review-decisions.md**: generated maintainer decisions and approval references
 - ✅ **roadmap.md**: roadmap and deferred work kept in docs instead of the README
@@ -370,8 +366,8 @@ erDiagram
 When modifying code, update documentation in this **exact order** (do not skip steps):
 
 1. **`development/*.md`** → Update if you changed tools, standards, or workflows
-   - Modified pre-commit hooks? → Update `workflows.md`
-   - Changed testing patterns? → Update `testing.md`
+   - Modified pre-commit hooks or contributor workflow? → Update `CONTRIBUTING.md`
+   - Changed testing patterns or quality gates? → Update `CONTRIBUTING.md`
    - Added dependency with different license? → Update `license-audit.md`
 
 2. **`architecture/overview.md`** + diagrams → Update if component structure changed
@@ -784,7 +780,7 @@ Adopt Ruff as the single tool for formatting and linting, replacing Black, isort
 
 **Review Date**: 2024-07-15 (6 months post-adoption)
 
-**Related**: `development/workflows.md#pre-commit`, `pyproject.toml#tool.ruff`
+**Related**: `CONTRIBUTING.md`, `pyproject.toml#tool.ruff`
 ```
 
 ### ✅ Excellent API Contract Documentation

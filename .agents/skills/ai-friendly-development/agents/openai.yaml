@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI-Friendly Development"
+  short_description: "Build observable, reproducible Python systems for data, ML, and agentic workflows"
+  default_prompt: "Implement or refactor this Python change using AI-friendly development practices with explicit contracts, observability, evaluation coverage, and a five-pass review."

@@ -20,7 +20,7 @@ help:
 	@echo "  docs           - Build documentation with MkDocs"
 	@echo "  docs-serve     - Serve documentation locally"
 	@echo "  pre-commit     - Install pre-commit hooks"
-	@echo "  setup-claude   - Set up Claude Code symlinks for skills"
+	@echo "  setup-claude   - Set up Claude Code symlinks for repo skills"
 
 install:
 	uv pip install -e .
@@ -93,7 +93,21 @@ pre-commit:
 
 setup-claude:
 	mkdir -p .claude/skills
-	ln -sf ../../.agents/skills/license-audit .claude/skills/license-audit
+	@for link in .claude/skills/*; do \
+		[ -L "$$link" ] || continue; \
+		target=$$(readlink "$$link"); \
+		case "$$target" in \
+			../../.agents/skills/*) \
+				skill_name=$$(basename "$$link"); \
+				[ -d ".agents/skills/$$skill_name" ] || rm -f "$$link"; \
+				;; \
+		esac; \
+	done
+	@for skill_dir in .agents/skills/*; do \
+		[ -d "$$skill_dir" ] || continue; \
+		skill_name=$$(basename "$$skill_dir"); \
+		ln -sfn "../../.agents/skills/$$skill_name" ".claude/skills/$$skill_name"; \
+	done
 	@echo "✓ Claude Code symlinks set up!"
 
 clean-data:
