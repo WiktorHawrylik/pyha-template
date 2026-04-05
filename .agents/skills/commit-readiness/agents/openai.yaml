@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Readiness"
+  short_description: "Fix pre-commit failures and prepare a clean commit"
+  default_prompt: "Get the current branch to a clean pre-commit state, summarize what changed, and propose a conventional commit message."
