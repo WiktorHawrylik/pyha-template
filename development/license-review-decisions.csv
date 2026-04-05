@@ -1,0 +1,4 @@
+Name,Version,License,Decision,ReviewedBy,ReviewedOn,Reference,Rationale
+certifi,2026.1.4,Mozilla Public License 2.0 (MPL 2.0),APPROVED,WiktorHawrylik,2026-04-05,https://www.gnu.org/licenses/license-list.html#MPL-2.0,MPL-2.0 used as library dependency only; no source modification; compatible with AGPL distribution
+hypothesis,6.151.6,MPL-2.0,APPROVED,WiktorHawrylik,2026-04-05,https://www.gnu.org/licenses/license-list.html#MPL-2.0,Test-only dependency; not linked into distributed artifact
+pathspec,1.0.4,Mozilla Public License 2.0 (MPL 2.0),APPROVED,WiktorHawrylik,2026-04-05,https://www.gnu.org/licenses/license-list.html#MPL-2.0,MPL-2.0 used as library dependency only; no source modification

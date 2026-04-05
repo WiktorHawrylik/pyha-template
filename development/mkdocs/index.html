@@ -1140,6 +1140,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license-review-decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Review Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1557,13 +1585,14 @@
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   ├── _constitution.md          # Standards: AI agent coding rules (NON-NEGOTIABLE)
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│   ├── mkdocs.md                 # Standards: Documentation guidelines (this file)
 </span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│   ├── license-audit.md          # Guide: AGPL-3.0 compliance requirements
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   ├── testing.md                # Guide: Testing strategies and patterns
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   └── workflows.md              # Guide: CI/CD pipelines and development flows
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>└── api/                          # 📚 API REFERENCE: Technical specifications
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    ├── reference.md              # Reference: Auto-generated API docs (from docstrings)
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    ├── integration-guide.md      # Tutorial: How to integrate with external systems
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    └── contracts.md              # Spec: API contracts, schemas, and guarantees
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   ├── license-review-decisions.md # Generated: published dependency review decisions
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   ├── testing.md                # Guide: Testing strategies and patterns
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   └── workflows.md              # Guide: CI/CD pipelines and development flows
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>└── api/                          # 📚 API REFERENCE: Technical specifications
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    ├── reference.md              # Reference: Auto-generated API docs (from docstrings)
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    ├── integration-guide.md      # Tutorial: How to integrate with external systems
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    └── contracts.md              # Spec: API contracts, schemas, and guarantees
 </span></code></pre></div>
 <p><strong>Documentation Responsibilities by Purpose</strong></p>
 <table>
@@ -1854,7 +1883,8 @@
 <li><code>development/mkdocs.md</code> → Documentation update protocols (this file)</li>
 <li><code>development/testing.md</code> → Testing patterns, fixtures, coverage requirements</li>
 <li><code>development/workflows.md</code> → CI/CD, release process, deployment procedures</li>
-<li><code>development/license-audit.md</code> → AGPL-3.0 obligations, dependency auditing</li>
+<li><code>development/license-audit.md</code> → AGPL-3.0 obligations, audit entrypoint, policy</li>
+<li><code>development/license-review-decisions.md</code> → generated published view of documented dependency approvals</li>
 </ul>
 <p><strong>Content Requirements</strong>:</p>
 <ul>
@@ -1862,7 +1892,8 @@
 <li>✅ <strong>mkdocs.md</strong>: When/what/where to document, quality gates</li>
 <li>✅ <strong>testing.md</strong>: Test pyramid, naming conventions, fixture patterns, 80%+ coverage</li>
 <li>✅ <strong>workflows.md</strong>: GitHub Actions, pre-commit hooks, release checklist</li>
-<li>✅ <strong>license-audit.md</strong>: AGPL-3.0 source disclosure, attribution, audit process</li>
+<li>✅ <strong>license-audit.md</strong>: AGPL-3.0 source disclosure, attribution, audit policy</li>
+<li>✅ <strong>license-review-decisions.md</strong>: generated maintainer decisions and approval references</li>
 </ul>
 <p><strong>Quality Bar</strong>: Enforceable via automated tools (pre-commit, CI/CD)</p>
 <h3 id="9-configuration-reference-guideconfigurationmd">9. Configuration Reference → <code>guide/configuration.md</code><a class="headerlink" href="#9-configuration-reference-guideconfigurationmd" title="Permanent link">&para;</a></h3>
