@@ -285,16 +285,44 @@ if __name__ == "__main__":
 
 This template is optimized for AI coding assistants:
 
+### Agentic Rules
+
+All agents must read `AGENTS.md` before contributing. It defines:
+
+- Mandatory guardrails and protected files
+- Definition of done requirements
+- Available skills and how to invoke them
+
+### Agent Skills
+
+Reusable workflows are packaged as skills under `.agents/skills/`. Each skill
+folder contains a `SKILL.md` with instructions and a `references/` directory
+with detailed runbooks.
+
+Available skills:
+
+| Skill | Description |
+|---|---|
+| `license-audit` | Run AGPL-3.0 compliance audits (headers, dependency licenses, third-party attribution) |
+| `commit-readiness` | Prepare a branch for commit by fixing pre-commit failures and proposing a conventional commit message |
+| `documentation-update` | Update docs to match current code, tooling, and workflows |
+
+Skills are available by default in Codex and Copilot. For Claude Code, run:
+
+```bash
+make setup-claude
+```
+
 ### GitHub Copilot
 
 - Read `.github/copilot-instructions.md`
-- Copilot will use template patterns
+- Skills are auto-discovered from `.agents/skills/`
 - Suggestions will match code style
 
 ### ChatGPT/Claude
 
-- Share AI development guide for context
-- Provide CONTRIBUTING.md for guidelines
+- Share `AGENTS.md` and the AI development guide for context
+- Provide `CONTRIBUTING.md` for guidelines
 - Reference existing code for patterns
 
 ## Best Practices

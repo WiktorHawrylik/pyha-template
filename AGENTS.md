@@ -27,6 +27,8 @@ Before opening or merging a change, confirm all of the following:
 
 A skill are set of local instructions stored in a `.agents/skills` directory.
 
+- commit-readiness: Prepare a branch for commit by iteratively fixing pre-commit failures, validating with command evidence, and proposing a conventional commit message (file: .agents/skills/commit-readiness/SKILL.md).
+- documentation-update: Update repository documentation so it matches current code, tooling, workflows, and navigation (file: .agents/skills/documentation-update/SKILL.md)
 - license-audit: Run AGPL-3.0 compliance audits (headers, dependency license classification, and third-party attribution checks). Use when asked to perform or verify license compliance. (file: .agents/skills/license-audit/SKILL.md)
 
 By default those are available in Codex and Copilot, for Claude you need additional set up:

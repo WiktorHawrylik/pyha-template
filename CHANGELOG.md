@@ -3,6 +3,22 @@
 All notable changes to this project are documented in this file.
 Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html). Release workflow follows GitFlow release branches (cut from develop, then merge to main and back to develop): [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
 
+## [Unreleased]
+
+### Added
+
+- `commit-readiness` skill under `.agents/skills/commit-readiness/`: iterative
+  pre-commit repair workflow with conventional commit message proposal.
+- `documentation-update` skill under `.agents/skills/documentation-update/`:
+  evidence-driven docs maintenance workflow with strict validation gates.
+
+### Changed
+
+- Migrated commit-readiness workflow from `.github/agents/` and
+  `.github/prompts/` to the unified `.agents/skills/` layout.
+
+---
+
 ## [0.0.0] - 0000-00-00
 
 ### Added

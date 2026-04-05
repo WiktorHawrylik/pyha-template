@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Update"
+  short_description: "Update docs to match code, workflows, and navigation"
+  default_prompt: "Update the relevant documentation, verify it against repository behavior, and summarize the validation results."
