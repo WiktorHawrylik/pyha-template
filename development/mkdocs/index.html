@@ -1662,7 +1662,7 @@
 <h2 id="where-must-be-documented">Where Must Be Documented<a class="headerlink" href="#where-must-be-documented" title="Permanent link">&para;</a></h2>
 <p><strong>Target Documentation Structure</strong></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>README.md              # Root: Project overview and quick start
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>CONTRIBUTING.md        # Root: Contribution guidelines and setup
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>CONTRIBUTING.md        # Root: Contribution, testing, and release workflow
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>CHANGELOG.md           # Root: Version history and release notes
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>LICENSE                # Root: AGPL-3.0 license text
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>AGENTS.md              # Root: Agentic development rules (humans + AI)
@@ -1696,13 +1696,11 @@
 </span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│   ├── mkdocs.md                 # Standards: Documentation guidelines (this file)
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   ├── license-audit.md          # Guide: AGPL-3.0 compliance requirements
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   ├── license-review-decisions.md # Generated: published dependency review decisions
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   ├── testing.md                # Guide: Testing strategies and patterns
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│   └── workflows.md              # Guide: CI/CD pipelines and development flows
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>└── api/                          # 📚 API REFERENCE: Technical specifications
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    ├── reference.md              # Reference: Auto-generated API docs (from docstrings)
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    ├── integration-guide.md      # Tutorial: How to integrate with external systems
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    └── contracts.md              # Spec: API contracts, schemas, and guarantees
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>└── api/                          # 📚 API REFERENCE: Technical specifications
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    ├── reference.md              # Reference: Auto-generated API docs (from docstrings)
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    ├── integration-guide.md      # Tutorial: How to integrate with external systems
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    └── contracts.md              # Spec: API contracts, schemas, and guarantees
 </span></code></pre></div>
 <p><strong>Documentation Responsibilities by Purpose</strong></p>
 <table>
@@ -1991,8 +1989,7 @@
 <ul>
 <li><code>development/_constitution.md</code> → Non-negotiable AI coding rules (enforced via pre-commit)</li>
 <li><code>development/mkdocs.md</code> → Documentation update protocols (this file)</li>
-<li><code>development/testing.md</code> → Testing patterns, fixtures, coverage requirements</li>
-<li><code>development/workflows.md</code> → CI/CD, release process, deployment procedures</li>
+<li><code>CONTRIBUTING.md</code> → contributor workflow, testing expectations, GitFlow, release process</li>
 <li><code>development/license-audit.md</code> → AGPL-3.0 obligations, audit entrypoint, policy</li>
 <li><code>development/license-review-decisions.md</code> → generated published view of documented dependency approvals</li>
 <li><code>architecture/roadmap.md</code> → roadmap items moved out of the README</li>
@@ -2001,8 +1998,7 @@
 <ul>
 <li>✅ <strong>_constitution.md</strong>: Immutable coding standards with rationale</li>
 <li>✅ <strong>mkdocs.md</strong>: When/what/where to document, quality gates</li>
-<li>✅ <strong>testing.md</strong>: Test pyramid, naming conventions, fixture patterns, 80%+ coverage</li>
-<li>✅ <strong>workflows.md</strong>: GitHub Actions, pre-commit hooks, release checklist</li>
+<li>✅ <strong>CONTRIBUTING.md</strong>: contributor setup, testing expectations, branch strategy, release checklist</li>
 <li>✅ <strong>license-audit.md</strong>: AGPL-3.0 source disclosure, attribution, audit policy</li>
 <li>✅ <strong>license-review-decisions.md</strong>: generated maintainer decisions and approval references</li>
 <li>✅ <strong>roadmap.md</strong>: roadmap and deferred work kept in docs instead of the README</li>
@@ -2040,8 +2036,8 @@
 <p>When modifying code, update documentation in this <strong>exact order</strong> (do not skip steps):</p>
 <ol>
 <li><strong><code>development/*.md</code></strong> → Update if you changed tools, standards, or workflows</li>
-<li>Modified pre-commit hooks? → Update <code>workflows.md</code></li>
-<li>Changed testing patterns? → Update <code>testing.md</code></li>
+<li>Modified pre-commit hooks or contributor workflow? → Update <code>CONTRIBUTING.md</code></li>
+<li>Changed testing patterns or quality gates? → Update <code>CONTRIBUTING.md</code></li>
 <li>
 <p>Added dependency with different license? → Update <code>license-audit.md</code></p>
 </li>
@@ -2459,7 +2455,7 @@
 </span><span id="__span-8-71"><a id="__codelineno-8-71" name="__codelineno-8-71" href="#__codelineno-8-71"></a>
 </span><span id="__span-8-72"><a id="__codelineno-8-72" name="__codelineno-8-72" href="#__codelineno-8-72"></a>**Review Date**: 2024-07-15 (6 months post-adoption)
 </span><span id="__span-8-73"><a id="__codelineno-8-73" name="__codelineno-8-73" href="#__codelineno-8-73"></a>
-</span><span id="__span-8-74"><a id="__codelineno-8-74" name="__codelineno-8-74" href="#__codelineno-8-74"></a>**Related**: `development/workflows.md#pre-commit`, `pyproject.toml#tool.ruff`
+</span><span id="__span-8-74"><a id="__codelineno-8-74" name="__codelineno-8-74" href="#__codelineno-8-74"></a>**Related**: `CONTRIBUTING.md`, `pyproject.toml#tool.ruff`
 </span></code></pre></div>
 <h3 id="excellent-api-contract-documentation">✅ Excellent API Contract Documentation<a class="headerlink" href="#excellent-api-contract-documentation" title="Permanent link">&para;</a></h3>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gu">## POST /api/v1/data/process</span>
