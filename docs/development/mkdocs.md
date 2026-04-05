@@ -32,6 +32,7 @@ docs/
 │   ├── functional-requirements.md       # Spec: Business logic and user stories
 │   ├── non-functional-requirements.md   # Spec: Performance, security, scalability
 │   ├── data-models.md                   # Reference: Domain entities and relationships
+│   ├── roadmap.md                       # Roadmap: planned work and deferred ideas
 │   └── decisions/                       # 📋 ADRs: Architecture Decision Records
 │       ├── adr-001-template.md          # Template: ADR format and structure
 │       └── adr-002-example.md           # Example: Sample architecture decision
@@ -315,6 +316,7 @@ erDiagram
 - `development/workflows.md` → CI/CD, release process, deployment procedures
 - `development/license-audit.md` → AGPL-3.0 obligations, audit entrypoint, policy
 - `development/license-review-decisions.md` → generated published view of documented dependency approvals
+- `architecture/roadmap.md` → roadmap items moved out of the README
 
 **Content Requirements**:
 
@@ -324,6 +326,7 @@ erDiagram
 - ✅ **workflows.md**: GitHub Actions, pre-commit hooks, release checklist
 - ✅ **license-audit.md**: AGPL-3.0 source disclosure, attribution, audit policy
 - ✅ **license-review-decisions.md**: generated maintainer decisions and approval references
+- ✅ **roadmap.md**: roadmap and deferred work kept in docs instead of the README
 
 **Quality Bar**: Enforceable via automated tools (pre-commit, CI/CD)
 

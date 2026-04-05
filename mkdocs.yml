@@ -83,6 +83,8 @@ nav:
   - API Reference:
       - Core: api/core.md
       - Utils: api/utils.md
+  - Architecture:
+      - Roadmap: architecture/roadmap.md
   - Development:
       - Contributing: contributing.md
       - AI Development: development/_constitution.md
