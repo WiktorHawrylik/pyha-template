@@ -10,7 +10,7 @@ Usage:
 
 Options:
   --repo-root <path>     Repository root to audit (default: current directory)
-  --roots <csv>          Comma-separated roots (default: src,tests,scripts)
+  --roots <csv>          Comma-separated roots (default: src,tests,scripts,.agents/skills/license-audit/scripts)
   --output-dir <path>    Artifact output directory (default: build/license-compliance)
   --skip-sync            Skip `uv sync --extra all`
   --help                 Show this help
@@ -18,10 +18,13 @@ EOF
 }
 
 repo_root="$(pwd)"
-roots_csv="src,tests,scripts"
+roots_csv="src,tests,scripts,.agents/skills/license-audit/scripts"
 output_dir="build/license-compliance"
 skip_sync="false"
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+header_script="${script_dir}/license_audit_headers.py"
+dependency_script="${script_dir}/license_audit_dependencies.py"
+review_markdown_script="${script_dir}/generate_review_decisions_markdown.py"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -73,12 +76,16 @@ cd "$repo_root" || {
   exit 1
 }
 
-if [[ ! -f "scripts/license_audit_headers.py" ]]; then
-  echo "[ERROR] Missing script: scripts/license_audit_headers.py" >&2
+if [[ ! -f "${header_script}" ]]; then
+  echo "[ERROR] Missing script: ${header_script}" >&2
   exit 1
 fi
-if [[ ! -f "scripts/license_audit_dependencies.py" ]]; then
-  echo "[ERROR] Missing script: scripts/license_audit_dependencies.py" >&2
+if [[ ! -f "${dependency_script}" ]]; then
+  echo "[ERROR] Missing script: ${dependency_script}" >&2
+  exit 1
+fi
+if [[ ! -f "${review_markdown_script}" ]]; then
+  echo "[ERROR] Missing script: ${review_markdown_script}" >&2
   exit 1
 fi
 
@@ -105,7 +112,7 @@ else
   echo "[INFO] Skipping environment sync."
 fi
 
-header_cmd=(uv run python scripts/license_audit_headers.py --roots)
+header_cmd=(uv run python "${header_script}" --roots)
 for root in "${roots[@]}"; do
   if [[ -n "$root" ]]; then
     header_cmd+=("$root")
@@ -130,7 +137,7 @@ else
 fi
 
 run_step "Categorize dependency licenses" \
-  uv run python scripts/license_audit_dependencies.py \
+  uv run python "${dependency_script}" \
     --input-csv "${output_dir}/dependency-licenses.csv" \
     --output-csv "${output_dir}/dependency-license-audit.csv"
 
@@ -139,10 +146,21 @@ echo "==> Verify third-party attribution markers"
 : > "${output_dir}/third-party-attribution-grep.txt"
 for root in "${roots[@]}"; do
   [[ -d "$root" ]] || continue
-  grep -R -n -E "Source:|License:|Copyright" "$root" \
-    >> "${output_dir}/third-party-attribution-grep.txt" || true
+  while IFS= read -r -d '' file_path; do
+    grep -n -I -E "Source:|License:|Copyright" "$file_path" \
+      >> "${output_dir}/third-party-attribution-grep.txt" || true
+  done < <(
+    find "$root" \
+      \( -name "__pycache__" -o -name "*.egg-info" \) -prune -o \
+      -type f ! -name "*.pyc" -print0
+  )
 done
 echo "[OK] Verify third-party attribution markers"
+
+run_step "Generate review decisions page" \
+  uv run python "${review_markdown_script}" \
+    --input-csv "docs/development/license-review-decisions.csv" \
+    --output-md "docs/development/license-review-decisions.md"
 
 run_step "Summarize audit results" \
   uv run python "${script_dir}/summarize_license_audit.py" \

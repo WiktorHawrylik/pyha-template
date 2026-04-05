@@ -40,6 +40,7 @@ docs/
 │   ├── _constitution.md          # Standards: AI agent coding rules (NON-NEGOTIABLE)
 │   ├── mkdocs.md                 # Standards: Documentation guidelines (this file)
 │   ├── license-audit.md          # Guide: AGPL-3.0 compliance requirements
+│   ├── license-review-decisions.md # Generated: published dependency review decisions
 │   ├── testing.md                # Guide: Testing strategies and patterns
 │   └── workflows.md              # Guide: CI/CD pipelines and development flows
 │
@@ -312,7 +313,8 @@ erDiagram
 - `development/mkdocs.md` → Documentation update protocols (this file)
 - `development/testing.md` → Testing patterns, fixtures, coverage requirements
 - `development/workflows.md` → CI/CD, release process, deployment procedures
-- `development/license-audit.md` → AGPL-3.0 obligations, dependency auditing
+- `development/license-audit.md` → AGPL-3.0 obligations, audit entrypoint, policy
+- `development/license-review-decisions.md` → generated published view of documented dependency approvals
 
 **Content Requirements**:
 
@@ -320,7 +322,8 @@ erDiagram
 - ✅ **mkdocs.md**: When/what/where to document, quality gates
 - ✅ **testing.md**: Test pyramid, naming conventions, fixture patterns, 80%+ coverage
 - ✅ **workflows.md**: GitHub Actions, pre-commit hooks, release checklist
-- ✅ **license-audit.md**: AGPL-3.0 source disclosure, attribution, audit process
+- ✅ **license-audit.md**: AGPL-3.0 source disclosure, attribution, audit policy
+- ✅ **license-review-decisions.md**: generated maintainer decisions and approval references
 
 **Quality Bar**: Enforceable via automated tools (pre-commit, CI/CD)
 

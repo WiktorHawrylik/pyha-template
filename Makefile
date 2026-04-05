@@ -1,4 +1,4 @@
-.PHONY: help install install-dev install-docs install-all test test-cov test-fast lint format format-check clean clean-data docs docs-serve pre-commit
+.PHONY: help install install-dev install-docs install-all test test-cov test-fast lint format format-check clean clean-data docs docs-serve pre-commit setup-claude
 
 # Default target
 help:
@@ -20,6 +20,7 @@ help:
 	@echo "  docs           - Build documentation with MkDocs"
 	@echo "  docs-serve     - Serve documentation locally"
 	@echo "  pre-commit     - Install pre-commit hooks"
+	@echo "  setup-claude   - Set up Claude Code symlinks for skills"
 
 install:
 	uv pip install -e .
@@ -89,6 +90,11 @@ docs-serve:
 pre-commit:
 	uv run pre-commit install
 	@echo "✓ Pre-commit hooks installed!"
+
+setup-claude:
+	mkdir -p .claude/skills
+	ln -sf ../../.agents/skills/license-audit .claude/skills/license-audit
+	@echo "✓ Claude Code symlinks set up!"
 
 clean-data:
 	@echo "Cleaning data cache and temporary files..."

@@ -39,6 +39,10 @@ ALLOW_PATTERNS: tuple[str, ...] = (
     "LGPL",
     "GPL-3.0",
     "AGPL-3.0",
+    "AGPLv3+",
+    "GNU Affero General Public License",
+    "GPLv3+",
+    "GNU General Public License v3 or later",
 )
 REVIEW_PATTERNS: tuple[str, ...] = (
     "MPL",
@@ -112,20 +116,30 @@ def build_audit_rows(input_csv: Path) -> list[dict[str, str]]:
         Rows enriched with computed `Category`.
     """
     rows: list[dict[str, str]] = []
+    seen_rows: set[tuple[str, str, str, str, str]] = set()
     with input_csv.open(encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         for row in reader:
             license_value = row.get("License", "")
-            rows.append(
-                {
-                    "Name": row.get("Name", ""),
-                    "Version": row.get("Version", ""),
-                    "License": license_value,
-                    "Category": classify_license(license_value),
-                    "Author": row.get("Author", ""),
-                    "URL": row.get("URL", ""),
-                }
+            audit_row = {
+                "Name": row.get("Name", ""),
+                "Version": row.get("Version", ""),
+                "License": license_value,
+                "Category": classify_license(license_value),
+                "Author": row.get("Author", ""),
+                "URL": row.get("URL", ""),
+            }
+            row_key = (
+                audit_row["Name"],
+                audit_row["Version"],
+                audit_row["License"],
+                audit_row["Author"],
+                audit_row["URL"],
             )
+            if row_key in seen_rows:
+                continue
+            seen_rows.add(row_key)
+            rows.append(audit_row)
     return rows
 
 

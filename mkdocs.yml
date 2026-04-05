@@ -88,6 +88,7 @@ nav:
       - AI Development: development/_constitution.md
       - Documentation Standards: development/mkdocs.md
       - License Audit: development/license-audit.md
+      - License Review Decisions: development/license-review-decisions.md
   - About:
       - Changelog: changelog.md
       - License: license.md

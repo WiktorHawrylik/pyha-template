@@ -4,14 +4,15 @@ These rules apply to LLMs working in this repository.
 
 ## Mandatory Guardrails
 
-- Never modify protected files
+- Never modify protected files or directories
 
-### Protected files
+### Protected files or directories
 
 - `AGENTS.md`
 - `.pre-commit-config.yaml`
 - `docs/development/_constitution.md`
 - `LICENSE`
+- `.agents/skills/license-audit`
 
 ## Definition of done
 
@@ -22,13 +23,19 @@ Before opening or merging a change, confirm all of the following:
 - Tests are up to date and follow guidelines
 - Branch name, commit message and PR title follow guidelines
 
-## Skills
-
-A skill is a set of local instructions stored in a `SKILL.md` file.
-
 ### Available skills
 
+A skill are set of local instructions stored in a `.agents/skills` directory.
+
 - license-audit: Run AGPL-3.0 compliance audits (headers, dependency license classification, and third-party attribution checks). Use when asked to perform or verify license compliance. (file: .agents/skills/license-audit/SKILL.md)
+
+By default those are available in Codex and Copilot, for Claude you need additional set up:
+
+```bash
+make setup-claude
+```
+
+This creates symlinks in `.claude/skills/` that allow Claude Code to discover skills from `.agents/skills/`.
 
 ## Comprehensive guidelines
 

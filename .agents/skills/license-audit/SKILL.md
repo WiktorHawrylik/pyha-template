@@ -30,15 +30,17 @@ Use bundled scripts for deterministic execution and the reference runbook for po
 ## Workflow
 
 1. Prepare environment with `uv sync --extra all` unless the user explicitly asks to skip sync.
-2. Validate AGPL headers with `scripts/license_audit_headers.py`.
+2. Validate AGPL headers with `.agents/skills/license-audit/scripts/license_audit_headers.py`.
 3. Export dependency metadata with `pip-licenses`.
-4. Categorize dependency licenses with `scripts/license_audit_dependencies.py`.
-5. Collect attribution markers (`Source:`, `License:`, `Copyright`) under target roots.
-6. Summarize and gate with `scripts/summarize_license_audit.py`.
+4. Categorize dependency licenses with `.agents/skills/license-audit/scripts/license_audit_dependencies.py`.
+5. Resolve any `REVIEW` rows in `docs/development/license-review-decisions.csv`.
+6. Generate `docs/development/license-review-decisions.md` from the CSV.
+7. Collect attribution markers (`Source:`, `License:`, `Copyright`) under target roots.
+8. Summarize and gate with `.agents/skills/license-audit/scripts/summarize_license_audit.py`.
 
 Use defaults when the user does not override:
 
-- Roots: `src,tests,scripts`
+- Roots: `src,tests,scripts,.agents/skills/license-audit/scripts`
 - Output directory: `build/license-compliance`
 
 Run with explicit options when needed:
@@ -46,7 +48,7 @@ Run with explicit options when needed:
 ```bash
 .agents/skills/license-audit/scripts/run_license_audit.sh \
   --repo-root <repo-root> \
-  --roots src,tests,scripts \
+  --roots src,tests,scripts,.agents/skills/license-audit/scripts \
   --output-dir build/license-compliance
 ```
 
@@ -58,6 +60,7 @@ Always produce:
 - `build/license-compliance/dependency-licenses.csv`
 - `build/license-compliance/dependency-license-audit.csv`
 - `build/license-compliance/third-party-attribution-grep.txt`
+- `docs/development/license-review-decisions.md`
 
 Always include a summary block:
 
@@ -76,10 +79,12 @@ Fail audit when either condition is true:
 
 - `header-audit.csv` contains one or more `FAIL` rows.
 - `dependency-license-audit.csv` contains one or more `BLOCK` rows.
+- `dependency-license-audit.csv` contains one or more unresolved `REVIEW` rows.
 
 Escalate to a human maintainer when either condition is true:
 
-- `dependency-license-audit.csv` contains one or more `REVIEW` rows.
+- `dependency-license-audit.csv` contains one or more `REVIEW` rows that are
+  not yet documented in `docs/development/license-review-decisions.csv`.
 - Copied/adapted third-party code lacks source/license attribution.
 
 ## References

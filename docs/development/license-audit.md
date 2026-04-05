@@ -1,7 +1,9 @@
-# License Compliance Guide (Agent-Executable, v2)
+# License Compliance Guide
 
 This project is licensed under **AGPL-3.0-or-later**.
-This guide is designed for humans and AI agents to run a repeatable compliance audit.
+This page is the human-facing policy guide for AGPL compliance in this repository.
+The executable workflow lives in the self-contained skill under
+`.agents/skills/license-audit/`.
 
 Legal note: this is an engineering compliance workflow, not legal advice.
 If any result is ambiguous, escalate to a human maintainer for final review.
@@ -13,24 +15,40 @@ Verify all of the following before merge:
 1. Python source files include the required AGPL header text.
 2. Dependency licenses are inventoried and categorized.
 3. Disallowed licenses are blocked.
-4. Third-party code usage is attributed and documented.
+4. Review-required dependency licenses are resolved and documented.
+5. Third-party code usage is attributed and documented.
 
-## Scope
+## Standard Workflow
 
-- Python files in `src/`, `tests/`, and `scripts/`
-- Dependencies declared in `pyproject.toml` and resolved in `uv.lock`
-- Third-party code copied or adapted into this repository
+Run the orchestrator from repository root:
 
-## Required Tools
+```bash
+.agents/skills/license-audit/scripts/run_license_audit.sh --repo-root .
+```
 
-- `uv`
-- `find` (default macOS)
-- `grep` (default macOS)
-- `python` via `uv run python`
+For non-default roots, pass them explicitly:
+
+```bash
+.agents/skills/license-audit/scripts/run_license_audit.sh \
+  --repo-root . \
+  --roots src,tests,scripts,.agents/skills/license-audit/scripts
+```
+
+Use the skill when you want the full repeatable workflow:
+
+- Header validation
+- Dependency inventory and classification
+- Review-decision page generation
+- Third-party attribution scan
+- Final pass/fail summary
+
+Published review decisions are available in
+[License Review Decisions](license-review-decisions.md).
 
 ## Required Header Template
 
-Each Python module must contain AGPL notice text equivalent to:
+Each Python module must contain AGPL notice text equivalent to a top-level
+module docstring:
 
 ```python
 """[Module description]
@@ -52,60 +70,43 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 ```
 
+The automated audit validates:
+
+- The header lives in the module docstring (not only in comments elsewhere).
+- A module description appears before the copyright line.
+- The copyright line includes a year and copyright holder.
+- The required AGPL notice text is present in that docstring.
+
 Required variables:
 
 - `[Module description]`: concise, module-specific summary.
 - `[YYYY]`: current year.
 - `[Your Name]`: contributor full name.
 
-## Execution Workflow
+## Review Decisions
 
-Run from repository root.
+If the dependency audit produces `REVIEW` rows, record maintainer decisions in
+`docs/development/license-review-decisions.csv`.
 
-### Step 1. Prepare Environment
+Required columns:
 
-```bash
-uv sync --extra all
-mkdir -p build/license-compliance
-```
+- `Name`
+- `Version`
+- `License`
+- `Decision`
+- `ReviewedBy`
+- `ReviewedOn`
+- `Reference`
+- `Rationale`
 
-### Step 2. Validate License Headers
+Use `Decision=APPROVED` only after a human maintainer has reviewed the license
+terms and recorded both the rationale and the reference used for that approval.
 
-```bash
-uv run python scripts/license_audit_headers.py \
-  --roots src tests scripts \
-  --output build/license-compliance/header-audit.csv
-```
+The published Markdown page at `development/license-review-decisions/` is
+generated from the CSV by
+`.agents/skills/license-audit/scripts/generate_review_decisions_markdown.py`.
 
-### Step 3. Extract Dependency Licenses
-
-```bash
-uv run pip-licenses \
-  --with-urls \
-  --with-authors \
-  --from=mixed \
-  --format=csv \
-  > build/license-compliance/dependency-licenses.csv
-```
-
-### Step 4. Categorize Dependency Licenses
-
-```bash
-uv run python scripts/license_audit_dependencies.py \
-  --input-csv build/license-compliance/dependency-licenses.csv \
-  --output-csv build/license-compliance/dependency-license-audit.csv
-```
-
-### Step 5. Verify Third-Party Attribution Markers
-
-```bash
-: > build/license-compliance/third-party-attribution-grep.txt
-for d in src tests scripts; do
-  [ -d "$d" ] || continue
-  grep -R -n -E "Source:|License:|Copyright" "$d" \
-    >> build/license-compliance/third-party-attribution-grep.txt || true
-done
-```
+## Third-Party Attribution
 
 If external code was copied or adapted, ensure nearby comments include:
 
@@ -128,7 +129,7 @@ Pass only if:
 
 1. `header-audit.csv` has zero `FAIL` rows.
 2. `dependency-license-audit.csv` has zero `BLOCK` rows.
-3. Any `REVIEW` rows are resolved by a human maintainer and documented.
+3. Any `REVIEW` rows are resolved in `docs/development/license-review-decisions.csv`.
 4. Third-party copied/adapted code has attribution comments.
 
 ## Recommended PR Summary Snippet

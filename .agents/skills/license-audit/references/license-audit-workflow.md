@@ -9,11 +9,13 @@ Verify all of the following before merge:
 1. Python source files include the required AGPL header text.
 2. Dependency licenses are inventoried and categorized.
 3. Disallowed licenses are blocked.
-4. Third-party copied/adapted code is attributed.
+4. Review-required dependency licenses are resolved and documented.
+5. Published review-decision documentation is generated from the CSV.
+6. Third-party copied/adapted code is attributed.
 
 ## Scope
 
-- Python files in `src/`, `tests/`, and `scripts/`
+- Python files in `src/`, `tests/`, `scripts/`, and `.agents/skills/license-audit/scripts/`
 - Dependencies declared in `pyproject.toml` and resolved in `uv.lock`
 - Third-party code copied or adapted into repository files
 
@@ -26,7 +28,8 @@ Verify all of the following before merge:
 
 ## Required Header Template
 
-Require every Python module to contain AGPL notice text equivalent to:
+Require every Python module to contain AGPL notice text equivalent to a
+top-level module docstring:
 
 ```python
 """[Module description]
@@ -48,6 +51,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 ```
 
+The automated audit validates:
+
+- The header lives in the module docstring.
+- A module description appears before the copyright line.
+- The copyright line includes a year and copyright holder.
+- The required AGPL notice text appears in that docstring.
+
 Require these variable substitutions:
 
 - `[Module description]`: concise module summary
@@ -68,8 +78,8 @@ mkdir -p build/license-compliance
 ### 2. Validate License Headers
 
 ```bash
-uv run python scripts/license_audit_headers.py \
-  --roots src tests scripts \
+uv run python .agents/skills/license-audit/scripts/license_audit_headers.py \
+  --roots src tests scripts .agents/skills/license-audit/scripts \
   --output build/license-compliance/header-audit.csv
 ```
 
@@ -87,21 +97,46 @@ uv run pip-licenses \
 ### 4. Categorize Dependency Licenses
 
 ```bash
-uv run python scripts/license_audit_dependencies.py \
+uv run python .agents/skills/license-audit/scripts/license_audit_dependencies.py \
   --input-csv build/license-compliance/dependency-licenses.csv \
   --output-csv build/license-compliance/dependency-license-audit.csv
 ```
 
-### 5. Verify Third-Party Attribution Markers
+### 5. Generate Review Decisions Markdown
+
+```bash
+uv run python .agents/skills/license-audit/scripts/generate_review_decisions_markdown.py \
+  --input-csv docs/development/license-review-decisions.csv \
+  --output-md docs/development/license-review-decisions.md
+```
+
+### 6. Verify Third-Party Attribution Markers
 
 ```bash
 : > build/license-compliance/third-party-attribution-grep.txt
-for d in src tests scripts; do
+for d in src tests scripts .agents/skills/license-audit/scripts; do
   [ -d "$d" ] || continue
-  grep -R -n -E "Source:|License:|Copyright" "$d" \
+  find "$d" \
+    \( -name "__pycache__" -o -name "*.egg-info" \) -prune -o \
+    -type f ! -name "*.pyc" -print0 |
+    xargs -0 grep -n -I -E "Source:|License:|Copyright" \
     >> build/license-compliance/third-party-attribution-grep.txt || true
 done
 ```
+
+### 7. Resolve Review-Required Dependencies
+
+If `dependency-license-audit.csv` contains `REVIEW` rows, document maintainer
+decisions in `docs/development/license-review-decisions.csv` with these columns:
+
+- `Name`
+- `Version`
+- `License`
+- `Decision`
+- `ReviewedBy`
+- `ReviewedOn`
+- `Reference`
+- `Rationale`
 
 ## Output Artifacts
 
@@ -111,6 +146,7 @@ Require these artifacts:
 - `build/license-compliance/dependency-licenses.csv`
 - `build/license-compliance/dependency-license-audit.csv`
 - `build/license-compliance/third-party-attribution-grep.txt`
+- `docs/development/license-review-decisions.md`
 
 ## Pass/Fail Criteria
 
@@ -118,7 +154,7 @@ Pass only if:
 
 1. `header-audit.csv` has zero `FAIL` rows.
 2. `dependency-license-audit.csv` has zero `BLOCK` rows.
-3. `REVIEW` rows are escalated to a human maintainer and resolved.
+3. `REVIEW` rows are documented and resolved in `docs/development/license-review-decisions.csv`.
 4. Copied/adapted third-party code contains attribution comments.
 
 ## Recommended Summary Snippet

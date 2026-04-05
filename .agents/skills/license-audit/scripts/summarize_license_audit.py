@@ -28,6 +28,8 @@ HEADER_ARTIFACT: Final[str] = "header-audit.csv"
 DEPENDENCY_AUDIT_ARTIFACT: Final[str] = "dependency-license-audit.csv"
 DEPENDENCY_LIST_ARTIFACT: Final[str] = "dependency-licenses.csv"
 ATTRIBUTION_ARTIFACT: Final[str] = "third-party-attribution-grep.txt"
+DEFAULT_REVIEW_DECISIONS_CSV: Final[Path] = Path("docs/development/license-review-decisions.csv")
+APPROVED_REVIEW_DECISIONS: Final[set[str]] = {"ALLOW", "APPROVE", "APPROVED"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -44,6 +46,12 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path("build/license-compliance"),
         help="Directory containing generated audit artifacts.",
+    )
+    parser.add_argument(
+        "--review-decisions-csv",
+        type=Path,
+        default=DEFAULT_REVIEW_DECISIONS_CSV,
+        help="CSV file documenting maintainer decisions for review-required dependencies.",
     )
     return parser.parse_args()
 
@@ -86,6 +94,121 @@ def count_dependency_categories(audit_csv: Path) -> tuple[int, int]:
             elif category == "REVIEW":
                 review += 1
     return blocked, review
+
+
+def load_review_rows(audit_csv: Path) -> list[dict[str, str]]:
+    """Load dependencies that still require a manual review decision.
+
+    Args:
+        audit_csv: Path to `dependency-license-audit.csv`.
+
+    Returns:
+        Review-classified dependency rows.
+    """
+    review_rows: list[dict[str, str]] = []
+    with audit_csv.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            if row.get("Category", "").strip().upper() == "REVIEW":
+                review_rows.append(row)
+    return review_rows
+
+
+def load_review_decisions(review_decisions_csv: Path) -> list[dict[str, str]]:
+    """Load documented maintainer review decisions when available.
+
+    Args:
+        review_decisions_csv: Path to the tracked review decision CSV.
+
+    Returns:
+        Parsed review decision rows, or an empty list if the file does not exist.
+
+    Raises:
+        ValueError: If required columns are missing or approved rows are incomplete.
+    """
+    if not review_decisions_csv.exists():
+        return []
+
+    with review_decisions_csv.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        fieldnames = reader.fieldnames or []
+        required_fields = {
+            "Name",
+            "Version",
+            "License",
+            "Decision",
+            "ReviewedBy",
+            "ReviewedOn",
+            "Reference",
+            "Rationale",
+        }
+        missing_fields = sorted(required_fields.difference(fieldnames))
+        if missing_fields:
+            missing_display = ", ".join(missing_fields)
+            raise ValueError(f"Review decisions CSV is missing required columns: {missing_display}")
+
+        decisions = list(reader)
+
+    for decision in decisions:
+        normalized_decision = decision.get("Decision", "").strip().upper()
+        if normalized_decision not in APPROVED_REVIEW_DECISIONS:
+            continue
+        missing_values = [
+            field
+            for field in ("ReviewedBy", "ReviewedOn", "Reference", "Rationale")
+            if not decision.get(field, "").strip()
+        ]
+        if missing_values:
+            missing_display = ", ".join(missing_values)
+            dependency_name = decision.get("Name", "<unknown dependency>").strip()
+            raise ValueError(f"Approved review decisions must include {missing_display}: {dependency_name}")
+
+    return decisions
+
+
+def normalize_match_field(value: str) -> str:
+    """Normalize CSV fields used for review-decision matching."""
+    return value.strip().casefold()
+
+
+def decision_matches_review(
+    decision: dict[str, str],
+    review_row: dict[str, str],
+) -> bool:
+    """Return whether a documented decision resolves a review row.
+
+    Name must match exactly (case-insensitive). Version and license fields may be
+    left blank in the decision file to cover any matching version or license text.
+    """
+    if normalize_match_field(decision.get("Name", "")) != normalize_match_field(review_row.get("Name", "")):
+        return False
+
+    decision_version = normalize_match_field(decision.get("Version", ""))
+    if decision_version and decision_version != normalize_match_field(review_row.get("Version", "")):
+        return False
+
+    decision_license = normalize_match_field(decision.get("License", ""))
+    if decision_license and decision_license != normalize_match_field(review_row.get("License", "")):
+        return False
+
+    return decision.get("Decision", "").strip().upper() in APPROVED_REVIEW_DECISIONS
+
+
+def resolve_review_rows(
+    review_rows: list[dict[str, str]],
+    review_decisions: list[dict[str, str]],
+) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    """Split review rows into documented and unresolved sets."""
+    resolved: list[dict[str, str]] = []
+    unresolved: list[dict[str, str]] = []
+
+    for review_row in review_rows:
+        if any(decision_matches_review(decision, review_row) for decision in review_decisions):
+            resolved.append(review_row)
+        else:
+            unresolved.append(review_row)
+
+    return resolved, unresolved
 
 
 def count_attribution_matches(attribution_txt: Path) -> int:
@@ -144,17 +267,33 @@ def main() -> None:
         raise SystemExit(1) from exc
 
     header_violations = count_header_violations(header_csv)
-    blocked_count, review_count = count_dependency_categories(dependency_audit_csv)
+    blocked_count, _ = count_dependency_categories(dependency_audit_csv)
+    review_rows = load_review_rows(dependency_audit_csv)
+    try:
+        review_decisions = load_review_decisions(args.review_decisions_csv)
+    except ValueError as exc:
+        print(f"[ERROR] {exc}")
+        raise SystemExit(1) from exc
+    resolved_reviews, unresolved_reviews = resolve_review_rows(review_rows, review_decisions)
     attribution_matches = count_attribution_matches(attribution_txt)
 
     print("License compliance audit completed.")
     print(f"- Header violations: {header_violations}")
     print(f"- Blocked dependencies: {blocked_count}")
-    print(f"- Review-required dependencies: {review_count}")
+    print(f"- Review-required dependencies: {len(unresolved_reviews)}")
+    print(f"- Reviewed dependency decisions: {len(resolved_reviews)}")
     print(f"- Third-party attribution checks: completed ({attribution_matches} matches)")
     print(f"Artifacts: {artifacts_dir.resolve()}/*")
 
-    if header_violations > 0 or blocked_count > 0:
+    if unresolved_reviews:
+        print(
+            "[ERROR] Unresolved review-required dependencies remain. "
+            f"Document maintainer decisions in {args.review_decisions_csv.resolve()}."
+        )
+        for row in unresolved_reviews:
+            print(f"- {row.get('Name', '')} {row.get('Version', '')}: {row.get('License', '')}")
+
+    if header_violations > 0 or blocked_count > 0 or unresolved_reviews:
         raise SystemExit(1)
 
 

@@ -9,7 +9,7 @@
 
 Wiktor Hawrylik Python library template optimized for agentic AI development and data-driven workflows.
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Using uv (recommended)
@@ -19,7 +19,7 @@ uv pip install your-package-name
 pip install your-package-name
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Basic Usage
 
@@ -50,7 +50,7 @@ cd my-project
    1. Name python module, now "your_package_name"
    2. Name python package, now "your-package-name"
 
-## 📚 Documentation
+## Documentation
 
 Complete documentation available at: **[https://WiktorHawrylik.github.io/your-package-name/](https://WiktorHawrylik.github.io/your-package-name/)**
 
@@ -60,21 +60,16 @@ Complete documentation available at: **[https://WiktorHawrylik.github.io/your-pa
 - [API Reference](https://WiktorHawrylik.github.io/your-package-name/api/core/)
 - [Contributing](https://WiktorHawrylik.github.io/your-package-name/contributing/)
 
-## 🛠️ Requirements
+## Requirements
 
 - Python 3.11+
 - uv (recommended) or pip
 - make (for automation)
 
-## 📄 License
-
-AGPL-3.0 - see [LICENSE](LICENSE)
-
-## 📝 TODO
+## TODO
 
 ### 🏗️ Architecture & Design
 
-- [ ] Move `docs/development/_constitution.md` → `docs/design/_constitution.md`
 - [ ] Add "Simplicity First" principles to development guide (minimal abstractions)
 - [ ] Should some files be python agnostic? For migrations? Very limited - only constitution - it can refer to dev guidelines per language?
 - [ ] **Database Backend for Agent Memory**
@@ -159,17 +154,21 @@ AGPL-3.0 - see [LICENSE](LICENSE)
 - [ ] Human debugging interfaces for notebooks
 - [ ] Notebook best practices and integration patterns
 
-### 📚 Documentation
+### Documentation
 
 - [ ] Complete missing guide pages (data-processing.md, testing.md)
 - [ ] Add architecture decision record (ADR) examples
 - [ ] Document template customization workflow
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) for guidelines.
 
-## 📬 Contact
+## License
+
+AGPL-3.0 - see [LICENSE](LICENSE)
+
+## Contact
 
 - **Report a problem**: [GitHub Issues](https://github.com/WiktorHawrylik/your-package-name/issues)
 - **Ask a question**: [GitHub Discussions](https://github.com/WiktorHawrylik/your-package-name/discussions)

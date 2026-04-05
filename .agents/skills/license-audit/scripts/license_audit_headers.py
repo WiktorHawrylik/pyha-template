@@ -20,16 +20,26 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 from __future__ import annotations
 
 import argparse
+import ast
 import csv
+import re
 from pathlib import Path
 
-DEFAULT_ROOTS: tuple[str, ...] = ("src", "tests", "scripts")
+DEFAULT_ROOTS: tuple[str, ...] = (
+    "src",
+    "tests",
+    "scripts",
+    ".agents/skills/license-audit/scripts",
+)
 DEFAULT_OUTPUT: str = "build/license-compliance/header-audit.csv"
 REQUIRED_TOKENS: tuple[str, ...] = (
     "GNU Affero General Public License",
     "This program is free software",
     "WITHOUT ANY WARRANTY",
     "https://www.gnu.org/licenses/",
+)
+COPYRIGHT_PATTERN = re.compile(
+    r"^Copyright \(C\) (?P<year>\d{4}(?:-\d{4})?) (?P<holder>.+)$",
 )
 
 
@@ -73,18 +83,63 @@ def collect_python_files(roots: list[Path]) -> list[Path]:
     return sorted(files)
 
 
-def find_missing_tokens(file_path: Path, required_tokens: tuple[str, ...]) -> list[str]:
-    """Find required license tokens missing from a file.
+def extract_module_docstring(file_path: Path) -> str | None:
+    """Extract the top-level module docstring from a Python file.
 
     Args:
         file_path: File to inspect.
-        required_tokens: Tokens that must appear in the file.
 
     Returns:
-        List of missing tokens. Empty list means the file passes.
+        Top-level module docstring, or None when absent.
     """
     text = file_path.read_text(encoding="utf-8")
-    return [token for token in required_tokens if token not in text]
+    module = ast.parse(text)
+    return ast.get_docstring(module, clean=False)
+
+
+def find_missing_requirements(file_path: Path, required_tokens: tuple[str, ...]) -> list[str]:
+    """Find missing header requirements for a Python module.
+
+    Args:
+        file_path: File to inspect.
+        required_tokens: License tokens that must appear in the module docstring.
+
+    Returns:
+        Human-readable requirement labels for missing header parts.
+    """
+    try:
+        docstring = extract_module_docstring(file_path)
+    except SyntaxError:
+        return ["module_docstring_parse_error"]
+
+    if not docstring:
+        return ["module_docstring_missing"]
+
+    lines = [line.strip() for line in docstring.splitlines()]
+    missing: list[str] = []
+
+    copyright_line = next(
+        (line for line in lines if line.startswith("Copyright (C)")),
+        None,
+    )
+    if copyright_line is None:
+        missing.append("copyright_line_missing")
+    elif not COPYRIGHT_PATTERN.match(copyright_line):
+        missing.extend(("copyright_year_missing", "copyright_holder_missing"))
+
+    if copyright_line is None:
+        if not any(line for line in lines):
+            missing.append("module_description_missing")
+    else:
+        copyright_index = lines.index(copyright_line)
+        if not any(line for line in lines[:copyright_index]):
+            missing.append("module_description_missing")
+
+    for token in required_tokens:
+        if token not in docstring:
+            missing.append(f"missing_token:{token}")
+
+    return missing
 
 
 def write_audit_report(
@@ -110,7 +165,7 @@ def write_audit_report(
         writer.writerow(["file", "status", "missing_tokens"])
 
         for file_path in files:
-            missing_tokens = find_missing_tokens(file_path, required_tokens)
+            missing_tokens = find_missing_requirements(file_path, required_tokens)
             status = "FAIL" if missing_tokens else "PASS"
             writer.writerow([str(file_path), status, "; ".join(missing_tokens)])
             if missing_tokens:
